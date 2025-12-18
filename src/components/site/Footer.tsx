@@ -15,6 +15,9 @@ export function Footer() {
           <div className="mt-2 text-[13px] leading-relaxed text-white/50">
             Built for faster billing, auditability, and compliance-first workflows.
           </div>
+          <div className="mt-4 text-xs text-white/60">
+            Trusted by: <span className="font-medium">Aternox</span>, Novacore, LedgerX, Orion Finance
+          </div>
         </div>
 
         <div className="flex items-center gap-4 text-[13px] text-white/50">

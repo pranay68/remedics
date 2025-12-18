@@ -72,6 +72,12 @@ export function Header() {
 				</nav>
 
 				<div className="flex items-center gap-2">
+					<div className="hidden items-center gap-3 pr-4 md:flex">
+						<div className="text-xs font-medium text-white/50">Trusted by</div>
+						<div className="rounded-full bg-white/[0.04] px-3 py-1 text-[13px] font-medium">
+							Aternox
+						</div>
+					</div>
 					<Link
 						href="/contact"
 						className="btn-secondary inline-flex items-center justify-center rounded-full px-4 py-1.5 text-[13px] transition-all duration-200"

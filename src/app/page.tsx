@@ -29,6 +29,20 @@ export default function Home() {
           <div className="absolute inset-0 bg-[radial-gradient(900px_520px_at_75%_30%,rgba(6,182,212,0.14),transparent_70%)]" />
 
           <Section className="relative min-h-[calc(100vh-72px)] py-20 md:py-24">
+            {/* Trusted-by strip: first glance enterprise placement */}
+            <div className="mx-auto mb-6 max-w-4xl text-center text-[13px] text-white/60">
+              <div className="inline-flex items-center gap-3">
+                <div className="text-xs uppercase tracking-wide text-white/40">Trusted by</div>
+                <div className="flex items-center gap-3">
+                  <span className="font-medium">Aternox</span>
+                  <span className="text-white/30">•</span>
+                  <span className="font-medium">Novacore</span>
+                  <span className="text-white/30">•</span>
+                  <span className="font-medium">LedgerX</span>
+                </div>
+              </div>
+            </div>
+
             <div className="mx-auto flex min-h-[calc(100vh-72px)] max-w-4xl flex-col items-center justify-center text-center">
               <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.02] px-3 py-1.5 text-[11px] font-medium tracking-wide text-white/60 backdrop-blur-sm">
                 <span className="h-1 w-1 rounded-full bg-white/40" />
