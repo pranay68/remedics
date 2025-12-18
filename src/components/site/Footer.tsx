@@ -16,7 +16,7 @@ export function Footer() {
             Built for faster billing, auditability, and compliance-first workflows.
           </div>
           <div className="mt-4 text-xs text-white/60">
-            Trusted by: <span className="font-medium">Aternox</span>, Novacore, LedgerX, Orion Finance
+            A product of <span className="font-medium">Aternox</span> © 2025
           </div>
         </div>
 

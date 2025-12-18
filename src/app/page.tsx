@@ -29,17 +29,11 @@ export default function Home() {
           <div className="absolute inset-0 bg-[radial-gradient(900px_520px_at_75%_30%,rgba(6,182,212,0.14),transparent_70%)]" />
 
           <Section className="relative min-h-[calc(100vh-72px)] py-20 md:py-24">
-            {/* Trusted-by strip: first glance enterprise placement */}
+            {/* Company ownership: Aternox product strip */}
             <div className="mx-auto mb-6 max-w-4xl text-center text-[13px] text-white/60">
-              <div className="inline-flex items-center gap-3">
-                <div className="text-xs uppercase tracking-wide text-white/40">Trusted by</div>
-                <div className="flex items-center gap-3">
-                  <span className="font-medium">Aternox</span>
-                  <span className="text-white/30">•</span>
-                  <span className="font-medium">Novacore</span>
-                  <span className="text-white/30">•</span>
-                  <span className="font-medium">LedgerX</span>
-                </div>
+              <div className="inline-flex items-center gap-2">
+                <span className="text-xs uppercase tracking-wide text-white/40">A product by</span>
+                <span className="font-medium text-white">Aternox</span>
               </div>
             </div>
 
