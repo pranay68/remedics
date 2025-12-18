@@ -25,9 +25,9 @@ export default function ContactPage() {
               </div>
               <div className="mt-6 space-y-2 text-sm">
                 <div className="text-muted">Sales</div>
-                <div className="font-medium">sales@remedics.ai</div>
+                <div className="font-medium">sales@billings.ai</div>
                 <div className="mt-4 text-muted">General</div>
-                <div className="font-medium">hello@remedics.ai</div>
+                <div className="font-medium">hello@billings.ai</div>
                 <div className="mt-4 text-xs text-muted">
                   Placeholder emails—swap later.
                 </div>

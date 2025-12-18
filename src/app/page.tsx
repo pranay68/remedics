@@ -32,20 +32,20 @@ export default function Home() {
             <div className="mx-auto flex min-h-[calc(100vh-72px)] max-w-4xl flex-col items-center justify-center text-center">
               <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.02] px-3 py-1.5 text-[11px] font-medium tracking-wide text-white/60 backdrop-blur-sm">
                 <span className="h-1 w-1 rounded-full bg-white/40" />
-                THE FUTURE CORE OF MEDICAL SECTOR
+                THE FUTURE OF BILLING OPERATIONS
               </div>
 
               <h1 className="mt-10 text-balance text-display text-5xl font-medium leading-[1.05] tracking-[-0.04em] md:text-6xl lg:text-[5rem]">
-                Clinical intelligence,<br className="hidden md:block" /> engineered for control and speed.
+                Billing intelligence,<br className="hidden md:block" /> engineered for control and speed.
               </h1>
               
               <h2 className="mt-6 text-display text-2xl font-light leading-[1.2] tracking-[-0.02em] text-white/50 md:text-3xl lg:text-4xl">
-                Precision, control, dominance.
+                Accuracy, automation, compliance.
               </h2>
 
               <p className="mt-8 max-w-xl text-pretty text-[15px] leading-relaxed text-white/60 md:text-base">
-                Remedics is clinical intelligence infrastructure—built to raise accuracy,
-                compress workflow time, and keep every output reviewable.
+                Billings AI is billing intelligence infrastructure—built to streamline billing workflows,
+                compress cycle time, and keep every output auditable.
               </p>
 
               <div className="mt-12 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -73,7 +73,7 @@ export default function Home() {
               <div className="mt-16 grid w-full gap-3 md:grid-cols-3">
                 <Card
                   title="Accuracy-first"
-                  desc="Engineered to outperform common baselines across core clinical workflows (evaluation details on request)."
+                  desc="Engineered to outperform common baselines across core billing workflows (evaluation details on request)."
                 />
                 <Card
                   title="Audit trail"
@@ -81,7 +81,7 @@ export default function Home() {
                 />
                 <Card
                   title="Workflow speed"
-                  desc="From intake to documentation—built to compress time without sacrificing control."
+                  desc="From invoice to reconciliation—built to compress cycle time without sacrificing control."
                 />
               </div>
             </div>
@@ -103,7 +103,7 @@ export default function Home() {
             <div className="md:col-span-7">
               <div className="grid gap-3 md:grid-cols-2">
                 <Card
-                  title="Clinician-in-the-loop"
+                  title="Operator-in-the-loop"
                   desc="Designed for oversight and accountability, not blind automation."
                 />
                 <Card

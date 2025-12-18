@@ -23,14 +23,14 @@ export default function SafetyPage() {
           </>
         }
         subtitle={
-          "We don't position Remedics as a magical black box. We position it as controllable infrastructure: outputs, logs, and workflows designed for oversight."
+          "We don't position Billings AI as a magical black box. We position it as controllable infrastructure: outputs, logs, and workflows designed for oversight."
         }
       >
         <FadeIn>
           <div className="grid gap-4 md:grid-cols-2">
             <Row
               delay={0.1}
-              title="Clinician-in-the-loop"
+              title="Operator-in-the-loop"
               desc="Designed to support professional judgment with clear artifacts, not replace it by default."
             />
             <Row
@@ -57,10 +57,10 @@ export default function SafetyPage() {
               Important
             </div>
             <h2 className="mt-3 text-display text-3xl font-semibold tracking-tight md:text-4xl">
-              Not medical advice.
+              Not financial advice.
             </h2>
             <p className="mt-4 max-w-3xl text-base text-muted md:text-lg">
-              Remedics is built for clinical workflows and requires professional oversight.
+              Billings AI is built for billing workflows and requires professional oversight.
               We avoid claiming certifications or regulatory approvals unless they are
               currently obtained.
             </p>

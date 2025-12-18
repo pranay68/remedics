@@ -24,7 +24,7 @@ export default function ProductPage() {
           </>
         }
         subtitle={
-          "Remedics is a clinical intelligence layer: it accelerates intake, documentation, and operational decision paths with controls for review and governance."
+          "Billings AI is a billing intelligence layer: it accelerates claim intake, invoicing, reconciliation, and operational decision paths with controls for review and governance."
         }
       >
         <div className="grid gap-8 md:grid-cols-12">
@@ -38,15 +38,15 @@ export default function ProductPage() {
                   Signal → Structure → Decision support
                 </div>
                 <p className="mt-3 text-base text-muted md:text-lg">
-                  Capture patient context, transform it into structured clinical artifacts,
+                  Capture billing context, transform it into structured financial artifacts,
                   and surface decision support aligned to your workflow.
                 </p>
                 <div className="mt-8 grid gap-3">
                   {[
-                    { label: "Intake", tag: "fast" },
-                    { label: "Triage support", tag: "traceable" },
-                    { label: "Documentation", tag: "reviewable" },
-                    { label: "Handoff summaries", tag: "audit-ready" },
+                    { label: "Claim intake", tag: "fast" },
+                    { label: "Revenue triage", tag: "traceable" },
+                    { label: "Transaction records", tag: "reviewable" },
+                    { label: "Audit-ready summaries", tag: "audit-ready" },
                   ].map((item, i) => (
                     <ScaleIn key={item.label} delay={0.1 * (i + 1)}>
                       <div className="group flex items-center justify-between rounded-2xl border border-border/70 bg-background/40 px-5 py-4 transition-all duration-300 hover:scale-[1.02] hover:border-brand-2/50 hover:bg-background/60">

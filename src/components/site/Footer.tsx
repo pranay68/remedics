@@ -11,9 +11,9 @@ export function Footer() {
     <footer className="border-t border-white/[0.06] bg-black">
       <div className="mx-auto flex max-w-4xl flex-col gap-6 px-5 py-10 md:flex-row md:items-center md:justify-between">
         <div className="text-sm">
-          <div className="text-display text-sm font-medium tracking-[-0.01em] text-white/90">Remedics</div>
+          <div className="text-display text-sm font-medium tracking-[-0.01em] text-white/90">Billings AI</div>
           <div className="mt-2 text-[13px] leading-relaxed text-white/50">
-            Built for speed, auditability, and safety-first workflows.
+            Built for faster billing, auditability, and compliance-first workflows.
           </div>
         </div>
 

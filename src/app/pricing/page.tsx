@@ -42,7 +42,7 @@ export default function PricingPage() {
           </>
         }
         subtitle={
-          "We don't publish pricing publicly. Remedics deployments depend on environment, governance, and scope."
+          "We don't publish pricing publicly. Billings AI deployments depend on environment, governance, and scope."
         }
       >
         <FadeIn>
@@ -56,7 +56,7 @@ export default function PricingPage() {
             <Tier
               delay={0.2}
               name="Scale"
-              forWhom="Hospitals / clinics"
+              forWhom="Finance teams / enterprises"
               bullets={["Governance path", "Role-based workflows", "Integration planning"]}
             />
             <Tier

@@ -25,7 +25,7 @@ export default function CareersPage() {
           </>
         }
         subtitle={
-          "Remedics is a small, high-density team. We don’t have managers for managers. We have engineers who solve clinical problems."
+          "Billings AI is a small, high-density team. We don’t have managers for managers. We have engineers who solve billing problems."
         }
       >
         <div className="grid gap-10 md:grid-cols-12">
@@ -33,21 +33,21 @@ export default function CareersPage() {
             <div className="text-sm font-semibold">Open roles</div>
             <p className="mt-2 text-sm text-muted">
               If you don’t see a role but you’re world-class at systems engineering or
-              clinical AI evaluation, email us.
+              billing AI evaluation, email us.
             </p>
             <div className="mt-6">
               <Link
-                href="mailto:careers@remedics.ai"
+                href="mailto:careers@billings.ai"
                 className="text-sm font-medium text-foreground underline decoration-muted underline-offset-4 hover:decoration-foreground"
               >
-                careers@remedics.ai
+                careers@billings.ai
               </Link>
             </div>
           </div>
 
           <div className="md:col-span-8 space-y-4">
             <Job title="Founding Systems Engineer" loc="Remote / Hybrid" />
-            <Job title="Clinical Evaluation Lead" loc="Remote" />
+            <Job title="Billing Evaluation Lead" loc="Remote" />
             <Job title="Frontend Design Engineer" loc="Remote" />
           </div>
         </div>

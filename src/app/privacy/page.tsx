@@ -33,7 +33,7 @@ export default function PrivacyPage() {
 
           <h2 className="mt-8 text-lg font-semibold">Contact</h2>
           <p className="text-muted">
-            For privacy inquiries, contact us at hello@remedics.ai.
+            For privacy inquiries, contact us at hello@billings.ai.
           </p>
         </div>
       </Page>

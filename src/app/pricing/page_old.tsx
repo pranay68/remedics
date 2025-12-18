@@ -38,7 +38,7 @@ export default function PricingPage() {
           </>
         }
         subtitle={
-          "We don’t publish pricing publicly. Remedics deployments depend on environment, governance, and scope."
+          "We don’t publish pricing publicly. Billings AI deployments depend on environment, governance, and scope."
         }
       >
         <div className="grid gap-4 md:grid-cols-3">
@@ -49,7 +49,7 @@ export default function PricingPage() {
           />
           <Tier
             name="Scale"
-            forWhom="Hospitals / clinics"
+            forWhom="Finance teams / enterprises"
             bullets={["Governance path", "Role-based workflows", "Integration planning"]}
           />
           <Tier

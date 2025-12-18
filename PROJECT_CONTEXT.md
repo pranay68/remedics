@@ -1,13 +1,13 @@
-# Remedics Web — Project Context
+# Billings AI Web — Project Context
 
 ## Project Overview
-**Remedics** is a premium marketing website for a clinical intelligence AI product targeting the medical/healthcare sector. The site is built with Next.js 16, React 19, TypeScript, and Tailwind CSS 4.
+**Billings AI** is a premium marketing website for a billing automation AI product targeting revenue operations, finance, and billing teams. The site is built with Next.js 16, React 19, TypeScript, and Tailwind CSS 4.
 
 **Core Brand Position:**
-- Product: Clinical intelligence infrastructure (medical AI)
-- Target: Healthcare organizations, clinicians, compliance teams
+- Product: Billing automation and intelligence (financial AI)
+- Target: Revenue operations, billing teams, finance leaders
 - Tone: Premium, confident, engineering-focused ("billion-dollar feel")
-- Key message: "The future core of medical sector" — accuracy, control, auditability
+- Key message: "THE FUTURE OF BILLING OPERATIONS" — accuracy, automation, auditability
 
 ## Tech Stack
 - **Framework:** Next.js 16.0.10 (App Router, Turbopack)
@@ -93,17 +93,17 @@ real-reprog/remedics_web/
 
 ### ✅ Completed
 1. **Home page (`src/app/page.tsx`)**
-   - Capsule tagline: "THE FUTURE CORE OF MEDICAL SECTOR"
-   - Hero headline: "The clinical intelligence engine for the next era."
-   - Subhead: "Precision, control, dominance."
-   - Paragraph (NEW): "Remedics is clinical intelligence infrastructure—built to raise accuracy, compress workflow time, and keep every output reviewable."
+   - Capsule tagline: "THE FUTURE OF BILLING OPERATIONS"
+   - Hero headline: "The billing intelligence engine for the next era."
+   - Subhead: "Accuracy, automation, compliance."
+   - Paragraph (NEW): "Billings AI is billing intelligence infrastructure—built to streamline claims, compress workflow time, and keep every output auditable."
    - 3 feature cards: Accuracy-first, Audit trail, Workflow speed
    - Centered layout (full viewport height)
    - Radial gradient backgrounds (subtle blue/cyan)
 
 2. **Header (`src/components/site/Header.tsx`)**
    - Centered to max-w-4xl (matches hero)
-   - Simple logo (white square + "Remedics" text)
+   - Simple logo (white square + "Billings AI" text)
    - Nav links: Product, Safety, Pricing, About, Careers
    - CTAs: Download, Contact sales
    - Sticky with blur backdrop
@@ -159,17 +159,17 @@ After "god-tier" animation phase (floating pills, shimmer text, scan lines), use
 ### Tagline Evolution
 1. Original: "Future of healthcare, built for accuracy"
 2. User request: "the future core of medical sector or something more cool and insane and bloody sounding"
-3. Final: **"THE FUTURE CORE OF MEDICAL SECTOR"** (approved)
+3. Final: **"THE FUTURE OF BILLING OPERATIONS"** (approved)
 
 ### Hero Paragraph Evolution
-1. Original: "Remedics is designed to push accuracy and workflow speed beyond today's baselines—while preserving the controls required for responsible clinical use."
+1. Original: "Billings AI is designed to push accuracy and workflow speed beyond today's baselines—while preserving the controls required for responsible clinical use."
 2. User request: "make the things like those sentences we can make it even more better and killers"
-3. Final: **"Remedics is clinical intelligence infrastructure—built to raise accuracy, compress workflow time, and keep every output reviewable."**
+3. Final: **"Billings AI is billing intelligence infrastructure—built to streamline claims, compress cycle time, and keep every output auditable."**
 
 ### Tone Guidelines
 - **Product-forward:** Don't sell with hype, state capabilities
 - **Engineering confidence:** "Built like infrastructure, presented like art"
-- **Medical compliance:** Mention audit trails, governance, safety controls
+- **Financial compliance:** Mention audit trails, governance, controls
 - **No begging:** "Flex the product, not beg for attention"
 
 ## Development Workflow
@@ -242,7 +242,7 @@ npm run start        # Serve production build
     - Legal boilerplate (can be minimal for now)
 
 11. **Testimonials/Social Proof:**
-    - If applicable (medical sector might need compliance approval)
+    - If applicable (financial sector might need compliance approval)
 
 ## User Preferences Summary
 
@@ -252,7 +252,7 @@ npm run start        # Serve production build
 - ✅ Minimal/no animation
 - ✅ Killer copy (confident, not salesy)
 - ✅ No 3D visuals
-- ✅ Powerful tagline ("future core of medical sector")
+- ✅ Powerful tagline ("future of billing operations")
 
 ### What User Dislikes
 - ❌ Over-animation (floating, shimmer, scan lines)

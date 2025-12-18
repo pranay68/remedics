@@ -22,16 +22,16 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Remedics — Clinical Intelligence, Engineered",
-    template: "%s — Remedics",
+    default: "Billings AI — Billing Intelligence, Engineered",
+    template: "%s — Billings AI",
   },
   description:
-    "Remedics builds premium clinical intelligence infrastructure with auditability, safety controls, and extreme workflow speed.",
-  metadataBase: new URL("https://remedics.ai"),
+    "Billings AI builds premium billing intelligence infrastructure with automation, auditability, and secure workflows.",
+  metadataBase: new URL("https://billings.ai"),
   openGraph: {
-    title: "Remedics — Clinical Intelligence, Engineered",
+    title: "Billings AI — Billing Intelligence, Engineered",
     description:
-      "Premium clinical intelligence infrastructure with auditability, safety controls, and extreme workflow speed.",
+      "Premium billing intelligence infrastructure with automation, auditability, and secure workflows.",
     type: "website",
   },
 };

@@ -19,11 +19,11 @@ export default function AboutPage() {
         eyebrow="About"
         title={
           <>
-            We build the <span className="text-gradient text-shimmer">future</span> of healthcare systems.
+            We build the <span className="text-gradient text-shimmer">future</span> of billing systems.
           </>
         }
         subtitle={
-          "Remedics exists to make clinical work faster, more precise, and more governable—without turning medicine into chaos."
+          "Billings AI exists to make billing operations faster, more precise, and more governable—without turning finance into chaos."
         }
       >
         <FadeIn>
@@ -31,7 +31,7 @@ export default function AboutPage() {
             <Block
               delay={0.1}
               title="Mission"
-              desc="Compress clinical time while raising the quality of artifacts and decisions."
+              desc="Compress billing cycle time while raising the quality of artifacts and financial decisions."
             />
             <Block
               delay={0.2}

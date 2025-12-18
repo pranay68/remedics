@@ -27,10 +27,9 @@ export default function TermsPage() {
             compromise services.
           </p>
 
-          <h2 className="mt-8 text-lg font-semibold">No medical advice</h2>
+          <h2 className="mt-8 text-lg font-semibold">No financial advice</h2>
           <p className="text-muted">
-            Content on this website is informational and does not constitute medical
-            advice.
+            Content on this website is informational and does not constitute financial or legal advice.
           </p>
 
           <h2 className="mt-8 text-lg font-semibold">Changes</h2>
