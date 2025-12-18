@@ -57,10 +57,10 @@ export default function Home() {
                   <span className="ml-2 transition-transform duration-200 group-hover:translate-x-0.5">→</span>
                 </Link>
                 <Link
-                  href="#download"
+                  href="/contact"
                   className="btn-secondary inline-flex h-11 items-center justify-center rounded-full px-6 text-[13px] transition-all duration-200"
                 >
-                  Download (soon)
+                  Download
                 </Link>
                 <Link
                   href="/safety"
@@ -118,35 +118,6 @@ export default function Home() {
                   title="Evaluation culture"
                   desc="We measure performance. We iterate. We keep receipts (when appropriate)."
                 />
-              </div>
-            </div>
-          </div>
-        </Section>
-
-        <Section className="py-24">
-          <div
-            id="download"
-            className="rounded-3xl border border-white/[0.06] bg-white/[0.01] p-12 backdrop-blur"
-          >
-            <div className="grid gap-8 md:grid-cols-12 md:items-center">
-              <div className="md:col-span-8">
-                <div className="text-[10px] font-medium uppercase tracking-[0.15em] text-white/40">
-                  Download
-                </div>
-                <h3 className="mt-4 text-display text-2xl font-medium leading-[1.2] tracking-[-0.02em] md:text-3xl">
-                  Not yet public. We'll open access soon.
-                </h3>
-                <p className="mt-3 text-[15px] text-white/50">
-                  This isn't a waitlist funnel. It's a controlled launch.
-                </p>
-              </div>
-              <div className="md:col-span-4 md:text-right">
-                <Link
-                  href="/contact"
-                  className="btn-primary inline-flex h-11 items-center justify-center rounded-full px-6 text-[13px] transition-all duration-200"
-                >
-                  Contact sales
-                </Link>
               </div>
             </div>
           </div>

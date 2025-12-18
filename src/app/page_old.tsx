@@ -73,10 +73,10 @@ export default function Home() {
                   Explore Product
                 </Link>
                 <Link
-                  href="#download"
+                  href="/contact"
                   className="btn-secondary inline-flex h-12 items-center justify-center rounded-full px-5 text-sm font-semibold"
                 >
-                  Download (soon)
+                  Download
                 </Link>
                 <Link
                   href="/safety"
@@ -154,18 +154,15 @@ export default function Home() {
         </Section>
 
         <Section className="py-16">
-          <div
-            id="download"
-            className="rounded-3xl border border-border/70 bg-surface/45 p-8 glow"
-          >
+          <div className="rounded-3xl border border-border/70 bg-surface/45 p-8 glow">
             <div className="grid gap-6 md:grid-cols-12 md:items-center">
               <div className="md:col-span-8">
-                <div className="text-xs font-semibold text-muted">Download</div>
+                <div className="text-xs font-semibold text-muted">Get access</div>
                 <h3 className="mt-2 text-2xl font-semibold tracking-tight">
                   Not yet public. We’ll open access soon.
                 </h3>
                 <p className="mt-2 text-muted">
-                  This isn’t a waitlist funnel. It’s a controlled launch.
+                  Contact sales to request access to Billings AI.
                 </p>
               </div>
               <div className="md:col-span-4 md:text-right">
@@ -173,7 +170,7 @@ export default function Home() {
                   href="/contact"
                   className="btn-secondary inline-flex h-12 items-center justify-center rounded-full px-5 text-sm font-semibold"
                 >
-                  Contact sales
+                  Download
                 </Link>
               </div>
             </div>

@@ -105,7 +105,7 @@ real-reprog/remedics_web/
    - Centered to max-w-4xl (matches hero)
    - Simple logo (white square + "Billings AI" text)
    - Nav links: Product, Safety, Pricing, About, Careers
-   - CTAs: Download, Contact sales
+   - CTAs: Download (via Contact sales)
    - Sticky with blur backdrop
    - Removed motion animations for cleaner feel
 

@@ -87,7 +87,7 @@ export default function PricingPage() {
                   href="/contact"
                   className="btn-primary inline-flex h-14 items-center justify-center rounded-full px-7 text-base font-semibold transition-all hover:scale-105"
                 >
-                  Contact sales
+                  Download
                 </Link>
               </div>
             </div>

@@ -85,7 +85,7 @@ export default function ProductPage() {
                     href="/contact"
                     className="btn-primary inline-flex h-12 items-center justify-center rounded-full px-5 text-sm font-semibold transition-all hover:scale-105"
                   >
-                    Contact sales
+                    Download
                   </Link>
                 </div>
               </div>
