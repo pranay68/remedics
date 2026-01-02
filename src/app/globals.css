@@ -7,11 +7,11 @@
   --surface: rgba(255, 255, 255, 0.02);
   --surface-2: rgba(255, 255, 255, 0.04);
   --border: rgba(255, 255, 255, 0.08);
-  --brand: #3B82F6;
-  --brand-2: #06B6D4;
-  --accent: #F43F5E;
-  --glow-cyan: rgba(6, 182, 212, 0.15);
-  --glow-blue: rgba(59, 130, 246, 0.12);
+  --brand: #E5E7EB; /* Silver/Platinum */
+  --brand-2: #D1D5DB; /* Light Silver */
+  --accent: #FFFFFF;
+  --glow-cyan: rgba(255, 255, 255, 0.15);
+  --glow-blue: rgba(200, 200, 200, 0.1);
 }
 
 @theme inline {
@@ -73,8 +73,8 @@ body {
 .glow {
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.06),
-    0 0 40px rgba(59, 130, 246, 0.08),
-    0 0 80px rgba(6, 182, 212, 0.04);
+    0 0 40px rgba(255, 255, 255, 0.05),
+    0 0 80px rgba(200, 200, 200, 0.03);
 }
 
 .text-gradient {

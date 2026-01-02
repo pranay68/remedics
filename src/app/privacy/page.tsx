@@ -8,32 +8,41 @@ export default function PrivacyPage() {
         eyebrow="Legal"
         title={
           <>
-            Privacy <span className="text-gradient">(v1)</span>
+            Privacy <span className="text-gradient">Policy</span>
           </>
         }
         subtitle={
-          "Placeholder privacy policy. Replace with your real policy before launch."
+          "Last updated: January 2025"
         }
       >
         <div className="prose prose-invert max-w-none">
           <p className="text-muted">
-            This privacy policy is a placeholder and not legal advice.
+            At Aternox, we take your privacy seriously. This Privacy Policy explains how we collect, use, and protect your information when you use our website and products (Reprog, Cursor).
           </p>
 
-          <h2 className="mt-8 text-lg font-semibold">Data</h2>
+          <h2 className="mt-8 text-lg font-semibold">1. Information We Collect</h2>
           <p className="text-muted">
-            The site may collect basic analytics and contact form submissions.
-            For this build, the contact API route does not store or send anything.
+            We collect information you provide directly to us, such as when you fill out a contact form or sign up for our services. This may include your name, email address, and company information.
           </p>
 
-          <h2 className="mt-8 text-lg font-semibold">Security</h2>
+          <h2 className="mt-8 text-lg font-semibold">2. How We Use Your Information</h2>
           <p className="text-muted">
-            We aim to follow secure engineering practices and minimize data collection.
+            We use the information we collect to provide, maintain, and improve our Services, to communicate with you, and to comply with legal obligations.
           </p>
 
-          <h2 className="mt-8 text-lg font-semibold">Contact</h2>
+          <h2 className="mt-8 text-lg font-semibold">3. Data Security</h2>
           <p className="text-muted">
-            For privacy inquiries, please use the contact form on the Contact page. We do not publish direct email addresses.
+            We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction.
+          </p>
+
+          <h2 className="mt-8 text-lg font-semibold">4. Code Privacy</h2>
+          <p className="text-muted">
+            For our developer tools (Reprog, Cursor), we prioritize local execution and zero-retention policies. We do not train our models on your private code unless explicitly authorized by you.
+          </p>
+
+          <h2 className="mt-8 text-lg font-semibold">5. Contact Us</h2>
+          <p className="text-muted">
+            If you have any questions about this Privacy Policy, please contact us via our Contact page.
           </p>
         </div>
       </Page>

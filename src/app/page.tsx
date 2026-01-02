@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Shell } from "@/components/site/Shell";
 import { Section } from "@/components/site/Section";
 
@@ -12,7 +13,7 @@ function Card({
   desc: string;
 }) {
   return (
-    <div className="group rounded-2xl border border-white/[0.06] bg-white/[0.01] p-6 backdrop-blur transition-all duration-300 hover:border-white/[0.12] hover:bg-white/[0.02]">
+    <div className="group rounded-2xl border border-white/[0.08] bg-white/[0.02] p-6 backdrop-blur transition-all duration-300 hover:border-white/[0.2] hover:bg-white/[0.04] hover:shadow-[0_0_30px_-10px_rgba(255,255,255,0.1)]">
       <div className="text-[13px] font-medium tracking-wide text-white/90">{title}</div>
       <div className="mt-2.5 text-[13px] leading-relaxed text-white/50">{desc}</div>
     </div>
@@ -23,10 +24,23 @@ export default function Home() {
   return (
     <Shell>
       <main className="noise cursor-crosshair">
-        <div className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-grid opacity-[0.07]" />
-          <div className="absolute inset-0 bg-[radial-gradient(1200px_600px_at_50%_0%,rgba(59,130,246,0.18),transparent_70%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(900px_520px_at_75%_30%,rgba(6,182,212,0.14),transparent_70%)]" />
+        <div className="relative overflow-hidden bg-black">
+          <div className="absolute inset-0 bg-grid opacity-[0.05]" />
+          {/* Platinum/Silver Gradients */}
+          <div className="absolute inset-0 bg-[radial-gradient(1200px_600px_at_50%_0%,rgba(255,255,255,0.12),transparent_70%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(900px_520px_at_75%_30%,rgba(192,192,192,0.08),transparent_70%)]" />
+          
+          {/* Faded Logo Background */}
+          <div className="absolute inset-0 flex items-center justify-center opacity-[0.04] pointer-events-none select-none mix-blend-overlay">
+             <Image 
+               src="/logo.png" 
+               alt="Aternox Background" 
+               width={1000} 
+               height={1000} 
+               className="object-contain grayscale invert"
+               priority
+             />
+          </div>
 
           <Section className="relative min-h-[calc(100vh-72px)] py-20 md:py-24">
             {/* Company ownership: Aternox product strip */}
@@ -38,58 +52,58 @@ export default function Home() {
             </div>
 
             <div className="mx-auto flex min-h-[calc(100vh-72px)] max-w-4xl flex-col items-center justify-center text-center">
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.02] px-3 py-1.5 text-[11px] font-medium tracking-wide text-white/60 backdrop-blur-sm">
-                <span className="h-1 w-1 rounded-full bg-white/40" />
-                INTELLIGENT CODE GENERATION
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-gradient-to-b from-white/[0.08] to-transparent px-3 py-1.5 text-[11px] font-medium tracking-wide text-white/80 backdrop-blur-sm shadow-[0_0_15px_-5px_rgba(255,255,255,0.2)]">
+                <span className="h-1 w-1 rounded-full bg-white/60 shadow-[0_0_5px_rgba(255,255,255,0.8)]" />
+                THE FUTURE OF SOFTWARE CREATION
               </div>
 
               <h1 className="mt-10 text-balance text-display text-5xl font-medium leading-[1.05] tracking-[-0.04em] md:text-6xl lg:text-[5rem]">
-                Reprog <br className="hidden md:block" /> The AI coding assistant.
+                <span className="bg-gradient-to-b from-white via-white/90 to-white/50 bg-clip-text text-transparent">Aternox</span> <br className="hidden md:block" /> 
+                <span className="text-white/80">Making programming easy.</span>
               </h1>
               
               <h2 className="mt-6 text-display text-2xl font-light leading-[1.2] tracking-[-0.02em] text-white/50 md:text-3xl lg:text-4xl">
-                Code faster, debug smarter, ship instantly.
+                We build tools that empower the next generation of builders.
               </h2>
 
               <p className="mt-8 max-w-xl text-pretty text-[15px] leading-relaxed text-white/60 md:text-base">
-                Reprog brings the power of context-aware AI to your editor. 
-                Like having a senior engineer pair-programming with you 24/7.
+                At Aternox, our mission is to democratize software engineering. We build AI-native products like Reprog and Cursor that remove the barriers between idea and implementation.
               </p>
 
               <div className="mt-12 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <Link
                   href="/product"
-                  className="btn-primary group inline-flex h-11 items-center justify-center rounded-full px-6 text-[13px] transition-all duration-200"
+                  className="group inline-flex h-11 items-center justify-center rounded-full bg-white text-black px-6 text-[13px] font-medium transition-all duration-200 hover:bg-white/90 hover:shadow-[0_0_20px_-5px_rgba(255,255,255,0.3)]"
                 >
-                  Meet Reprog
+                  Our Products
                   <span className="ml-2 transition-transform duration-200 group-hover:translate-x-0.5">→</span>
                 </Link>
                 <Link
-                  href="/contact"
-                  className="btn-secondary inline-flex h-11 items-center justify-center rounded-full px-6 text-[13px] transition-all duration-200"
+                  href="/about"
+                  className="inline-flex h-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] px-6 text-[13px] text-white transition-all duration-200 hover:bg-white/[0.08]"
                 >
-                  Download
+                  About Us
                 </Link>
                 <Link
-                  href="/safety"
+                  href="/contact"
                   className="inline-flex h-11 items-center justify-center px-6 text-[13px] text-white/50 transition-all duration-200 hover:text-white/80"
                 >
-                  Security
+                  Contact
                 </Link>
               </div>
 
               <div className="mt-16 grid w-full gap-3 md:grid-cols-3">
                 <Card
-                  title="Context Aware"
-                  desc="Understands your entire codebase, not just the current file. Reprog suggests code that fits your architecture."
+                  title="Our Mission"
+                  desc="To make programming accessible to everyone. We believe that with the right tools, anyone can be a software engineer."
                 />
                 <Card
-                  title="Privacy First"
-                  desc="Your code stays yours. Enterprise-grade security ensures your IP never leaves your control."
+                  title="AI Native"
+                  desc="We don't just add AI to existing tools. We build new paradigms where AI is the core of the development lifecycle."
                 />
                 <Card
-                  title="Instant Refactors"
-                  desc="Rewrite complex logic, generate tests, or migrate frameworks with a single natural language command."
+                  title="For Builders"
+                  desc="Whether you're a seasoned architect or writing your first line of code, Aternox builds the infrastructure for your ideas."
                 />
               </div>
             </div>

@@ -47,8 +47,8 @@ export default function CareersPage() {
 
           <div className="md:col-span-8 space-y-4">
             <Job title="Founding Systems Engineer" loc="Remote / Hybrid" />
-            <Job title="Billing Evaluation Lead" loc="Remote" />
-            <Job title="Frontend Design Engineer" loc="Remote" />
+            <Job title="AI Research Engineer" loc="Remote" />
+            <Job title="Product Engineer (IDE)" loc="Remote" />
           </div>
         </div>
       </Page>
