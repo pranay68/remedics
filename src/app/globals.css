@@ -26,9 +26,9 @@
   --color-accent: var(--accent);
   --color-glow-cyan: var(--glow-cyan);
   --color-glow-blue: var(--glow-blue);
-  --font-sans: var(--font-inter);
-  --font-display: var(--font-space-grotesk);
-  --font-mono: var(--font-jetbrains-mono);
+  --font-sans: var(--font-geist-sans);
+  --font-display: var(--font-syncopate);
+  --font-mono: var(--font-geist-mono);
 }
 
 body {
@@ -78,10 +78,38 @@ body {
 }
 
 .text-gradient {
-  background: linear-gradient(90deg, #FFFFFF 0%, #9CA3AF 100%);
+  background: linear-gradient(
+    to bottom right,
+    #ffffff 0%,
+    #ffffff 40%,
+    #9ca3af 100%
+  );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+.text-shimmer {
+  background: linear-gradient(
+    110deg,
+    #ffffff 45%,
+    #9ca3af 50%,
+    #ffffff 55%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 3s infinite linear;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
 }
 
 .btn-primary {

@@ -7,8 +7,8 @@ import { ScaleIn } from "@/components/animations/ScaleIn";
 function Feature({ title, desc, delay = 0 }: { title: string; desc: string; delay?: number }) {
   return (
     <ScaleIn delay={delay} className="group rounded-2xl border border-border/70 bg-surface/50 p-7 transition-all duration-500 hover:scale-105 hover:border-brand-2/50 hover:bg-surface/70 glow">
-      <div className="text-sm font-semibold text-brand-2">{title}</div>
-      <div className="mt-2 text-sm leading-6 text-muted">{desc}</div>
+      <div className="font-sans text-sm font-bold tracking-tight text-brand-2">{title}</div>
+      <div className="mt-2 font-sans text-sm leading-relaxed text-white/40">{desc}</div>
     </ScaleIn>
   );
 }
@@ -20,7 +20,7 @@ export default function ProductPage() {
         eyebrow="Reprog"
         title={
           <>
-            The AI assistant that <span className="text-gradient text-shimmer">understands</span> your code.
+            The AI assistant that <span className="text-shimmer">understands</span> your code.
           </>
         }
         subtitle={
@@ -31,13 +31,13 @@ export default function ProductPage() {
           <div className="md:col-span-7">
             <FadeIn>
               <div className="glass rounded-3xl border border-gradient p-8 glow-intense scan-line">
-                <div className="text-xs font-mono font-semibold uppercase tracking-wider text-brand-2">
+                <div className="font-sans text-xs font-bold uppercase tracking-widest text-brand-2">
                   Capabilities
                 </div>
-                <div className="mt-3 text-display text-2xl font-semibold md:text-3xl">
+                <div className="mt-3 font-display text-xl font-bold tracking-[0.15em] uppercase md:text-2xl">
                   Context → Reasoning → Generation
                 </div>
-                <p className="mt-3 text-base text-muted md:text-lg">
+                <p className="mt-3 font-sans text-base text-white/40 md:text-lg">
                   Reprog indexes your codebase locally. It understands your types, your utilities, and your architecture
                   before it writes a single line of code.
                 </p>
@@ -49,9 +49,9 @@ export default function ProductPage() {
                     { label: "One-click Refactor", tag: "automated" },
                   ].map((item, i) => (
                     <ScaleIn key={item.label} delay={0.1 * (i + 1)}>
-                      <div className="group flex items-center justify-between rounded-2xl border border-border/70 bg-background/40 px-5 py-4 transition-all duration-300 hover:scale-[1.02] hover:border-brand-2/50 hover:bg-background/60">
-                        <div className="text-base font-medium">{item.label}</div>
-                        <div className="text-mono text-xs text-brand-2">{item.tag}</div>
+                      <div className="group flex items-center justify-between rounded-2xl border border-white/5 bg-white/[0.02] px-5 py-4 transition-all duration-300 hover:scale-[1.02] hover:border-white/20 hover:bg-white/[0.04]">
+                        <div className="font-sans text-base font-bold tracking-tight">{item.label}</div>
+                        <div className="font-mono text-[10px] font-bold uppercase tracking-widest text-brand-2">{item.tag}</div>
                       </div>
                     </ScaleIn>
                   ))}
@@ -63,14 +63,14 @@ export default function ProductPage() {
           <div className="md:col-span-5">
             <FadeIn delay={0.2}>
               <div className="glass rounded-3xl border border-border/70 p-8 glow">
-                <div className="text-xs font-mono font-semibold uppercase tracking-wider text-muted">
+                <div className="font-sans text-xs font-bold uppercase tracking-widest text-white/30">
                   Experience
                 </div>
-                <h2 className="mt-3 text-display text-2xl font-semibold tracking-tight md:text-3xl">
+                <h2 className="mt-3 font-display text-xl font-bold tracking-[0.15em] uppercase md:text-2xl">
                   Feels like magic.{" "}
-                  <span className="text-gradient">Works like engineering.</span>
+                  <span className="text-shimmer">Works like engineering.</span>
                 </h2>
-                <p className="mt-4 text-base text-muted">
+                <p className="mt-4 font-sans text-base text-white/40">
                   Stop context switching between documentation and your editor. Reprog brings the knowledge to your cursor.
                 </p>
                 <div className="mt-8 flex gap-3">

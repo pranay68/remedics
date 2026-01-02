@@ -14,8 +14,8 @@ function Card({
 }) {
   return (
     <div className="group rounded-2xl border border-white/[0.08] bg-white/[0.02] p-6 backdrop-blur transition-all duration-300 hover:border-white/[0.2] hover:bg-white/[0.04] hover:shadow-[0_0_30px_-10px_rgba(255,255,255,0.1)]">
-      <div className="text-[13px] font-medium tracking-wide text-white/90">{title}</div>
-      <div className="mt-2.5 text-[13px] leading-relaxed text-white/50">{desc}</div>
+      <div className="font-display text-[11px] font-bold tracking-[0.2em] uppercase text-white/90">{title}</div>
+      <div className="mt-2.5 font-sans text-[13px] leading-relaxed text-white/50">{desc}</div>
     </div>
   );
 }
@@ -49,12 +49,12 @@ export default function Home() {
                 INTELLIGENCE FOR BUILDERS
               </div>
 
-              <h1 className="mt-10 text-balance text-display text-5xl font-medium leading-[1.05] tracking-[-0.04em] md:text-6xl lg:text-[5rem]">
-                <span className="bg-gradient-to-b from-white via-white/90 to-white/50 bg-clip-text text-transparent">Aternox</span> <br className="hidden md:block" /> 
-                <span className="text-white/80">Architecting the Future of Code.</span>
+              <h1 className="mt-10 text-balance font-display text-5xl font-bold leading-[1.1] tracking-[0.15em] uppercase md:text-7xl lg:text-[5rem]">
+                <span className="text-shimmer">Aternox.</span> <br className="hidden md:block" /> 
+                <span className="text-white/90">Architecting the Future of Code.</span>
               </h1>
               
-              <h2 className="mt-6 text-display text-2xl font-light leading-[1.2] tracking-[-0.02em] text-white/50 md:text-3xl lg:text-4xl">
+              <h2 className="mt-6 max-w-2xl text-balance font-sans text-lg font-medium leading-relaxed tracking-tight text-white/40 md:text-xl">
                 We build the infrastructure that powers the next era of software development.
               </h2>
 
@@ -105,9 +105,9 @@ export default function Home() {
         <Section className="py-24">
           <div className="grid gap-12 md:grid-cols-12">
             <div className="md:col-span-5">
-              <h2 className="text-display text-3xl font-medium leading-[1.15] tracking-[-0.02em] md:text-4xl">
+              <h2 className="font-display text-2xl font-bold leading-[1.15] tracking-[0.1em] uppercase md:text-3xl">
                 Built for flow state.{" "}
-                <span className="text-gradient">Engineered for speed.</span>
+                <span className="text-shimmer">Engineered for speed.</span>
               </h2>
               <p className="mt-5 text-[15px] leading-relaxed text-white/60">
                 Reprog isn't just an autocomplete. It's a deep integration into your development environment

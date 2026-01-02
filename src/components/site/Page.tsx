@@ -20,13 +20,13 @@ export function Page({
 
         <Section className="relative py-16">
           {eyebrow ? (
-            <div className="text-xs font-semibold text-muted">{eyebrow}</div>
+            <div className="font-sans text-xs font-bold uppercase tracking-widest text-white/30">{eyebrow}</div>
           ) : null}
-          <h1 className="mt-3 text-balance text-4xl font-semibold tracking-tight md:text-5xl">
+          <h1 className="mt-3 text-balance font-display text-3xl font-bold tracking-[0.15em] uppercase md:text-4xl">
             {title}
           </h1>
           {subtitle ? (
-            <p className="mt-4 max-w-2xl text-pretty text-base leading-7 text-muted md:text-lg">
+            <p className="mt-4 max-w-2xl text-pretty font-sans text-base leading-relaxed text-white/40 md:text-lg">
               {subtitle}
             </p>
           ) : null}

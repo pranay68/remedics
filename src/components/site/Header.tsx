@@ -52,7 +52,7 @@ export function Header() {
 						<div className="absolute inset-0 bg-gradient-to-tr from-brand/20 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 					</div>
 					<div className="leading-tight">
-						<div className="text-display text-sm font-semibold tracking-tight text-white/90">
+						<div className="font-display text-[10px] font-bold tracking-[0.25em] uppercase text-white/90">
 							Aternox
 						</div>
 					</div>
@@ -65,10 +65,10 @@ export function Header() {
 							<Link
 								key={item.href}
 								href={item.href}
-								className={`rounded-full px-3 py-1.5 text-[13px] transition-all duration-200 ${
+								className={`rounded-full px-4 py-1.5 text-[13px] font-medium transition-all duration-200 ${
 									active
-										? "bg-white/[0.08] text-white"
-										: "text-white/50 hover:text-white/80 hover:bg-white/[0.04]"
+										? "bg-white/10 text-white shadow-[0_0_15px_-5px_rgba(255,255,255,0.2)]"
+										: "text-white/40 hover:text-white/80"
 								}`}
 							>
 								{item.label}
