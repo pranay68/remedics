@@ -15,8 +15,11 @@ export function Footer() {
           <div className="mt-2 text-[13px] leading-relaxed text-white/50">
             Building the next generation of developer tools.
           </div>
+          <div className="mt-2 text-[11px] font-mono text-white/40">
+            Chandranagar, Ward 07, Nepal
+          </div>
           <div className="mt-4 text-xs text-white/60">
-            © 2025 Aternox Inc.
+            © 2026 Aternox Inc.
           </div>
         </div>
 
@@ -26,7 +29,7 @@ export function Footer() {
               {l.label}
             </Link>
           ))}
-          <span className="text-white/30">© {new Date().getFullYear()}</span>
+          <span className="text-white/30">© 2026</span>
         </div>
       </div>
     </footer>

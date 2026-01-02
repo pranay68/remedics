@@ -49,6 +49,30 @@ export default function AboutPage() {
         <FadeIn delay={0.5}>
           <div className="mt-12 glass rounded-3xl border border-gradient p-10 glow-intense scan-line">
             <div className="text-xs font-mono font-semibold uppercase tracking-wider text-brand-2">
+              Leadership
+            </div>
+            <div className="mt-6 flex flex-col gap-8 md:flex-row md:items-center">
+              <div className="h-24 w-24 shrink-0 rounded-2xl bg-gradient-to-br from-brand to-brand-2 p-[1px]">
+                <div className="flex h-full w-full items-center justify-center rounded-2xl bg-surface text-3xl font-bold text-brand-2">
+                  SK
+                </div>
+              </div>
+              <div>
+                <h3 className="text-2xl font-semibold text-foreground">Sulekha Kumari Kamti</h3>
+                <p className="text-sm font-medium text-brand-2">Founder & CEO</p>
+                <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted">
+                  Sulekha founded Aternox with a vision to redefine the relationship between developers and their tools. 
+                  With a focus on building AI-native infrastructure, she leads the company's mission to architect the future of code, 
+                  ensuring that engineering remains a creative pursuit at scale.
+                </p>
+              </div>
+            </div>
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={0.7}>
+          <div className="mt-12 glass rounded-3xl border border-gradient p-10 glow-intense scan-line">
+            <div className="text-xs font-mono font-semibold uppercase tracking-wider text-brand-2">
               Statement
             </div>
             <h2 className="mt-3 text-display text-3xl font-semibold tracking-tight md:text-4xl">

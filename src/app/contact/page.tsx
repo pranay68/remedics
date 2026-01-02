@@ -26,6 +26,15 @@ export default function ContactPage() {
               <div className="mt-6 text-sm text-muted">
                 Please provide your contact details in the form and we will respond shortly.
               </div>
+              <div className="mt-8 pt-6 border-t border-border/50">
+                <div className="text-xs font-mono font-semibold uppercase tracking-wider text-brand-2">
+                  Headquarters
+                </div>
+                <div className="mt-2 text-sm text-muted">
+                  Chandranagar, Ward 07<br />
+                  Nepal
+                </div>
+              </div>
             </div>
           </div>
 
