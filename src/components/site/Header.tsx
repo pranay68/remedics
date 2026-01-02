@@ -7,9 +7,7 @@ import { useEffect, useState } from "react";
 const nav = [
 	{ href: "/product", label: "Product" },
 	{ href: "/safety", label: "Safety" },
-	{ href: "/pricing", label: "Pricing" },
 	{ href: "/about", label: "About" },
-	{ href: "/careers", label: "Careers" },
 ];
 
 function isActive(pathname: string, href: string) {
@@ -49,7 +47,6 @@ export function Header() {
 						<div className="text-display text-sm font-medium tracking-[-0.01em]">
 							Aternox
 						</div>
-						<div className="text-xs text-white/40">Engineering & products</div>
 					</div>
 				</Link>
 
@@ -73,13 +70,7 @@ export function Header() {
 				</nav>
 
 			<div className="flex items-center gap-2">
-					<Link
-						href="/contact"
-						className="btn-secondary inline-flex items-center justify-center rounded-full px-4 py-1.5 text-[13px] transition-all duration-200"
-						aria-label="Download — contact sales"
-					>
-						Download
-					</Link>
+					{/* Download button removed */}
 				</div>
 			</div>
 		</header>

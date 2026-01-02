@@ -22,14 +22,14 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Aternox — Engineering & Products",
+    default: "Aternox — Architecting the Future of Code",
     template: "%s — Aternox",
   },
-  description: "Aternox builds Reprog, the AI coding assistant that understands your entire codebase.",
+  description: "Aternox builds the infrastructure that powers the next era of software development. From intelligent coding assistants to autonomous agents.",
   metadataBase: new URL("https://aternox.com"),
   openGraph: {
-    title: "Aternox — Engineering & Products",
-    description: "Aternox builds Reprog, the AI coding assistant that understands your entire codebase.",
+    title: "Aternox — Architecting the Future of Code",
+    description: "Aternox builds the infrastructure that powers the next era of software development. From intelligent coding assistants to autonomous agents.",
     type: "website",
   },
 };

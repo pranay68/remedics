@@ -43,31 +43,23 @@ export default function Home() {
           </div>
 
           <Section className="relative min-h-[calc(100vh-72px)] py-20 md:py-24">
-            {/* Company ownership: Aternox product strip */}
-            <div className="mx-auto mb-6 max-w-4xl text-center text-[13px] text-white/60">
-              <div className="inline-flex items-center gap-2">
-                <span className="text-xs uppercase tracking-wide text-white/40">Built by</span>
-                <span className="font-medium text-white">Aternox</span>
-              </div>
-            </div>
-
             <div className="mx-auto flex min-h-[calc(100vh-72px)] max-w-4xl flex-col items-center justify-center text-center">
               <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-gradient-to-b from-white/[0.08] to-transparent px-3 py-1.5 text-[11px] font-medium tracking-wide text-white/80 backdrop-blur-sm shadow-[0_0_15px_-5px_rgba(255,255,255,0.2)]">
                 <span className="h-1 w-1 rounded-full bg-white/60 shadow-[0_0_5px_rgba(255,255,255,0.8)]" />
-                THE FUTURE OF SOFTWARE CREATION
+                INTELLIGENCE FOR BUILDERS
               </div>
 
               <h1 className="mt-10 text-balance text-display text-5xl font-medium leading-[1.05] tracking-[-0.04em] md:text-6xl lg:text-[5rem]">
                 <span className="bg-gradient-to-b from-white via-white/90 to-white/50 bg-clip-text text-transparent">Aternox</span> <br className="hidden md:block" /> 
-                <span className="text-white/80">Making programming easy.</span>
+                <span className="text-white/80">Architecting the Future of Code.</span>
               </h1>
               
               <h2 className="mt-6 text-display text-2xl font-light leading-[1.2] tracking-[-0.02em] text-white/50 md:text-3xl lg:text-4xl">
-                We build tools that empower the next generation of builders.
+                We build the infrastructure that powers the next era of software development.
               </h2>
 
               <p className="mt-8 max-w-xl text-pretty text-[15px] leading-relaxed text-white/60 md:text-base">
-                At Aternox, our mission is to democratize software engineering. We build AI-native products like Reprog and Cursor that remove the barriers between idea and implementation.
+                From intelligent coding assistants to autonomous agents, Aternox is the engine behind the world's best engineering teams. We bridge the gap between human intent and machine execution.
               </p>
 
               <div className="mt-12 flex flex-col gap-3 sm:flex-row sm:items-center">
