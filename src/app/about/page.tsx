@@ -2,10 +2,9 @@ import { Shell } from "@/components/site/Shell";
 import { Page } from "@/components/site/Page";
 import { Reveal } from "@/components/animations/Reveal";
 import { Spotlight } from "@/components/animations/Spotlight";
-import { Magnetic } from "@/components/animations/Magnetic";
-import { Target, Lightbulb, Rocket, Quote } from "lucide-react";
+import { Target, Lightbulb, Rocket, Quote, LucideIcon } from "lucide-react";
 
-function Block({ title, desc, delay = 0, icon: Icon }: { title: string; desc: string; delay?: number; icon: any }) {
+function Block({ title, desc, delay = 0, icon: Icon }: { title: string; desc: string; delay?: number; icon: LucideIcon }) {
   return (
     <Reveal delay={delay}>
       <Spotlight>
@@ -82,7 +81,7 @@ export default function AboutPage() {
                   <p className="font-display text-sm font-bold tracking-widest text-white/40 uppercase">Founder & CEO</p>
                   <p className="mt-6 max-w-2xl font-sans text-lg leading-relaxed text-white/50">
                     Sulekha founded Aternox with a vision to redefine the relationship between developers and their tools. 
-                    With a focus on building AI-native infrastructure, she leads the company's mission to architect the future of code, 
+                    With a focus on building AI-native infrastructure, she leads the company&apos;s mission to architect the future of code, 
                     ensuring that engineering remains a creative pursuit at scale.
                   </p>
                 </div>

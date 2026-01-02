@@ -4,9 +4,9 @@ import { Page } from "@/components/site/Page";
 import { Reveal } from "@/components/animations/Reveal";
 import { Spotlight } from "@/components/animations/Spotlight";
 import { Magnetic } from "@/components/animations/Magnetic";
-import { ArrowRight, Shield, Zap, Cpu, Code2, Sparkles } from "lucide-react";
+import { ArrowRight, Shield, Zap, Cpu, Code2, Sparkles, LucideIcon } from "lucide-react";
 
-function Feature({ title, desc, delay = 0, icon: Icon }: { title: string; desc: string; delay?: number; icon: any }) {
+function Feature({ title, desc, delay = 0, icon: Icon }: { title: string; desc: string; delay?: number; icon: LucideIcon }) {
   return (
     <Reveal delay={delay}>
       <Spotlight>
@@ -61,26 +61,12 @@ export default function ProductPage() {
                     before it writes a single line of code.
                   </p>
                   <div className="grid gap-4">
-                    {{
-                      label: "Smart Autocomplete",
-                      tag: "predictive",
-                      icon: Zap,
-                    },
-                    {
-                      label: "Natural Language Edit",
-                      tag: "conversational",
-                      icon: Sparkles,
-                    },
-                    {
-                      label: "Codebase Chat",
-                      tag: "indexed",
-                      icon: Code2,
-                    },
-                    {
-                      label: "One-click Refactor",
-                      tag: "automated",
-                      icon: Cpu,
-                    }].map((item, i) => (
+                    {[
+                      { label: "Smart Autocomplete", tag: "predictive", icon: Zap },
+                      { label: "Natural Language Edit", tag: "conversational", icon: Sparkles },
+                      { label: "Codebase Chat", tag: "indexed", icon: Code2 },
+                      { label: "One-click Refactor", tag: "automated", icon: Cpu },
+                    ].map((item, i) => (
                       <Reveal key={item.label} delay={0.3 + i * 0.1}>
                         <div className="group flex items-center justify-between rounded-2xl border border-white/5 bg-white/[0.03] px-6 py-5 transition-all duration-300 hover:border-white/20 hover:bg-white/[0.06]">
                           <div className="flex items-center gap-4">

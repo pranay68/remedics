@@ -2,9 +2,9 @@ import { Shell } from "@/components/site/Shell";
 import { Page } from "@/components/site/Page";
 import { Reveal } from "@/components/animations/Reveal";
 import { Spotlight } from "@/components/animations/Spotlight";
-import { ShieldCheck, Lock, EyeOff, Server } from "lucide-react";
+import { ShieldCheck, Lock, EyeOff, Server, LucideIcon } from "lucide-react";
 
-function Row({ title, desc, delay = 0, icon: Icon }: { title: string; desc: string; delay?: number; icon: any }) {
+function Row({ title, desc, delay = 0, icon: Icon }: { title: string; desc: string; delay?: number; icon: LucideIcon }) {
   return (
     <Reveal delay={delay}>
       <Spotlight>
@@ -35,7 +35,7 @@ export default function SafetyPage() {
         subtitle={
           <Reveal delay={0.1}>
             <span className="text-white/60">
-              Reprog is designed with a zero-retention architecture. We don't train on your code, and we don't store your IP.
+              Reprog is designed with a zero-retention architecture. We don&apos;t train on your code, and we don&apos;t store your IP.
             </span>
           </Reveal>
         }
@@ -77,7 +77,7 @@ export default function SafetyPage() {
                 Commitment
               </div>
               <h2 className="font-display text-3xl font-bold tracking-tight md:text-5xl mb-6 leading-tight">
-                We don't train on <br />your data.
+                We don&apos;t train on <br />your data.
               </h2>
               <p className="max-w-3xl font-sans text-xl text-white/50 leading-relaxed">
                 Our business model is selling software, not selling your data. We explicitly opt-out of training base models on customer code.

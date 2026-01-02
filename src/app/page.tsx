@@ -1,6 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
-import { motion } from "framer-motion";
 import { Shell } from "@/components/site/Shell";
 import { Section } from "@/components/site/Section";
 import { Reveal } from "@/components/animations/Reveal";
@@ -8,30 +6,13 @@ import { Spotlight } from "@/components/animations/Spotlight";
 import { Magnetic } from "@/components/animations/Magnetic";
 import { ArrowRight, Zap, Shield, Cpu } from "lucide-react";
 
-function Card({
-  title,
-  desc,
-}: {
-  title: string;
-  desc: string;
-}) {
-  return (
-    <Spotlight>
-      <div className="group relative rounded-2xl border border-white/[0.08] bg-white/[0.02] p-6 backdrop-blur transition-all duration-500 hover:border-white/[0.2] hover:bg-white/[0.04]">
-        <div className="font-display text-[13px] font-medium tracking-wide text-white/90">{title}</div>
-        <div className="mt-2.5 font-sans text-[13px] leading-relaxed text-white/50">{desc}</div>
-      </div>
-    </Spotlight>
-  );
-}
-
 export default function Home() {
   return (
     <Shell>
       {/* Hero Section */}
-      <Section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
+      <Section className="relative min-h-[90vh] flex items-center justify-center pt-20 overflow-hidden">
         {/* ...existing code... */}
-        <div className="relative z-10 max-w-4xl">
+        <div className="relative z-10 max-w-4xl text-center">
           <Reveal>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm mb-6">
               <span className="relative flex h-2 w-2">
@@ -54,13 +35,13 @@ export default function Home() {
 
           <Reveal delay={0.2}>
             <p className="text-xl md:text-2xl text-white/60 max-w-2xl mb-10 leading-relaxed font-light">
-              We build high-performance AI tools for the world's most ambitious developers. 
+              We build high-performance AI tools for the world&apos;s most ambitious developers. 
               Experience <span className="text-white font-medium">Reprog</span> — the flagship AI coding assistant.
             </p>
           </Reveal>
 
           <Reveal delay={0.3}>
-            <div className="flex flex-wrap gap-6">
+            <div className="flex flex-wrap gap-6 justify-center">
               <Magnetic>
                 <Link
                   href="/product"
@@ -99,7 +80,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl font-display font-bold mb-4">Reprog AI</h3>
                 <p className="text-white/60 leading-relaxed">
-                  Our flagship coding assistant that understands your entire codebase, not just the file you're in.
+                  Our flagship coding assistant that understands your entire codebase, not just the file you&apos;re in.
                 </p>
               </div>
             </Spotlight>
@@ -113,7 +94,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl font-display font-bold mb-4">Enterprise Grade</h3>
                 <p className="text-white/60 leading-relaxed">
-                  Security-first architecture designed for the world's most sensitive development environments.
+                  Security-first architecture designed for the world&apos;s most sensitive development environments.
                 </p>
               </div>
             </Spotlight>
