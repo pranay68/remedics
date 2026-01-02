@@ -22,7 +22,7 @@ export function Page({
           {eyebrow ? (
             <div className="font-sans text-xs font-bold uppercase tracking-widest text-white/30">{eyebrow}</div>
           ) : null}
-          <h1 className="mt-3 text-balance font-display text-3xl font-bold tracking-[0.15em] uppercase md:text-4xl">
+          <h1 className="mt-3 text-balance font-display text-4xl font-semibold tracking-tight md:text-5xl">
             {title}
           </h1>
           {subtitle ? (

@@ -16,9 +16,9 @@ export async function POST(req: Request) {
   const company = body?.company?.trim() || "N/A";
   const message = body?.message?.trim() || "";
 
-  if (!email || message.length < 8) {
+  if (!email) {
     return NextResponse.json(
-      { ok: false, message: "Please include a valid email and message." },
+      { ok: false, message: "Please include a valid email." },
       { status: 400 },
     );
   }
@@ -37,16 +37,16 @@ export async function POST(req: Request) {
   try {
     if (process.env.GMAIL_APP_PASSWORD) {
       await transporter.sendMail({
-        from: `"Aternox Contact Form" <${process.env.GMAIL_USER || "sulekhakapar123@gmail.com"}>`,
+        from: `"Aternox Access Request" <${process.env.GMAIL_USER || "sulekhakapar123@gmail.com"}>`,
         to: "sulekhakapar123@gmail.com",
-        subject: `New Contact from ${name} (${company})`,
+        subject: `New Access Request from ${name} (${company})`,
         text: `
 Name: ${name}
 Email: ${email}
 Company: ${company}
 
 Message:
-${message}
+${message || "No message provided."}
         `,
         html: `
 <p><strong>Name:</strong> ${name}</p>

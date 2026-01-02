@@ -1,15 +1,24 @@
 import Link from "next/link";
 import { Shell } from "@/components/site/Shell";
 import { Page } from "@/components/site/Page";
-import { FadeIn } from "@/components/animations/FadeIn";
-import { ScaleIn } from "@/components/animations/ScaleIn";
+import { Reveal } from "@/components/animations/Reveal";
+import { Spotlight } from "@/components/animations/Spotlight";
+import { Magnetic } from "@/components/animations/Magnetic";
+import { ArrowRight, Shield, Zap, Cpu, Code2, Sparkles } from "lucide-react";
 
-function Feature({ title, desc, delay = 0 }: { title: string; desc: string; delay?: number }) {
+function Feature({ title, desc, delay = 0, icon: Icon }: { title: string; desc: string; delay?: number; icon: any }) {
   return (
-    <ScaleIn delay={delay} className="group rounded-2xl border border-border/70 bg-surface/50 p-7 transition-all duration-500 hover:scale-105 hover:border-brand-2/50 hover:bg-surface/70 glow">
-      <div className="font-sans text-sm font-bold tracking-tight text-brand-2">{title}</div>
-      <div className="mt-2 font-sans text-sm leading-relaxed text-white/40">{desc}</div>
-    </ScaleIn>
+    <Reveal delay={delay}>
+      <Spotlight>
+        <div className="group rounded-3xl border border-white/10 bg-white/5 p-8 transition-all duration-500 hover:border-white/20 backdrop-blur-sm h-full">
+          <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <Icon className="w-5 h-5 text-white/70" />
+          </div>
+          <div className="font-display text-xl font-bold tracking-tight mb-3">{title}</div>
+          <div className="font-sans text-sm leading-relaxed text-white/40">{desc}</div>
+        </div>
+      </Spotlight>
+    </Reveal>
   );
 }
 
@@ -19,98 +28,129 @@ export default function ProductPage() {
       <Page
         eyebrow="Reprog"
         title={
-          <>
-            The AI assistant that <span className="text-shimmer">understands</span> your code.
-          </>
+          <Reveal>
+            <span className="font-display">
+              The AI assistant that <span className="text-shimmer">understands</span> your code.
+            </span>
+          </Reveal>
         }
         subtitle={
-          "Reprog is a context-aware coding companion. It reads your entire repository to provide suggestions, refactors, and answers that actually compile and run."
+          <Reveal delay={0.1}>
+            <span className="text-white/60">
+              Reprog is a context-aware coding companion. It reads your entire repository to provide suggestions, refactors, and answers that actually compile and run.
+            </span>
+          </Reveal>
         }
       >
-        <div className="grid gap-8 md:grid-cols-12">
+        <div className="grid gap-8 md:grid-cols-12 mt-12">
           <div className="md:col-span-7">
-            <FadeIn>
-              <div className="glass rounded-3xl border border-gradient p-8 glow-intense scan-line">
-                <div className="font-sans text-xs font-bold uppercase tracking-widest text-brand-2">
-                  Capabilities
+            <Reveal delay={0.2}>
+              <Spotlight>
+                <div className="glass rounded-[2.5rem] border border-white/10 p-10 glow-intense relative overflow-hidden">
+                  <div className="absolute top-0 right-0 p-8 opacity-10">
+                    <Code2 size={120} />
+                  </div>
+                  <div className="font-display text-xs font-bold uppercase tracking-[0.2em] text-white/40 mb-4">
+                    Capabilities
+                  </div>
+                  <div className="font-display text-3xl font-bold md:text-4xl mb-6 leading-tight">
+                    Context → Reasoning <br />→ Generation
+                  </div>
+                  <p className="font-sans text-lg text-white/50 mb-10 leading-relaxed">
+                    Reprog indexes your codebase locally. It understands your types, your utilities, and your architecture
+                    before it writes a single line of code.
+                  </p>
+                  <div className="grid gap-4">
+                    {{
+                      label: "Smart Autocomplete",
+                      tag: "predictive",
+                      icon: Zap,
+                    },
+                    {
+                      label: "Natural Language Edit",
+                      tag: "conversational",
+                      icon: Sparkles,
+                    },
+                    {
+                      label: "Codebase Chat",
+                      tag: "indexed",
+                      icon: Code2,
+                    },
+                    {
+                      label: "One-click Refactor",
+                      tag: "automated",
+                      icon: Cpu,
+                    }].map((item, i) => (
+                      <Reveal key={item.label} delay={0.3 + i * 0.1}>
+                        <div className="group flex items-center justify-between rounded-2xl border border-white/5 bg-white/[0.03] px-6 py-5 transition-all duration-300 hover:border-white/20 hover:bg-white/[0.06]">
+                          <div className="flex items-center gap-4">
+                            <item.icon className="w-5 h-5 text-white/30 group-hover:text-white/70 transition-colors" />
+                            <div className="font-display text-base font-bold tracking-tight">{item.label}</div>
+                          </div>
+                          <div className="font-mono text-[10px] font-bold uppercase tracking-widest text-white/30 px-2 py-1 rounded border border-white/5">{item.tag}</div>
+                        </div>
+                      </Reveal>
+                    ))}
+                  </div>
                 </div>
-                <div className="mt-3 font-display text-xl font-bold tracking-[0.15em] uppercase md:text-2xl">
-                  Context → Reasoning → Generation
-                </div>
-                <p className="mt-3 font-sans text-base text-white/40 md:text-lg">
-                  Reprog indexes your codebase locally. It understands your types, your utilities, and your architecture
-                  before it writes a single line of code.
-                </p>
-                <div className="mt-8 grid gap-3">
-                  {[
-                    { label: "Smart Autocomplete", tag: "predictive" },
-                    { label: "Natural Language Edit", tag: "conversational" },
-                    { label: "Codebase Chat", tag: "indexed" },
-                    { label: "One-click Refactor", tag: "automated" },
-                  ].map((item, i) => (
-                    <ScaleIn key={item.label} delay={0.1 * (i + 1)}>
-                      <div className="group flex items-center justify-between rounded-2xl border border-white/5 bg-white/[0.02] px-5 py-4 transition-all duration-300 hover:scale-[1.02] hover:border-white/20 hover:bg-white/[0.04]">
-                        <div className="font-sans text-base font-bold tracking-tight">{item.label}</div>
-                        <div className="font-mono text-[10px] font-bold uppercase tracking-widest text-brand-2">{item.tag}</div>
-                      </div>
-                    </ScaleIn>
-                  ))}
-                </div>
-              </div>
-            </FadeIn>
+              </Spotlight>
+            </Reveal>
           </div>
 
           <div className="md:col-span-5">
-            <FadeIn delay={0.2}>
-              <div className="glass rounded-3xl border border-border/70 p-8 glow">
-                <div className="font-sans text-xs font-bold uppercase tracking-widest text-white/30">
-                  Experience
+            <Reveal delay={0.4}>
+              <Spotlight>
+                <div className="glass rounded-[2.5rem] border border-white/10 p-10 h-full flex flex-col justify-between">
+                  <div>
+                    <div className="font-display text-xs font-bold uppercase tracking-[0.2em] text-white/40 mb-4">
+                      Experience
+                    </div>
+                    <h2 className="font-display text-3xl font-bold tracking-tight md:text-4xl mb-6 leading-tight">
+                      Feels like magic.{" "}
+                      <span className="text-shimmer">Works like engineering.</span>
+                    </h2>
+                    <p className="font-sans text-lg text-white/50 leading-relaxed">
+                      Stop context switching between documentation and your editor. Reprog brings the knowledge to your cursor.
+                    </p>
+                  </div>
+                  
+                  <div className="mt-12 flex flex-col gap-4">
+                    <Magnetic>
+                      <Link
+                        href="/contact"
+                        className="w-full h-16 bg-white text-black font-bold rounded-2xl flex items-center justify-center gap-2 hover:bg-white/90 transition-all"
+                      >
+                        Request Access
+                        <ArrowRight className="w-5 h-5" />
+                      </Link>
+                    </Magnetic>
+                  </div>
                 </div>
-                <h2 className="mt-3 font-display text-xl font-bold tracking-[0.15em] uppercase md:text-2xl">
-                  Feels like magic.{" "}
-                  <span className="text-shimmer">Works like engineering.</span>
-                </h2>
-                <p className="mt-4 font-sans text-base text-white/40">
-                  Stop context switching between documentation and your editor. Reprog brings the knowledge to your cursor.
-                </p>
-                <div className="mt-8 flex gap-3">
-                  <Link
-                    href="/safety"
-                    className="btn-secondary inline-flex h-12 items-center justify-center rounded-full px-5 text-sm font-semibold transition-all hover:scale-105"
-                  >
-                    Security
-                  </Link>
-                  <Link
-                    href="/contact"
-                    className="btn-primary inline-flex h-12 items-center justify-center rounded-full px-5 text-sm font-semibold transition-all hover:scale-105"
-                  >
-                    Download
-                  </Link>
-                </div>
-              </div>
-            </FadeIn>
+              </Spotlight>
+            </Reveal>
           </div>
         </div>
 
-        <FadeIn delay={0.4}>
-          <div className="mt-12 grid gap-4 md:grid-cols-3">
-            <Feature
-              delay={0.1}
-              title="Local Indexing"
-              desc="Reprog builds a semantic map of your codebase on your machine. Your code never leaves your device for indexing."
-            />
-            <Feature
-              delay={0.2}
-              title="Multi-file Edits"
-              desc="Ask Reprog to refactor a component, and it will automatically update the imports and usages in other files."
-            />
-            <Feature
-              delay={0.3}
-              title="Terminal Integration"
-              desc="Generate shell commands, explain errors, and run scripts directly from the chat interface."
-            />
-          </div>
-        </FadeIn>
+        <div className="mt-24 grid gap-6 md:grid-cols-3">
+          <Feature
+            delay={0.5}
+            icon={Shield}
+            title="Local Indexing"
+            desc="Reprog builds a semantic map of your codebase on your machine. Your code never leaves your device for indexing."
+          />
+          <Feature
+            delay={0.6}
+            icon={Zap}
+            title="Zero Latency"
+            desc="Optimized for speed. Get suggestions in milliseconds, keeping you in the flow state without interruptions."
+          />
+          <Feature
+            delay={0.7}
+            icon={Cpu}
+            title="Neural Reasoning"
+            desc="Beyond simple completion. Reprog reasons about logic, edge cases, and performance implications."
+          />
+        </div>
       </Page>
     </Shell>
   );

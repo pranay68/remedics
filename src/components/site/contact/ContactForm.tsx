@@ -20,10 +20,9 @@ export function ContactForm() {
   const canSubmit = useMemo(() => {
     return (
       form.email.trim().length > 3 &&
-      form.message.trim().length > 8 &&
       status.state !== "sending"
     );
-  }, [form.email, form.message, status.state]);
+  }, [form.email, status.state]);
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -46,7 +45,7 @@ export function ContactForm() {
 
       setStatus({
         state: "sent",
-        message: data.message || "Sent. We’ll respond soon.",
+        message: data.message || "Request received. Our team will reach out shortly.",
       });
       setForm({ name: "", email: "", company: "", message: "" });
     } catch (err) {
@@ -58,9 +57,9 @@ export function ContactForm() {
   return (
     <form onSubmit={onSubmit} className="space-y-4">
       <div>
-        <div className="text-sm font-semibold">Send a message</div>
+        <div className="text-sm font-semibold">Request Access</div>
         <div className="mt-1 text-sm text-muted">
-          This is a placeholder handler for now. It stores nothing.
+          Enter your details and we'll get back to you with a custom demo.
         </div>
       </div>
 
@@ -96,31 +95,30 @@ export function ContactForm() {
           value={form.company}
           onChange={(e) => setForm((s) => ({ ...s, company: e.target.value }))}
           className="h-11 w-full rounded-2xl border border-border/70 bg-background/30 px-4 text-sm outline-none focus:border-white/30"
-          placeholder="Hospital / clinic / org"
+          placeholder="Company / Organization"
           autoComplete="organization"
         />
       </label>
 
       <label className="space-y-2">
-        <div className="text-xs font-semibold text-muted">Message *</div>
+        <div className="text-xs font-semibold text-muted">Message (Optional)</div>
         <textarea
-          required
           value={form.message}
           onChange={(e) => setForm((s) => ({ ...s, message: e.target.value }))}
-          className="min-h-[140px] w-full resize-none rounded-2xl border border-border/70 bg-background/30 px-4 py-3 text-sm outline-none focus:border-white/30"
-          placeholder="What’s your environment and what do you want to deploy?"
+          className="min-h-[100px] w-full rounded-2xl border border-border/70 bg-background/30 p-4 text-sm outline-none focus:border-white/30"
+          placeholder="Tell us about your team's needs..."
         />
       </label>
 
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <button
-          type="submit"
-          disabled={!canSubmit}
-          className="btn-primary inline-flex h-11 items-center justify-center rounded-full px-5 text-sm font-semibold disabled:opacity-50"
-        >
-          {status.state === "sending" ? "Sending…" : "Send"}
-        </button>
+      <button
+        disabled={!canSubmit}
+        type="submit"
+        className="h-12 w-full rounded-2xl bg-white font-bold text-black transition-all hover:bg-white/90 disabled:opacity-50"
+      >
+        {status.state === "sending" ? "Sending..." : "Request Access"}
+      </button>
 
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         {status.state === "sent" ? (
           <div className="text-sm text-muted">{status.message}</div>
         ) : null}

@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
-import { Syncopate } from "next/font/google";
+import { Space_Grotesk, Syncopate } from "next/font/google";
+import { SmoothScroll } from "@/components/animations/SmoothScroll";
 import "./globals.css";
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-space-grotesk",
+});
 
 const syncopate = Syncopate({
   subsets: ["latin"],
@@ -32,9 +38,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body
-        className={`${GeistSans.variable} ${GeistMono.variable} ${syncopate.variable} antialiased min-h-full bg-background text-foreground`}
+        className={`${GeistSans.variable} ${GeistMono.variable} ${spaceGrotesk.variable} ${syncopate.variable} antialiased min-h-full bg-background text-foreground`}
       >
-        {children}
+        <SmoothScroll>
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   );
