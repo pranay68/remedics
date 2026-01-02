@@ -26,10 +26,9 @@
   --color-accent: var(--accent);
   --color-glow-cyan: var(--glow-cyan);
   --color-glow-blue: var(--glow-blue);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-inter);
   --font-display: var(--font-space-grotesk);
-  --font-mono: var(--font-geist-mono);
-  --font-futuristic: var(--font-syncopate);
+  --font-mono: var(--font-jetbrains-mono);
 }
 
 body {
@@ -37,20 +36,6 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system,
     Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-  overflow-x: hidden;
-}
-
-body::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  opacity: 0.03;
-  z-index: 9999;
 }
 
 html,
@@ -108,7 +93,7 @@ body {
   background: linear-gradient(
     110deg,
     #ffffff 45%,
-    #a1a1aa 50%,
+    #9ca3af 50%,
     #ffffff 55%
   );
   background-size: 200% 100%;
@@ -125,21 +110,6 @@ body {
   100% {
     background-position: -200% 0;
   }
-}
-
-.glass {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-}
-
-.glow-intense {
-  box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.08),
-    0 0 60px rgba(255, 255, 255, 0.05),
-    0 0 120px rgba(255, 255, 255, 0.02);
 }
 
 .btn-primary {

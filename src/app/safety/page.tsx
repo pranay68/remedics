@@ -1,22 +1,14 @@
 import { Shell } from "@/components/site/Shell";
 import { Page } from "@/components/site/Page";
-import { Reveal } from "@/components/animations/Reveal";
-import { Spotlight } from "@/components/animations/Spotlight";
-import { ShieldCheck, Lock, EyeOff, Server, LucideIcon } from "lucide-react";
+import { FadeIn } from "@/components/animations/FadeIn";
+import { ScaleIn } from "@/components/animations/ScaleIn";
 
-function Row({ title, desc, delay = 0, icon: Icon }: { title: string; desc: string; delay?: number; icon: LucideIcon }) {
+function Row({ title, desc, delay = 0 }: { title: string; desc: string; delay?: number }) {
   return (
-    <Reveal delay={delay}>
-      <Spotlight>
-        <div className="group rounded-3xl border border-white/10 bg-white/5 p-8 transition-all duration-500 hover:border-white/20 backdrop-blur-sm h-full">
-          <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <Icon className="w-5 h-5 text-white/70" />
-          </div>
-          <div className="font-display text-xl font-bold tracking-tight mb-3">{title}</div>
-          <div className="font-sans text-sm leading-relaxed text-white/40">{desc}</div>
-        </div>
-      </Spotlight>
-    </Reveal>
+    <ScaleIn delay={delay} className="group rounded-2xl border border-border/70 bg-surface/50 p-7 transition-all duration-500 hover:scale-105 hover:border-brand-2/50 hover:bg-surface/70 glow">
+      <div className="text-sm font-semibold text-brand-2">{title}</div>
+      <div className="mt-2 text-sm leading-6 text-muted">{desc}</div>
+    </ScaleIn>
   );
 }
 
@@ -26,65 +18,52 @@ export default function SafetyPage() {
       <Page
         eyebrow="Safety"
         title={
-          <Reveal>
-            <span className="font-display">
-              Your code is <span className="text-shimmer">yours</span>.
-            </span>
-          </Reveal>
+          <>
+            Your code is <span className="text-gradient text-shimmer">yours</span>.
+          </>
         }
         subtitle={
-          <Reveal delay={0.1}>
-            <span className="text-white/60">
-              Reprog is designed with a zero-retention architecture. We don&apos;t train on your code, and we don&apos;t store your IP.
-            </span>
-          </Reveal>
+          "Reprog is designed with a zero-retention architecture. We don't train on your code, and we don't store your IP."
         }
       >
-        <div className="grid gap-6 md:grid-cols-2 mt-12">
-          <Row
-            delay={0.2}
-            icon={EyeOff}
-            title="Zero Retention"
-            desc="Code snippets sent for inference are discarded immediately after generation. No logs, no storage."
-          />
-          <Row
-            delay={0.3}
-            icon={Lock}
-            title="Local Indexing"
-            desc="Your codebase index lives on your machine. We never upload your repository to our servers."
-          />
-          <Row
-            delay={0.4}
-            icon={ShieldCheck}
-            title="SOC 2 Ready"
-            desc="Our infrastructure is built on SOC 2 compliant providers with strict access controls."
-          />
-          <Row
-            delay={0.5}
-            icon={Server}
-            title="Enterprise Controls"
-            desc="Admins can enforce policies on model usage, telemetry, and data sharing."
-          />
-        </div>
+        <FadeIn>
+          <div className="grid gap-4 md:grid-cols-2">
+            <Row
+              delay={0.1}
+              title="Zero Retention"
+              desc="Code snippets sent for inference are discarded immediately after generation. No logs, no storage."
+            />
+            <Row
+              delay={0.2}
+              title="Local Indexing"
+              desc="Your codebase index lives on your machine. We never upload your repository to our servers."
+            />
+            <Row
+              delay={0.3}
+              title="SOC 2 Ready"
+              desc="Our infrastructure is built on SOC 2 compliant providers with strict access controls."
+            />
+            <Row
+              delay={0.4}
+              title="Enterprise Controls"
+              desc="Admins can enforce policies on model usage, telemetry, and data sharing."
+            />
+          </div>
+        </FadeIn>
 
-        <Reveal delay={0.6}>
-          <Spotlight>
-            <div className="mt-12 glass rounded-[2.5rem] border border-white/10 p-12 glow-intense relative overflow-hidden">
-              <div className="absolute top-0 right-0 p-12 opacity-5">
-                <ShieldCheck size={160} />
-              </div>
-              <div className="font-display text-xs font-bold uppercase tracking-[0.2em] text-white/40 mb-6">
-                Commitment
-              </div>
-              <h2 className="font-display text-3xl font-bold tracking-tight md:text-5xl mb-6 leading-tight">
-                We don&apos;t train on <br />your data.
-              </h2>
-              <p className="max-w-3xl font-sans text-xl text-white/50 leading-relaxed">
-                Our business model is selling software, not selling your data. We explicitly opt-out of training base models on customer code.
-              </p>
+        <FadeIn delay={0.6}>
+          <div className="mt-12 glass rounded-3xl border border-gradient p-10 glow-intense scan-line">
+            <div className="text-xs font-mono font-semibold uppercase tracking-wider text-accent">
+              Commitment
             </div>
-          </Spotlight>
-        </Reveal>
+            <h2 className="mt-3 font-sans text-3xl font-semibold tracking-[-0.04em] md:text-4xl">
+              We don't train on your data.
+            </h2>
+            <p className="mt-4 max-w-3xl text-base text-muted md:text-lg">
+              Our business model is selling software, not selling your data. We explicitly opt-out of training base models on customer code.
+            </p>
+          </div>
+        </FadeIn>
       </Page>
     </Shell>
   );

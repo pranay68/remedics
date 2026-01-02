@@ -30,42 +30,45 @@ export function Header() {
 
 	return (
 		<header
-			className={`sticky top-0 z-50 border-b transition-all duration-500 ${
+			className={`sticky top-0 z-50 border-b transition-all duration-300 ${
 				scrolled
-					? "border-white/10 bg-black/80 backdrop-blur-2xl py-3"
-					: "border-white/0 bg-transparent py-5"
-			}`}
+					? "border-white/[0.08] bg-black/70 backdrop-blur-xl"
+					: "border-white/[0.04] bg-black/30 backdrop-blur-md"
+			} supports-[backdrop-filter]:bg-black/30`}
 		>
-			<div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6">
+			<div className="mx-auto flex max-w-4xl items-center justify-between gap-6 px-5 py-4">
 				<Link
 					href="/"
-					className="group flex items-center gap-3 transition-opacity"
+					className="group flex items-center gap-2.5 transition-opacity hover:opacity-80"
 				>
-					<div className="relative h-10 w-10 overflow-hidden rounded-xl border border-white/10 bg-white/5 shadow-2xl transition-all duration-300 group-hover:border-white/20">
+					<div className="relative h-9 w-9 overflow-hidden rounded-xl border border-white/10 bg-gradient-to-br from-white/10 to-white/[0.02] shadow-2xl transition-transform duration-500 group-hover:scale-110">
 						<Image 
 							src="/logo.png" 
 							alt="Aternox Logo" 
-							width={40}
-							height={40}
-							className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+							width={36}
+							height={36}
+							className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-125 group-hover:rotate-3"
 						/>
+						<div className="absolute inset-0 bg-gradient-to-tr from-brand/20 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 					</div>
-					<div className="font-futuristic text-sm font-bold tracking-[0.3em] uppercase text-white/90 group-hover:text-white transition-colors">
-						Aternox
+					<div className="leading-tight">
+						<div className="font-sans text-sm font-semibold tracking-[-0.03em] text-white/90">
+							Aternox
+						</div>
 					</div>
 				</Link>
 
-				<nav className="hidden items-center gap-2 md:flex bg-white/5 backdrop-blur-md border border-white/10 rounded-full p-1">
+				<nav className="hidden items-center gap-1 md:flex">
 					{nav.map((item) => {
 						const active = isActive(pathname, item.href);
 						return (
 							<Link
 								key={item.href}
 								href={item.href}
-								className={`rounded-full px-5 py-2 text-[13px] font-medium transition-all duration-300 ${
+								className={`rounded-full px-3 py-1.5 text-[13px] transition-all duration-200 ${
 									active
-										? "bg-white text-black shadow-xl"
-										: "text-white/50 hover:text-white hover:bg-white/5"
+										? "bg-white/[0.08] text-white"
+										: "text-white/50 hover:text-white/80 hover:bg-white/[0.04]"
 								}`}
 							>
 								{item.label}
@@ -74,13 +77,8 @@ export function Header() {
 					})}
 				</nav>
 
-				<div className="flex items-center gap-4">
-					<Link
-						href="/contact"
-						className="hidden md:flex h-10 items-center justify-center rounded-full bg-white px-6 text-[13px] font-bold text-black transition-all hover:bg-white/90 active:scale-95"
-					>
-						Get Started
-					</Link>
+			<div className="flex items-center gap-2">
+					{/* Download button removed */}
 				</div>
 			</div>
 		</header>

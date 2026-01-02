@@ -18,7 +18,7 @@ function Tier({
   return (
     <ScaleIn delay={delay} className="group rounded-3xl border border-border/70 bg-surface/50 p-8 transition-all duration-500 hover:scale-105 hover:border-brand-2/50 hover:bg-surface/70 glow">
       <div className="text-xs font-mono font-semibold uppercase tracking-wider text-muted">{forWhom}</div>
-      <div className="mt-3 font-display text-xl font-semibold tracking-tight">{name}</div>
+      <div className="mt-3 font-sans text-xl font-semibold tracking-[-0.04em]">{name}</div>
       <ul className="mt-6 space-y-3 text-sm text-muted">
         {bullets.map((b) => (
           <li key={b} className="flex gap-3">
@@ -38,7 +38,7 @@ export default function PricingPage() {
         eyebrow="Pricing"
         title={
           <>
-            Simple pricing for <span className="text-shimmer">everyone</span>.
+            Simple pricing for <span className="text-gradient text-shimmer">everyone</span>.
           </>
         }
         subtitle={
@@ -75,7 +75,7 @@ export default function PricingPage() {
                 <div className="text-xs font-mono font-semibold uppercase tracking-wider text-brand-2">
                   Enterprise
                 </div>
-                <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight md:text-4xl">
+                <h2 className="mt-3 font-sans text-3xl font-semibold tracking-[-0.04em] md:text-4xl">
                   Need on-prem or custom models?
                 </h2>
                 <p className="mt-4 text-base text-muted md:text-lg">

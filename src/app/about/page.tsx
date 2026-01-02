@@ -1,22 +1,14 @@
 import { Shell } from "@/components/site/Shell";
 import { Page } from "@/components/site/Page";
-import { Reveal } from "@/components/animations/Reveal";
-import { Spotlight } from "@/components/animations/Spotlight";
-import { Target, Lightbulb, Rocket, Quote, LucideIcon } from "lucide-react";
+import { FadeIn } from "@/components/animations/FadeIn";
+import { ScaleIn } from "@/components/animations/ScaleIn";
 
-function Block({ title, desc, delay = 0, icon: Icon }: { title: string; desc: string; delay?: number; icon: LucideIcon }) {
+function Block({ title, desc, delay = 0 }: { title: string; desc: string; delay?: number }) {
   return (
-    <Reveal delay={delay}>
-      <Spotlight>
-        <div className="group rounded-3xl border border-white/10 bg-white/5 p-8 transition-all duration-500 hover:border-white/20 backdrop-blur-sm h-full">
-          <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <Icon className="w-5 h-5 text-white/70" />
-          </div>
-          <div className="font-display text-xl font-bold tracking-tight mb-3">{title}</div>
-          <div className="font-sans text-sm leading-relaxed text-white/40">{desc}</div>
-        </div>
-      </Spotlight>
-    </Reveal>
+    <ScaleIn delay={delay} className="group rounded-2xl border border-border/70 bg-surface/50 p-7 transition-all duration-500 hover:scale-105 hover:border-brand-2/50 hover:bg-surface/70 glow">
+      <div className="text-sm font-semibold text-brand-2">{title}</div>
+      <div className="mt-2 text-sm leading-6 text-muted">{desc}</div>
+    </ScaleIn>
   );
 }
 
@@ -26,83 +18,71 @@ export default function AboutPage() {
       <Page
         eyebrow="About"
         title={
-          <Reveal>
-            <span className="font-display">
-              We build tools for <span className="text-shimmer">builders</span>.
-            </span>
-          </Reveal>
+          <>
+            We build tools for <span className="text-gradient text-shimmer">builders</span>.
+          </>
         }
         subtitle={
-          <Reveal delay={0.1}>
-            <span className="text-white/60">
-              Aternox exists to accelerate software development. We build AI products that help engineers stay in flow and ship faster.
-            </span>
-          </Reveal>
+          "Aternox exists to accelerate software development. We build AI products that help engineers stay in flow and ship faster."
         }
       >
-        <div className="grid gap-6 md:grid-cols-3 mt-12">
-          <Block
-            delay={0.2}
-            icon={Target}
-            title="Mission"
-            desc="Eliminate the friction between thought and code. Make software engineering more creative and less repetitive."
-          />
-          <Block
-            delay={0.3}
-            icon={Lightbulb}
-            title="Approach"
-            desc="Deep integration. We don't just build wrappers; we build systems that understand the structure of software."
-          />
-          <Block
-            delay={0.4}
-            icon={Rocket}
-            title="Philosophy"
-            desc="Tools should be fast, reliable, and invisible. They should work with you, not against you."
-          />
-        </div>
+        <FadeIn>
+          <div className="grid gap-4 md:grid-cols-3">
+            <Block
+              delay={0.1}
+              title="Mission"
+              desc="Eliminate the friction between thought and code. Make software engineering more creative and less repetitive."
+            />
+            <Block
+              delay={0.2}
+              title="Approach"
+              desc="Deep integration. We don't just build wrappers; we build systems that understand the structure of software."
+            />
+            <Block
+              delay={0.3}
+              title="Philosophy"
+              desc="Tools should be fast, reliable, and invisible. They should work with you, not against you."
+            />
+          </div>
+        </FadeIn>
 
-        <Reveal delay={0.5}>
-          <Spotlight>
-            <div className="mt-12 glass rounded-[2.5rem] border border-white/10 p-10 glow-intense relative overflow-hidden">
-              <div className="absolute top-0 right-0 p-12 opacity-5">
-                <Quote size={160} />
-              </div>
-              <div className="text-xs font-display font-bold uppercase tracking-[0.2em] text-white/40 mb-8">
-                Leadership
-              </div>
-              <div className="flex flex-col gap-10 md:flex-row md:items-center relative z-10">
-                <div className="h-32 w-32 shrink-0 rounded-3xl bg-gradient-to-br from-white/20 to-white/5 p-[1px]">
-                  <div className="flex h-full w-full items-center justify-center rounded-3xl bg-black text-4xl font-display font-bold text-white/80">
-                    SK
-                  </div>
+        <FadeIn delay={0.5}>
+          <div className="mt-12 glass rounded-3xl border border-gradient p-10 glow-intense scan-line">
+            <div className="text-xs font-mono font-semibold uppercase tracking-wider text-brand-2">
+              Leadership
+            </div>
+            <div className="mt-6 flex flex-col gap-8 md:flex-row md:items-center">
+              <div className="h-24 w-24 shrink-0 rounded-2xl bg-gradient-to-br from-brand to-brand-2 p-[1px]">
+                <div className="flex h-full w-full items-center justify-center rounded-2xl bg-surface text-3xl font-bold text-brand-2">
+                  SK
                 </div>
-                <div>
-                  <h3 className="font-display text-3xl font-bold tracking-tight text-white mb-2">Sulekha Kumari Kamti</h3>
-                  <p className="font-display text-sm font-bold tracking-widest text-white/40 uppercase">Founder & CEO</p>
-                  <p className="mt-6 max-w-2xl font-sans text-lg leading-relaxed text-white/50">
-                    Sulekha founded Aternox with a vision to redefine the relationship between developers and their tools. 
-                    With a focus on building AI-native infrastructure, she leads the company&apos;s mission to architect the future of code, 
-                    ensuring that engineering remains a creative pursuit at scale.
-                  </p>
-                </div>
+              </div>
+              <div>
+                <h3 className="text-2xl font-semibold text-foreground">Sulekha Kumari Kamti</h3>
+                <p className="text-sm font-medium text-brand-2">Founder & CEO</p>
+                <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted">
+                  Sulekha founded Aternox with a vision to redefine the relationship between developers and their tools. 
+                  With a focus on building AI-native infrastructure, she leads the company's mission to architect the future of code, 
+                  ensuring that engineering remains a creative pursuit at scale.
+                </p>
               </div>
             </div>
-          </Spotlight>
-        </Reveal>
+          </div>
+        </FadeIn>
 
-        <Reveal delay={0.7}>
-          <div className="mt-12 glass rounded-[2.5rem] border border-white/10 p-12 text-center">
-            <div className="font-display text-xs font-bold uppercase tracking-[0.2em] text-white/40 mb-6">
+        <FadeIn delay={0.7}>
+          <div className="mt-12 glass rounded-3xl border border-gradient p-10 glow-intense scan-line">
+            <div className="text-xs font-mono font-semibold uppercase tracking-wider text-brand-2">
               Statement
             </div>
-            <h2 className="font-display text-4xl font-bold tracking-tight md:text-6xl mb-6">
-              Code is the <span className="text-shimmer">lever</span>.
+            <h2 className="mt-3 font-sans text-3xl font-semibold tracking-[-0.04em] md:text-4xl">
+              Code is the lever.
             </h2>
-            <p className="mx-auto max-w-2xl font-sans text-xl text-white/50 leading-relaxed">
+            <p className="mt-4 max-w-3xl text-base text-muted md:text-lg">
               We believe that by making engineers more productive, we accelerate the pace of innovation for everyone.
             </p>
           </div>
-        </Reveal>
+        </FadeIn>
       </Page>
     </Shell>
   );
