@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -40,11 +41,18 @@ export function Header() {
 					href="/"
 					className="group flex items-center gap-2.5 transition-opacity hover:opacity-80"
 				>
-					<span className="relative grid h-8 w-8 place-items-center rounded-lg border border-white/[0.08] bg-white/[0.02]">
-						<span className="h-3 w-3 rounded-md bg-white" />
-					</span>
+					<div className="relative h-9 w-9 overflow-hidden rounded-xl border border-white/10 bg-gradient-to-br from-white/10 to-white/[0.02] shadow-2xl transition-transform duration-500 group-hover:scale-110">
+						<Image 
+							src="/logo.png" 
+							alt="Aternox Logo" 
+							width={36}
+							height={36}
+							className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-125 group-hover:rotate-3"
+						/>
+						<div className="absolute inset-0 bg-gradient-to-tr from-brand/20 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+					</div>
 					<div className="leading-tight">
-						<div className="text-display text-sm font-medium tracking-[-0.01em]">
+						<div className="text-display text-sm font-semibold tracking-tight text-white/90">
 							Aternox
 						</div>
 					</div>
