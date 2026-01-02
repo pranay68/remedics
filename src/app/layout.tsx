@@ -22,16 +22,14 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Billings AI — Billing Intelligence, Engineered",
-    template: "%s — Billings AI",
+    default: "Aternox — Engineering & Products",
+    template: "%s — Aternox",
   },
-  description:
-    "Billings AI builds premium billing intelligence infrastructure with automation, auditability, and secure workflows.",
-  metadataBase: new URL("https://billings.ai"),
+  description: "Aternox builds Reprog, the AI coding assistant that understands your entire codebase.",
+  metadataBase: new URL("https://aternox.com"),
   openGraph: {
-    title: "Billings AI — Billing Intelligence, Engineered",
-    description:
-      "Premium billing intelligence infrastructure with automation, auditability, and secure workflows.",
+    title: "Aternox — Engineering & Products",
+    description: "Aternox builds Reprog, the AI coding assistant that understands your entire codebase.",
     type: "website",
   },
 };

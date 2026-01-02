@@ -38,32 +38,32 @@ export default function PricingPage() {
         eyebrow="Pricing"
         title={
           <>
-            No tiers to impress you. Just <span className="text-gradient text-shimmer">fit</span>.
+            Simple pricing for <span className="text-gradient text-shimmer">everyone</span>.
           </>
         }
         subtitle={
-          "We don't publish pricing publicly. Billings AI deployments depend on environment, governance, and scope."
+          "Start for free. Upgrade for advanced features and team collaboration."
         }
       >
         <FadeIn>
           <div className="grid gap-5 md:grid-cols-3">
             <Tier
               delay={0.1}
-              name="Pilot"
-              forWhom="Small teams"
-              bullets={["Workflow fit", "Evaluation loop", "Fast setup"]}
+              name="Free"
+              forWhom="Individuals"
+              bullets={["Basic autocomplete", "Limited chat queries", "Community support"]}
             />
             <Tier
               delay={0.2}
-              name="Scale"
-              forWhom="Finance teams / enterprises"
-              bullets={["Governance path", "Role-based workflows", "Integration planning"]}
+              name="Pro"
+              forWhom="Professionals"
+              bullets={["Advanced models (GPT-4, Claude 3)", "Unlimited chat", "Priority support"]}
             />
             <Tier
               delay={0.3}
-              name="Enterprise"
-              forWhom="Regulated environments"
-              bullets={["Security posture", "Deployment options", "Support SLAs"]}
+              name="Team"
+              forWhom="Organizations"
+              bullets={["Centralized billing", "SSO / SAML", "Usage analytics"]}
             />
           </div>
         </FadeIn>
@@ -73,13 +73,13 @@ export default function PricingPage() {
             <div className="grid gap-8 md:grid-cols-12 md:items-center">
               <div className="md:col-span-8">
                 <div className="text-xs font-mono font-semibold uppercase tracking-wider text-brand-2">
-                  Pricing is contextual
+                  Enterprise
                 </div>
                 <h2 className="mt-3 text-display text-3xl font-semibold tracking-tight md:text-4xl">
-                  Tell us your environment, and we'll scope it.
+                  Need on-prem or custom models?
                 </h2>
                 <p className="mt-4 text-base text-muted md:text-lg">
-                  Cloud vs on-prem, integrations, governance requirements—these decide the shape.
+                  We offer self-hosted deployments and fine-tuning services for large engineering teams.
                 </p>
               </div>
               <div className="md:col-span-4 md:text-right">
@@ -87,7 +87,7 @@ export default function PricingPage() {
                   href="/contact"
                   className="btn-primary inline-flex h-14 items-center justify-center rounded-full px-7 text-base font-semibold transition-all hover:scale-105"
                 >
-                  Download
+                  Contact Sales
                 </Link>
               </div>
             </div>

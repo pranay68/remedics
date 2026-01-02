@@ -25,7 +25,7 @@ export default function CareersPage() {
           </>
         }
         subtitle={
-          "Billings AI is a small, high-density team. We don’t have managers for managers. We have engineers who solve billing problems."
+          "Aternox is a small, high-density engineering organization building Reprog and Cursor — tools that accelerate software creation. We hire builders who ship products."
         }
       >
         <div className="grid gap-10 md:grid-cols-12">
@@ -33,14 +33,14 @@ export default function CareersPage() {
             <div className="text-sm font-semibold">Open roles</div>
             <p className="mt-2 text-sm text-muted">
               If you don’t see a role but you’re world-class at systems engineering or
-              billing AI evaluation, email us.
+              developer tooling, please get in touch via the Contact form and include a short note and your CV/link to work.
             </p>
             <div className="mt-6">
               <Link
-                href="mailto:careers@billings.ai"
+                href="/contact"
                 className="text-sm font-medium text-foreground underline decoration-muted underline-offset-4 hover:decoration-foreground"
               >
-                careers@billings.ai
+                Contact us
               </Link>
             </div>
           </div>

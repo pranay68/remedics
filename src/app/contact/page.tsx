@@ -19,18 +19,12 @@ export default function ContactPage() {
         <div className="grid gap-6 md:grid-cols-12">
           <div className="md:col-span-5">
             <div className="rounded-3xl border border-border/70 bg-surface/50 p-7">
-              <div className="text-sm font-semibold">Fast path</div>
+              <div className="text-sm font-semibold">Contact</div>
               <div className="mt-2 text-sm text-muted">
-                Use the form. Or email directly.
+                Use the form to request access, sales inquiries, or general questions. We do not display direct emails publicly.
               </div>
-              <div className="mt-6 space-y-2 text-sm">
-                <div className="text-muted">Sales</div>
-                <div className="font-medium">sales@billings.ai</div>
-                <div className="mt-4 text-muted">General</div>
-                <div className="font-medium">hello@billings.ai</div>
-                <div className="mt-4 text-xs text-muted">
-                  Placeholder emails—swap later.
-                </div>
+              <div className="mt-6 text-sm text-muted">
+                Please provide your contact details in the form and we will respond shortly.
               </div>
             </div>
           </div>

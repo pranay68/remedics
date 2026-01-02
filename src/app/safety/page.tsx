@@ -19,34 +19,34 @@ export default function SafetyPage() {
         eyebrow="Safety"
         title={
           <>
-            Built to be <span className="text-gradient text-shimmer">reviewable</span>.
+            Your code is <span className="text-gradient text-shimmer">yours</span>.
           </>
         }
         subtitle={
-          "We don't position Billings AI as a magical black box. We position it as controllable infrastructure: outputs, logs, and workflows designed for oversight."
+          "Reprog is designed with a zero-retention architecture. We don't train on your code, and we don't store your IP."
         }
       >
         <FadeIn>
           <div className="grid gap-4 md:grid-cols-2">
             <Row
               delay={0.1}
-              title="Operator-in-the-loop"
-              desc="Designed to support professional judgment with clear artifacts, not replace it by default."
+              title="Zero Retention"
+              desc="Code snippets sent for inference are discarded immediately after generation. No logs, no storage."
             />
             <Row
               delay={0.2}
-              title="Audit trail"
-              desc="Traceable outputs and structured logs that can fit governance and review processes."
+              title="Local Indexing"
+              desc="Your codebase index lives on your machine. We never upload your repository to our servers."
             />
             <Row
               delay={0.3}
-              title="Evaluation mindset"
-              desc="We treat metrics seriously: we measure, stress-test, and iterate."
+              title="SOC 2 Ready"
+              desc="Our infrastructure is built on SOC 2 compliant providers with strict access controls."
             />
             <Row
               delay={0.4}
-              title="Security-by-design"
-              desc="Secure defaults with deployment flexibility based on your environment constraints."
+              title="Enterprise Controls"
+              desc="Admins can enforce policies on model usage, telemetry, and data sharing."
             />
           </div>
         </FadeIn>
@@ -54,15 +54,13 @@ export default function SafetyPage() {
         <FadeIn delay={0.6}>
           <div className="mt-12 glass rounded-3xl border border-gradient p-10 glow-intense scan-line">
             <div className="text-xs font-mono font-semibold uppercase tracking-wider text-accent">
-              Important
+              Commitment
             </div>
             <h2 className="mt-3 text-display text-3xl font-semibold tracking-tight md:text-4xl">
-              Not financial advice.
+              We don't train on your data.
             </h2>
             <p className="mt-4 max-w-3xl text-base text-muted md:text-lg">
-              Billings AI is built for billing workflows and requires professional oversight.
-              We avoid claiming certifications or regulatory approvals unless they are
-              currently obtained.
+              Our business model is selling software, not selling your data. We explicitly opt-out of training base models on customer code.
             </p>
           </div>
         </FadeIn>

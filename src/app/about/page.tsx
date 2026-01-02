@@ -19,11 +19,11 @@ export default function AboutPage() {
         eyebrow="About"
         title={
           <>
-            We build the <span className="text-gradient text-shimmer">future</span> of billing systems.
+            We build tools for <span className="text-gradient text-shimmer">builders</span>.
           </>
         }
         subtitle={
-          "Billings AI exists to make billing operations faster, more precise, and more governable—without turning finance into chaos."
+          "Aternox exists to accelerate software development. We build AI products that help engineers stay in flow and ship faster."
         }
       >
         <FadeIn>
@@ -31,17 +31,17 @@ export default function AboutPage() {
             <Block
               delay={0.1}
               title="Mission"
-              desc="Compress billing cycle time while raising the quality of artifacts and financial decisions."
+              desc="Eliminate the friction between thought and code. Make software engineering more creative and less repetitive."
             />
             <Block
               delay={0.2}
               title="Approach"
-              desc="Engineering-first systems: evaluation loops, safety controls, and strong UX."
+              desc="Deep integration. We don't just build wrappers; we build systems that understand the structure of software."
             />
             <Block
               delay={0.3}
               title="Philosophy"
-              desc="Confidence through measurement. Authority through execution."
+              desc="Tools should be fast, reliable, and invisible. They should work with you, not against you."
             />
           </div>
         </FadeIn>
@@ -52,11 +52,10 @@ export default function AboutPage() {
               Statement
             </div>
             <h2 className="mt-3 text-display text-3xl font-semibold tracking-tight md:text-4xl">
-              We don't beg for attention.
+              Code is the lever.
             </h2>
             <p className="mt-4 max-w-3xl text-base text-muted md:text-lg">
-              The product speaks. The engineering shows. When you're ready to deploy,
-              we'll talk.
+              We believe that by making engineers more productive, we accelerate the pace of innovation for everyone.
             </p>
           </div>
         </FadeIn>

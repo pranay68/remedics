@@ -272,7 +272,7 @@ export function SignalCore({ className = "" }: Props) {
       <canvas
         ref={canvasRef}
         className="h-full w-full"
-        aria-label="Billings AI signal core visual"
+        aria-label="Remedics signal core visual"
       />
     </div>
   );
