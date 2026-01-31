@@ -46,20 +46,21 @@ export default function Home() {
             <div className="mx-auto flex min-h-[calc(100vh-72px)] max-w-4xl flex-col items-center justify-center text-center">
               <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-gradient-to-b from-white/[0.08] to-transparent px-3 py-1.5 text-[11px] font-medium tracking-wide text-white/80 backdrop-blur-sm shadow-[0_0_15px_-5px_rgba(255,255,255,0.2)]">
                 <span className="h-1 w-1 rounded-full bg-white/60 shadow-[0_0_5px_rgba(255,255,255,0.8)]" />
-                INTELLIGENCE FOR BUILDERS
+                AUTONOMOUS SOFTWARE SYSTEM
               </div>
 
               <h1 className="mt-10 text-balance font-sans text-5xl font-semibold leading-[1.1] tracking-[-0.05em] md:text-7xl lg:text-[5.5rem]">
                 <span className="text-shimmer">Aternox.</span> <br className="hidden md:block" /> 
-                <span className="text-white/90">Architecting the Future of Code.</span>
+                <span className="text-white/90">Enterprise software. Built end-to-end.</span>
               </h1>
               
               <h2 className="mt-8 max-w-2xl text-balance font-sans text-xl font-light leading-relaxed tracking-tight text-white/40 md:text-2xl">
-                We build the infrastructure that powers the next era of software development.
+                The first autonomous system that builds enterprise-grade software.
               </h2>
 
               <p className="mt-8 max-w-xl text-pretty text-[15px] leading-relaxed text-white/60 md:text-base">
-                From intelligent coding assistants to autonomous agents, Aternox is the engine behind the world's best engineering teams. We bridge the gap between human intent and machine execution.
+                Not vibe coding. Not no-code. A coordinated system that plans, implements, tests, and ships production
+                software—like a team of 10,000 superhuman developers with unreal coordination.
               </p>
 
               <div className="mt-12 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -67,35 +68,35 @@ export default function Home() {
                   href="/product"
                   className="group inline-flex h-11 items-center justify-center rounded-full bg-white text-black px-6 text-[13px] font-medium transition-all duration-200 hover:bg-white/90 hover:shadow-[0_0_20px_-5px_rgba(255,255,255,0.3)]"
                 >
-                  Our Products
+                  How it works
                   <span className="ml-2 transition-transform duration-200 group-hover:translate-x-0.5">→</span>
                 </Link>
                 <Link
-                  href="/about"
+                  href="/download"
                   className="inline-flex h-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] px-6 text-[13px] text-white transition-all duration-200 hover:bg-white/[0.08]"
                 >
-                  About Us
+                  Download (soon)
                 </Link>
                 <Link
                   href="/contact"
                   className="inline-flex h-11 items-center justify-center px-6 text-[13px] text-white/50 transition-all duration-200 hover:text-white/80"
                 >
-                  Contact
+                  Request access
                 </Link>
               </div>
 
               <div className="mt-16 grid w-full gap-3 md:grid-cols-3">
                 <Card
-                  title="Our Mission"
-                  desc="To make programming accessible to everyone. We believe that with the right tools, anyone can be a software engineer."
+                  title="Enterprise-Grade"
+                  desc="Built for real teams: architecture, tests, and maintainable code—not demoware."
                 />
                 <Card
-                  title="AI Native"
-                  desc="We don't just add AI to existing tools. We build new paradigms where AI is the core of the development lifecycle."
+                  title="Autonomous System"
+                  desc="A coordinated set of agents that behaves like one engineering organization."
                 />
                 <Card
-                  title="For Builders"
-                  desc="Whether you're a seasoned architect or writing your first line of code, Aternox builds the infrastructure for your ideas."
+                  title="Verified Output"
+                  desc="Plans, implements, tests, and iterates until the software matches the spec."
                 />
               </div>
             </div>
@@ -110,27 +111,27 @@ export default function Home() {
                 <span className="text-shimmer">Engineered for speed.</span>
               </h2>
               <p className="mt-5 text-[15px] leading-relaxed text-white/60">
-                Reprog isn't just an autocomplete. It's a deep integration into your development environment
-                that anticipates your next move.
+                Aternox goes beyond an assistant. It’s a full-stack autonomous workflow that turns intent into
+                enterprise-grade software.
               </p>
             </div>
             <div className="md:col-span-7">
               <div className="grid gap-3 md:grid-cols-2">
                 <Card
-                  title="Smart Chat"
-                  desc="Ask questions about your codebase in natural language. Get answers with citations."
+                  title="Spec → Plan"
+                  desc="Convert requirements into an actionable plan with clear scopes and interfaces."
                 />
                 <Card
-                  title="Code Generation"
-                  desc="Generate entire functions, classes, or tests from a simple comment description."
+                  title="Build → Integrate"
+                  desc="Implement multi-file changes with coherent architecture across the codebase."
                 />
                 <Card
-                  title="Auto-Debug"
-                  desc="Paste an error message and let Reprog analyze the stack trace and suggest a fix."
+                  title="Test → Fix"
+                  desc="Generate tests, run checks, and iterate until failures are resolved."
                 />
                 <Card
-                  title="IDE Integration"
-                  desc="Works seamlessly where you already work. No context switching required."
+                  title="Enterprise Controls"
+                  desc="Security, governance, and workflows designed for production environments."
                 />
               </div>
             </div>

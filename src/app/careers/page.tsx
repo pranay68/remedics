@@ -25,7 +25,7 @@ export default function CareersPage() {
           </>
         }
         subtitle={
-          "Aternox is a small, high-density engineering organization building Reprog and Cursor — tools that accelerate software creation. We hire builders who ship products."
+          "Aternox is a small, high-density engineering organization building an autonomous system that ships enterprise-grade software end-to-end. We hire builders who ship."
         }
       >
         <div className="grid gap-10 md:grid-cols-12">

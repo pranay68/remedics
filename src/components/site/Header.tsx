@@ -9,6 +9,7 @@ const nav = [
 	{ href: "/product", label: "Product" },
 	{ href: "/safety", label: "Safety" },
 	{ href: "/about", label: "About" },
+	{ href: "/download", label: "Download" },
 ];
 
 function isActive(pathname: string, href: string) {
@@ -77,8 +78,16 @@ export function Header() {
 					})}
 				</nav>
 
-			<div className="flex items-center gap-2">
-					{/* Download button removed */}
+				<div className="flex items-center gap-2">
+					<Link
+						href="/download"
+						className="hidden md:inline-flex h-9 items-center justify-center rounded-full bg-white px-4 text-[13px] font-medium text-black transition-all duration-200 hover:bg-white/90"
+					>
+						Download
+						<span className="ml-2 rounded-full bg-black/10 px-2 py-0.5 text-[10px] font-semibold tracking-wide text-black/70">
+							SOON
+						</span>
+					</Link>
 				</div>
 			</div>
 		</header>

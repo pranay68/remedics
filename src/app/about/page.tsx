@@ -23,7 +23,7 @@ export default function AboutPage() {
           </>
         }
         subtitle={
-          "Aternox exists to accelerate software development. We build AI products that help engineers stay in flow and ship faster."
+          "Aternox builds autonomous systems that ship enterprise-grade software: planned, implemented, tested, and hardened end-to-end."
         }
       >
         <FadeIn>
@@ -31,17 +31,17 @@ export default function AboutPage() {
             <Block
               delay={0.1}
               title="Mission"
-              desc="Eliminate the friction between thought and code. Make software engineering more creative and less repetitive."
+              desc="Turn intent into production software with the reliability and coordination of a world-class engineering org."
             />
             <Block
               delay={0.2}
               title="Approach"
-              desc="Deep integration. We don't just build wrappers; we build systems that understand the structure of software."
+              desc="System-level execution: planning, implementation, verification, and governance—coordinated as one."
             />
             <Block
               delay={0.3}
               title="Philosophy"
-              desc="Tools should be fast, reliable, and invisible. They should work with you, not against you."
+              desc="Enterprise-grade means predictable: readable code, strong defaults, safety controls, and iteration until it works."
             />
           </div>
         </FadeIn>
@@ -62,7 +62,7 @@ export default function AboutPage() {
                 <p className="text-sm font-medium text-brand-2">Founder & CEO</p>
                 <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted">
                   Sulekha founded Aternox with a vision to redefine the relationship between developers and their tools. 
-                  With a focus on building AI-native infrastructure, she leads the company's mission to architect the future of code, 
+                  With a focus on building AI-native infrastructure, she leads the company&apos;s mission to architect the future of code, 
                   ensuring that engineering remains a creative pursuit at scale.
                 </p>
               </div>
@@ -79,7 +79,7 @@ export default function AboutPage() {
               Code is the lever.
             </h2>
             <p className="mt-4 max-w-3xl text-base text-muted md:text-lg">
-              We believe that by making engineers more productive, we accelerate the pace of innovation for everyone.
+              We believe software should be built with speed and certainty. Autonomy is the lever.
             </p>
           </div>
         </FadeIn>

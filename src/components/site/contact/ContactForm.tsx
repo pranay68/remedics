@@ -59,7 +59,7 @@ export function ContactForm() {
       <div>
         <div className="text-sm font-semibold">Request Access</div>
         <div className="mt-1 text-sm text-muted">
-          Enter your details and we'll get back to you with a custom demo.
+          Enter your details and we&apos;ll get back to you with a custom demo.
         </div>
       </div>
 

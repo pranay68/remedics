@@ -13,10 +13,10 @@ export function Footer() {
         <div className="text-sm">
           <div className="text-display text-sm font-medium tracking-[-0.01em] text-white/90">Aternox</div>
           <div className="mt-2 text-[13px] leading-relaxed text-white/50">
-            Building the next generation of developer tools.
+            The autonomous system that builds enterprise-grade software.
           </div>
           <div className="mt-2 text-[11px] font-mono text-white/40">
-            Chandranagar, Ward 07, Nepal
+            Newark, Delaware, USA
           </div>
           <div className="mt-4 text-xs text-white/60">
             © 2026 Aternox Inc.

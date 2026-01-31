@@ -12,17 +12,17 @@ export default function TermsPage() {
           </>
         }
         subtitle={
-          "Last updated: January 2025"
+          "Last updated: January 2026"
         }
       >
         <div className="prose prose-invert max-w-none">
           <p className="text-muted">
-            Welcome to Aternox. By accessing or using our website, products (including Reprog and Cursor), and services, you agree to be bound by these Terms of Service.
+            Welcome to Aternox. By accessing or using our website, products, and services, you agree to be bound by these Terms of Service.
           </p>
 
           <h2 className="mt-8 text-lg font-semibold">1. Acceptance of Terms</h2>
           <p className="text-muted">
-            These Terms constitute a binding legal agreement between you and Aternox Inc. ("Aternox," "we," "us," or "our"). If you do not agree to these Terms, please do not use our Services.
+            These Terms constitute a binding legal agreement between you and Aternox Inc. (Aternox, we, us, or our). If you do not agree to these Terms, please do not use our Services.
           </p>
 
           <h2 className="mt-8 text-lg font-semibold">2. Use of Services</h2>
@@ -37,7 +37,7 @@ export default function TermsPage() {
 
           <h2 className="mt-8 text-lg font-semibold">4. Disclaimer of Warranties</h2>
           <p className="text-muted">
-            THE SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. ATERNOX DISCLAIMS ALL WARRANTIES, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+            THE SERVICES ARE PROVIDED AS IS AND AS AVAILABLE WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. ATERNOX DISCLAIMS ALL WARRANTIES, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
           </p>
 
           <h2 className="mt-8 text-lg font-semibold">5. Limitation of Liability</h2>

@@ -31,8 +31,8 @@ export default function ContactPage() {
                   Headquarters
                 </div>
                 <div className="mt-2 text-sm text-muted">
-                  Chandranagar, Ward 07<br />
-                  Nepal
+                  Newark, Delaware<br />
+                  USA
                 </div>
               </div>
             </div>

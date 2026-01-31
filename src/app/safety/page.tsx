@@ -23,7 +23,7 @@ export default function SafetyPage() {
           </>
         }
         subtitle={
-          "Reprog is designed with a zero-retention architecture. We don't train on your code, and we don't store your IP."
+          "Aternox is designed with a zero-retention architecture. We don't train on your code, and we don't store your IP."
         }
       >
         <FadeIn>
@@ -57,7 +57,7 @@ export default function SafetyPage() {
               Commitment
             </div>
             <h2 className="mt-3 font-sans text-3xl font-semibold tracking-[-0.04em] md:text-4xl">
-              We don't train on your data.
+              We don&apos;t train on your data.
             </h2>
             <p className="mt-4 max-w-3xl text-base text-muted md:text-lg">
               Our business model is selling software, not selling your data. We explicitly opt-out of training base models on customer code.

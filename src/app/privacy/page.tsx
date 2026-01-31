@@ -12,12 +12,12 @@ export default function PrivacyPage() {
           </>
         }
         subtitle={
-          "Last updated: January 2025"
+          "Last updated: January 2026"
         }
       >
         <div className="prose prose-invert max-w-none">
           <p className="text-muted">
-            At Aternox, we take your privacy seriously. This Privacy Policy explains how we collect, use, and protect your information when you use our website and products (Reprog, Cursor).
+            At Aternox, we take your privacy seriously. This Privacy Policy explains how we collect, use, and protect your information when you use our website and products.
           </p>
 
           <h2 className="mt-8 text-lg font-semibold">1. Information We Collect</h2>
@@ -37,7 +37,7 @@ export default function PrivacyPage() {
 
           <h2 className="mt-8 text-lg font-semibold">4. Code Privacy</h2>
           <p className="text-muted">
-            For our developer tools (Reprog, Cursor), we prioritize local execution and zero-retention policies. We do not train our models on your private code unless explicitly authorized by you.
+            For our products, we prioritize local execution and zero-retention policies where applicable. We do not train models on your private code unless explicitly authorized by you.
           </p>
 
           <h2 className="mt-8 text-lg font-semibold">5. Contact Us</h2>

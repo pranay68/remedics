@@ -17,14 +17,14 @@ export default function ProductPage() {
   return (
     <Shell>
       <Page
-        eyebrow="Reprog"
+        eyebrow="Aternox"
         title={
           <>
-            The AI assistant that <span className="text-gradient text-shimmer">understands</span> your code.
+            The autonomous system that <span className="text-gradient text-shimmer">builds</span> enterprise software.
           </>
         }
         subtitle={
-          "Reprog is a context-aware coding companion. It reads your entire repository to provide suggestions, refactors, and answers that actually compile and run."
+          "Not vibe coding. Not a no-code tool. Aternox is an end-to-end system that plans, implements, tests, and hardens production software from your intent."
         }
       >
         <div className="grid gap-8 md:grid-cols-12">
@@ -32,21 +32,22 @@ export default function ProductPage() {
             <FadeIn>
               <div className="glass rounded-3xl border border-gradient p-8 glow-intense scan-line">
                 <div className="text-xs font-mono font-semibold uppercase tracking-wider text-brand-2">
-                  Capabilities
+                  Workflow
                 </div>
                 <div className="mt-3 font-sans text-2xl font-semibold tracking-[-0.04em] md:text-3xl">
-                  Context → Reasoning → Generation
+                  Spec → Architecture → Implementation → Verification
                 </div>
                 <p className="mt-3 text-base text-muted md:text-lg">
-                  Reprog indexes your codebase locally. It understands your types, your utilities, and your architecture
-                  before it writes a single line of code.
+                  Aternox coordinates many specialized agents as a single system. Think of it like a team of 10,000
+                  superhuman developers with unreal coordination: scoped work, consistent interfaces, and verified
+                  outputs.
                 </p>
                 <div className="mt-8 grid gap-3">
                   {[
-                    { label: "Smart Autocomplete", tag: "predictive" },
-                    { label: "Natural Language Edit", tag: "conversational" },
-                    { label: "Codebase Chat", tag: "indexed" },
-                    { label: "One-click Refactor", tag: "automated" },
+                    { label: "Spec-to-System Planning", tag: "decomposition" },
+                    { label: "Coordinated Implementation", tag: "multi-agent" },
+                    { label: "Tests + Fix Loops", tag: "verification" },
+                    { label: "Enterprise Guardrails", tag: "governance" },
                   ].map((item, i) => (
                     <ScaleIn key={item.label} delay={0.1 * (i + 1)}>
                       <div className="group flex items-center justify-between rounded-2xl border border-border/70 bg-background/40 px-5 py-4 transition-all duration-300 hover:scale-[1.02] hover:border-brand-2/50 hover:bg-background/60">
@@ -71,7 +72,8 @@ export default function ProductPage() {
                   <span className="text-shimmer">Works like engineering.</span>
                 </h2>
                 <p className="mt-4 text-base text-muted">
-                  Stop context switching between documentation and your editor. Reprog brings the knowledge to your cursor.
+                  Outputs are designed to be used in real organizations: readable code, consistent architecture,
+                  strong defaults, and safety controls.
                 </p>
                 <div className="mt-8 flex gap-3">
                   <Link
@@ -81,7 +83,7 @@ export default function ProductPage() {
                     Security
                   </Link>
                   <Link
-                    href="/contact"
+                    href="/download"
                     className="btn-primary inline-flex h-12 items-center justify-center rounded-full px-5 text-sm font-semibold transition-all hover:scale-105"
                   >
                     Download
@@ -96,18 +98,18 @@ export default function ProductPage() {
           <div className="mt-12 grid gap-4 md:grid-cols-3">
             <Feature
               delay={0.1}
-              title="Local Indexing"
-              desc="Reprog builds a semantic map of your codebase on your machine. Your code never leaves your device for indexing."
+              title="System-Level Consistency"
+              desc="Architecture, naming, boundaries, and conventions are enforced across the whole codebase—not per-file."
             />
             <Feature
               delay={0.2}
-              title="Multi-file Edits"
-              desc="Ask Reprog to refactor a component, and it will automatically update the imports and usages in other files."
+              title="Enterprise-Grade Outputs"
+              desc="From services to web apps: strong defaults, tests, and maintainable code that your team can own."
             />
             <Feature
               delay={0.3}
-              title="Terminal Integration"
-              desc="Generate shell commands, explain errors, and run scripts directly from the chat interface."
+              title="Verification Loops"
+              desc="Aternox generates tests, runs checks, fixes failures, and iterates until the system behaves as specified."
             />
           </div>
         </FadeIn>
