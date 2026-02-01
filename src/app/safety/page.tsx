@@ -23,30 +23,30 @@ export default function SafetyPage() {
           </>
         }
         subtitle={
-          "Aternox is designed with a zero-retention architecture. We don't train on your code, and we don't store your IP."
+          "Reprog is built by Aternox with privacy-first defaults. We’re explicit about data handling, and we design for enterprise review."
         }
       >
         <FadeIn>
           <div className="grid gap-4 md:grid-cols-2">
             <Row
               delay={0.1}
-              title="Zero Retention"
-              desc="Code snippets sent for inference are discarded immediately after generation. No logs, no storage."
+              title="Minimal Retention"
+              desc="We minimize retention by default and keep handling aligned with our Privacy Policy and customer agreements."
             />
             <Row
               delay={0.2}
-              title="Local Indexing"
-              desc="Your codebase index lives on your machine. We never upload your repository to our servers."
+              title="Enterprise Deployments"
+              desc="Deployment and data-handling options are designed for enterprise environments and security review."
             />
             <Row
               delay={0.3}
               title="SOC 2 Ready"
-              desc="Our infrastructure is built on SOC 2 compliant providers with strict access controls."
+              desc="We operate with security controls and processes designed to meet enterprise expectations."
             />
             <Row
               delay={0.4}
               title="Enterprise Controls"
-              desc="Admins can enforce policies on model usage, telemetry, and data sharing."
+              desc="Teams can enforce policies around usage, governance, and rollout."
             />
           </div>
         </FadeIn>
@@ -60,7 +60,7 @@ export default function SafetyPage() {
               We don&apos;t train on your data.
             </h2>
             <p className="mt-4 max-w-3xl text-base text-muted md:text-lg">
-              Our business model is selling software, not selling your data. We explicitly opt-out of training base models on customer code.
+              Our business model is selling software, not selling your data. We do not train models on customer code by default.
             </p>
           </div>
         </FadeIn>

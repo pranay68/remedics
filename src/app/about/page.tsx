@@ -23,7 +23,7 @@ export default function AboutPage() {
           </>
         }
         subtitle={
-          "Aternox builds autonomous systems that ship enterprise-grade software: planned, implemented, tested, and hardened end-to-end."
+          "Aternox is the company behind Reprog — an autonomous engineering product designed for enterprise teams that need speed and control."
         }
       >
         <FadeIn>
@@ -31,12 +31,12 @@ export default function AboutPage() {
             <Block
               delay={0.1}
               title="Mission"
-              desc="Turn intent into production software with the reliability and coordination of a world-class engineering org."
+              desc="Turn intent into production software with the reliability and discipline of a world-class engineering org."
             />
             <Block
               delay={0.2}
               title="Approach"
-              desc="System-level execution: planning, implementation, verification, and governance—coordinated as one."
+              desc="Product-first autonomy: outcomes, verification, and governance — without exposing the blueprint."
             />
             <Block
               delay={0.3}

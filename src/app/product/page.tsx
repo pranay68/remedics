@@ -17,14 +17,18 @@ export default function ProductPage() {
   return (
     <Shell>
       <Page
-        eyebrow="Aternox"
+        eyebrow={
+          <span>
+            Reprog <span className="text-white/30">by</span> Aternox
+          </span>
+        }
         title={
           <>
-            The autonomous system that <span className="text-gradient text-shimmer">builds</span> enterprise software.
+            Autonomous engineering that <span className="text-gradient text-shimmer">ships</span> enterprise software.
           </>
         }
         subtitle={
-          "Not vibe coding. Not a no-code tool. Aternox is an end-to-end system that plans, implements, tests, and hardens production software from your intent."
+          "Reprog turns intent into production-ready code with clear change scopes, reviewable output, and controls designed for real organizations."
         }
       >
         <div className="grid gap-8 md:grid-cols-12">
@@ -35,12 +39,11 @@ export default function ProductPage() {
                   Workflow
                 </div>
                 <div className="mt-3 font-sans text-2xl font-semibold tracking-[-0.04em] md:text-3xl">
-                  Spec → Architecture → Implementation → Verification
+                  Spec → Scope → Implementation → Verification
                 </div>
                 <p className="mt-3 text-base text-muted md:text-lg">
-                  Aternox coordinates many specialized agents as a single system. Think of it like a team of 10,000
-                  superhuman developers with unreal coordination: scoped work, consistent interfaces, and verified
-                  outputs.
+                  Reprog is built for outcomes: changes that fit the codebase, stay understandable, and survive
+                  production constraints. You get speed without giving up control.
                 </p>
                 <div className="mt-8 grid gap-3">
                   {[
@@ -72,8 +75,8 @@ export default function ProductPage() {
                   <span className="text-shimmer">Works like engineering.</span>
                 </h2>
                 <p className="mt-4 text-base text-muted">
-                  Outputs are designed to be used in real organizations: readable code, consistent architecture,
-                  strong defaults, and safety controls.
+                  Output is designed for real teams: readable diffs, predictable structure, and governance-friendly
+                  workflow.
                 </p>
                 <div className="mt-8 flex gap-3">
                   <Link
@@ -86,7 +89,7 @@ export default function ProductPage() {
                     href="/download"
                     className="btn-primary inline-flex h-12 items-center justify-center rounded-full px-5 text-sm font-semibold transition-all hover:scale-105"
                   >
-                    Download
+                    Get Reprog
                   </Link>
                 </div>
               </div>
@@ -98,8 +101,8 @@ export default function ProductPage() {
           <div className="mt-12 grid gap-4 md:grid-cols-3">
             <Feature
               delay={0.1}
-              title="System-Level Consistency"
-              desc="Architecture, naming, boundaries, and conventions are enforced across the whole codebase—not per-file."
+              title="Consistency"
+              desc="Architecture, naming, and conventions stay coherent across the codebase — not just a single file."
             />
             <Feature
               delay={0.2}
@@ -109,7 +112,7 @@ export default function ProductPage() {
             <Feature
               delay={0.3}
               title="Verification Loops"
-              desc="Aternox generates tests, runs checks, fixes failures, and iterates until the system behaves as specified."
+              desc="Reprog helps you validate changes with checks and test coverage, iterating until behavior matches intent."
             />
           </div>
         </FadeIn>

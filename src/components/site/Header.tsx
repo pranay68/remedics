@@ -6,10 +6,11 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const nav = [
-	{ href: "/product", label: "Product" },
+	{ href: "/product", label: "Reprog" },
+	{ href: "/pricing", label: "Pricing" },
 	{ href: "/safety", label: "Safety" },
 	{ href: "/about", label: "About" },
-	{ href: "/download", label: "Download" },
+	{ href: "/contact", label: "Contact" },
 ];
 
 function isActive(pathname: string, href: string) {
@@ -56,6 +57,13 @@ export function Header() {
 						<div className="font-sans text-sm font-semibold tracking-[-0.03em] text-white/90">
 							Aternox
 						</div>
+						<div className="mt-0.5 flex items-center gap-2">
+							<div className="text-[11px] font-medium tracking-tight text-white/40">Company</div>
+							<span className="h-1 w-1 rounded-full bg-white/20" />
+							<div className="text-[11px] font-medium tracking-tight text-white/70">
+								Reprog
+							</div>
+						</div>
 					</div>
 				</Link>
 
@@ -83,7 +91,7 @@ export function Header() {
 						href="/download"
 						className="hidden md:inline-flex h-9 items-center justify-center rounded-full bg-white px-4 text-[13px] font-medium text-black transition-all duration-200 hover:bg-white/90"
 					>
-						Download
+						Download Reprog
 						<span className="ml-2 rounded-full bg-black/10 px-2 py-0.5 text-[10px] font-semibold tracking-wide text-black/70">
 							SOON
 						</span>

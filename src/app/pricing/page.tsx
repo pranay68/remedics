@@ -38,32 +38,32 @@ export default function PricingPage() {
         eyebrow="Pricing"
         title={
           <>
-            Simple pricing for <span className="text-gradient text-shimmer">everyone</span>.
+            Pricing that scales with your <span className="text-gradient text-shimmer">team</span>.
           </>
         }
         subtitle={
-          "Start for free. Upgrade for advanced features and team collaboration."
+          "Start with a pilot. Upgrade as you move from evaluation to production deployments."
         }
       >
         <FadeIn>
           <div className="grid gap-5 md:grid-cols-3">
             <Tier
               delay={0.1}
-              name="Free"
-              forWhom="Individuals"
-              bullets={["Basic autocomplete", "Limited chat queries", "Community support"]}
+              name="Pilot"
+              forWhom="Individuals / Evaluation"
+              bullets={["Core Reprog workflow", "Personal projects", "Email support"]}
             />
             <Tier
               delay={0.2}
-              name="Pro"
-              forWhom="Professionals"
-              bullets={["Advanced models (GPT-4, Claude 3)", "Unlimited chat", "Priority support"]}
+              name="Team"
+              forWhom="Small teams"
+              bullets={["Shared projects", "Policy controls", "Priority support"]}
             />
             <Tier
               delay={0.3}
-              name="Team"
+              name="Enterprise"
               forWhom="Organizations"
-              bullets={["Centralized billing", "SSO / SAML", "Usage analytics"]}
+              bullets={["SSO / SAML", "Audit-friendly workflow", "Custom security & procurement"]}
             />
           </div>
         </FadeIn>
@@ -76,10 +76,11 @@ export default function PricingPage() {
                   Enterprise
                 </div>
                 <h2 className="mt-3 font-sans text-3xl font-semibold tracking-[-0.04em] md:text-4xl">
-                  Need on-prem or custom models?
+                  Security review, procurement, or custom deployment?
                 </h2>
                 <p className="mt-4 text-base text-muted md:text-lg">
-                  We offer self-hosted deployments and fine-tuning services for large engineering teams.
+                  We support enterprise onboarding: security documentation, contract workflows, and deployment options
+                  that match how serious teams operate.
                 </p>
               </div>
               <div className="md:col-span-4 md:text-right">

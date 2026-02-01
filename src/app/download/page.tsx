@@ -9,7 +9,7 @@ export default function DownloadPage() {
         eyebrow="Download"
         title={
           <>
-            Download <span className="text-gradient text-shimmer">Aternox</span>.
+            Download <span className="text-gradient text-shimmer">Reprog</span>.
           </>
         }
         subtitle="We’ll publish the official download link here at launch. Until then, request access and we’ll reach out when builds are ready."
@@ -22,8 +22,8 @@ export default function DownloadPage() {
             Coming soon.
           </h2>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted">
-            We’re finalizing installers and enterprise deployment bundles. If you want early access, send your
-            details and intended use-case.
+            We’re finalizing installers and enterprise deployment bundles. If you want early access, share your
+            intended use-case and environment.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
             <Link
@@ -36,7 +36,7 @@ export default function DownloadPage() {
               href="/product"
               className="btn-secondary inline-flex h-12 items-center justify-center rounded-full px-6 text-sm font-semibold transition-all hover:scale-105"
             >
-              Learn how it works
+              See what Reprog does
             </Link>
           </div>
         </div>

@@ -13,7 +13,7 @@ export function Footer() {
         <div className="text-sm">
           <div className="text-display text-sm font-medium tracking-[-0.01em] text-white/90">Aternox</div>
           <div className="mt-2 text-[13px] leading-relaxed text-white/50">
-            The autonomous system that builds enterprise-grade software.
+            Builders of Reprog — autonomous engineering for enterprise teams.
           </div>
           <div className="mt-2 text-[11px] font-mono text-white/40">
             Newark, Delaware, USA

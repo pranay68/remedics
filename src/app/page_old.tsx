@@ -3,7 +3,6 @@ import { SignalCore } from "@/components/hero/SignalCore";
 import { Shell } from "@/components/site/Shell";
 import { Section } from "@/components/site/Section";
 import { FadeIn } from "@/components/animations/FadeIn";
-import { ScaleIn } from "@/components/animations/ScaleIn";
 
 function Pill({ children }: { children: React.ReactNode }) {
   return (
