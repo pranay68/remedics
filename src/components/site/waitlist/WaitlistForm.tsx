@@ -26,18 +26,25 @@ export function WaitlistForm() {
     
     setSending(true);
     try {
-      await fetch("https://formspree.io/f/PLACEHOLDER", {
+      const response = await fetch("/api/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           email,
-          modes: selectedModes.join(", ") || "Not specified",
+          modes: selectedModes,
           userType,
           specialIdentity: userType === "Special" ? specialIdentity : undefined,
         }),
       });
-    } catch {
-      // noop
+      
+      if (!response.ok) {
+        throw new Error("Failed to submit");
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      alert("Failed to join waitlist. Please try again.");
+      setSending(false);
+      return;
     }
     setSending(false);
     setSubmitted(true);

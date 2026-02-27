@@ -20,13 +20,20 @@ export function EnterpriseForm() {
     if (status === "sending") return;
     setStatus("sending");
     try {
-      await fetch("https://formspree.io/f/PLACEHOLDER", {
+      const response = await fetch("/api/enterprise-inquiry", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, _route: "enterprise" }),
+        body: JSON.stringify(form),
       });
-    } catch {
-      // noop
+      
+      if (!response.ok) {
+        throw new Error("Failed to submit");
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      alert("Failed to submit inquiry. Please try again.");
+      setStatus("idle");
+      return;
     }
     setStatus("sent");
   }
