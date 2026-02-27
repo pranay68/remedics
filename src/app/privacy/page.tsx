@@ -37,7 +37,7 @@ export default function PrivacyPage() {
 
           <h2 className="mt-8 text-lg font-semibold">4. Code Privacy</h2>
           <p className="text-muted">
-            For Reprog and our other products, we prioritize privacy-first defaults and minimal retention where applicable. We do not train models on your private code unless explicitly authorized by you.
+            For DGS and our other products, we prioritize privacy-first defaults and minimal retention where applicable. We do not use your data to train models unless explicitly authorized by you.
           </p>
 
           <h2 className="mt-8 text-lg font-semibold">5. Contact Us</h2>

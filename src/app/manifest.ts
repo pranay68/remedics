@@ -2,9 +2,9 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Reprog | Aternox",
-    short_name: "Reprog",
-    description: "Reprog is Aternox’s autonomous engineering product for enterprise teams.",
+    name: "DGS | Aternox",
+    short_name: "DGS",
+    description: "DGS is Aternox's deterministic synthesis engine — verifiable, traceable output across every domain.",
     start_url: "/",
     display: "standalone",
     background_color: "#000000",

@@ -25,16 +25,16 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Reprog — Autonomous Engineering for Enterprise | Aternox",
+    default: "DGS — Deep General Synthesis | Aternox",
     template: "%s | Aternox",
   },
   description:
-    "Reprog is Aternox’s autonomous engineering product for enterprise teams — turning specs into production-ready software with speed, control, and reviewable output.",
+    "DGS is a deterministic synthesis engine by Aternox. Not a language model. Not prediction. Verifiable, traceable output across every domain.",
   metadataBase: site,
   alternates: {
     canonical: "/",
   },
-  applicationName: "Reprog",
+  applicationName: "DGS",
   category: "Software",
   robots: {
     index: true,
@@ -50,18 +50,18 @@ export const metadata: Metadata = {
   // Add your Search Console verification when ready.
   // verification: { google: "<token>" },
   openGraph: {
-    title: "Reprog — Autonomous Engineering for Enterprise | Aternox",
+    title: "DGS — Deep General Synthesis | Aternox",
     description:
-      "Reprog is Aternox’s autonomous engineering product for enterprise teams — turning specs into production-ready software with speed, control, and reviewable output.",
+      "DGS is a deterministic synthesis engine by Aternox. Not a language model. Not prediction. Verifiable, traceable output across every domain.",
     type: "website",
     siteName: "Aternox",
     url: site,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Reprog — Autonomous Engineering for Enterprise | Aternox",
+    title: "DGS — Deep General Synthesis | Aternox",
     description:
-      "Reprog is Aternox’s autonomous engineering product for enterprise teams — turning specs into production-ready software with speed, control, and reviewable output.",
+      "DGS is a deterministic synthesis engine by Aternox. Not a language model. Not prediction. Verifiable, traceable output across every domain.",
   },
 };
 
@@ -89,9 +89,9 @@ export default function RootLayout({
   const softwareAppJsonLd = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: "Reprog",
-    applicationCategory: "DeveloperApplication",
-    operatingSystem: "Windows, macOS, Linux",
+    name: "DGS — Deep General Synthesis",
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web",
     offers: {
       "@type": "Offer",
       price: "0",
@@ -107,15 +107,16 @@ export default function RootLayout({
       name: "Aternox",
       url: site.href,
     },
-    url: new URL("/product", site).href,
+    url: new URL("/dgs", site).href,
     description:
-      "Reprog is Aternox’s autonomous engineering product for enterprise teams — turning specs into production-ready software with speed, control, and reviewable output.",
+      "DGS is a deterministic synthesis engine by Aternox. Not a language model. Not prediction. Verifiable, traceable output across every domain.",
   };
 
   return (
     <html lang="en" className="h-full">
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased min-h-full bg-background text-foreground`}
+        suppressHydrationWarning
       >
         <script
           type="application/ld+json"

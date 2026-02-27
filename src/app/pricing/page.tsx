@@ -51,7 +51,7 @@ export default function PricingPage() {
               delay={0.1}
               name="Pilot"
               forWhom="Individuals / Evaluation"
-              bullets={["Core Reprog workflow", "Personal projects", "Email support"]}
+              bullets={["Core DGS access", "Personal projects", "Email support"]}
             />
             <Tier
               delay={0.2}

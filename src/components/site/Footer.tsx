@@ -13,13 +13,13 @@ export function Footer() {
         <div className="text-sm">
           <div className="text-display text-sm font-medium tracking-[-0.01em] text-white/90">Aternox</div>
           <div className="mt-2 text-[13px] leading-relaxed text-white/50">
-            Builders of Reprog — autonomous engineering for enterprise teams.
+            Deterministic General Synthesis
           </div>
           <div className="mt-2 text-[11px] font-mono text-white/40">
-            Newark, Delaware, USA
+            Aternox LLC, Delaware, USA
           </div>
           <div className="mt-4 text-xs text-white/60">
-            © 2026 Aternox Inc.
+            © 2026 Aternox LLC
           </div>
         </div>
 

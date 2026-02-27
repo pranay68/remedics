@@ -37,7 +37,7 @@ export async function POST(req: Request) {
   try {
     if (process.env.GMAIL_APP_PASSWORD) {
       await transporter.sendMail({
-        from: `"Aternox (Reprog) Contact" <${process.env.GMAIL_USER || "sulekhakapar123@gmail.com"}>`,
+        from: `"Aternox Contact" <${process.env.GMAIL_USER || "sulekhakapar123@gmail.com"}>`,
         to: "sulekhakapar123@gmail.com",
         subject: `New Contact from ${name} (${company})`,
         text: `

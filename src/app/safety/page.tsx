@@ -23,7 +23,7 @@ export default function SafetyPage() {
           </>
         }
         subtitle={
-          "Reprog is built by Aternox with privacy-first defaults. We’re explicit about data handling, and we design for enterprise review."
+          "DGS is built by Aternox with privacy-first defaults. We're explicit about data handling, and we design for enterprise review."
         }
       >
         <FadeIn>

@@ -37,14 +37,14 @@ export default function OpenGraphImage() {
 
         <div style={{ display: "flex", flexDirection: "column", gap: 18, maxWidth: 980 }}>
           <div style={{ fontSize: 22, letterSpacing: 2, color: "rgba(255,255,255,0.7)", textTransform: "uppercase" }}>
-            Reprog — by Aternox
+            DGS — Deep General Synthesis | Aternox
           </div>
           <div style={{ fontSize: 82, fontWeight: 700, letterSpacing: -3, lineHeight: 1.02 }}>
-            Autonomous engineering
-            <span style={{ color: "rgba(255,255,255,0.86)" }}> for enterprise</span>.
+            Synthesis.
+            <span style={{ color: "rgba(255,255,255,0.86)" }}> Not prediction.</span>
           </div>
           <div style={{ fontSize: 28, color: "rgba(255,255,255,0.6)", lineHeight: 1.35 }}>
-            Turn specs into production-ready software — fast, controlled, and reviewable.
+            Deterministic, verified output across every domain. No hallucination. No hedging.
           </div>
         </div>
       </div>

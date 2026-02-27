@@ -22,7 +22,7 @@ export default function TermsPage() {
 
           <h2 className="mt-8 text-lg font-semibold">1. Acceptance of Terms</h2>
           <p className="text-muted">
-            These Terms constitute a binding legal agreement between you and Aternox Inc. (Aternox, we, us, or our). If you do not agree to these Terms, please do not use our Services.
+            These Terms constitute a binding legal agreement between you and Aternox LLC (Aternox, we, us, or our). If you do not agree to these Terms, please do not use our Services.
           </p>
 
           <h2 className="mt-8 text-lg font-semibold">2. Use of Services</h2>

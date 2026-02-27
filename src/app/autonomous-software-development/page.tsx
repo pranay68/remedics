@@ -4,9 +4,9 @@ import { Shell } from "@/components/site/Shell";
 import { Page } from "@/components/site/Page";
 import { FadeIn } from "@/components/animations/FadeIn";
 
-const title = "Autonomous Software Development for Enterprise | Reprog";
+const title = "Deterministic Synthesis for Enterprise | DGS by Aternox";
 const description =
-  "Reprog is autonomous software development by Aternox — enterprise-grade delivery with controlled, reviewable output.";
+  "DGS is a deterministic synthesis engine by Aternox — verifiable, traceable output across every domain.";
 
 export const metadata: Metadata = {
   title,
@@ -46,7 +46,7 @@ export default function AutonomousSoftwareDevelopmentPage() {
           </>
         }
         subtitle={
-          "Reprog is built for teams that need production-grade delivery — fast, controlled, and reviewable."
+          "DGS is built for teams that need verified, deterministic output — structured, traceable, and falsifiable."
         }
       >
         <script
@@ -76,20 +76,20 @@ export default function AutonomousSoftwareDevelopmentPage() {
                 <div className="text-xs font-mono font-semibold uppercase tracking-wider text-muted">Built by</div>
                 <div className="mt-3 text-2xl font-semibold">Aternox</div>
                 <p className="mt-3 text-sm leading-6 text-muted">
-                  Reprog is Aternox’s product for autonomous engineering — designed for enterprise workflows and real codebases.
+                  DGS is Aternox's deterministic synthesis engine — designed for enterprise workflows that require verified, structured output.
                 </p>
                 <div className="mt-8 flex flex-col gap-3">
                   <Link
-                    href="/product"
+                    href="/dgs"
                     className="btn-primary inline-flex h-12 items-center justify-center rounded-full px-6 text-sm font-semibold transition-all hover:scale-105"
                   >
-                    See Reprog
+                    Learn about DGS
                   </Link>
                   <Link
-                    href="/pricing"
+                    href="/waitlist"
                     className="btn-secondary inline-flex h-12 items-center justify-center rounded-full px-6 text-sm font-semibold transition-all hover:scale-105"
                   >
-                    Pricing
+                    Join waitlist
                   </Link>
                 </div>
               </div>

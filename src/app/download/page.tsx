@@ -9,10 +9,10 @@ export default function DownloadPage() {
         eyebrow="Download"
         title={
           <>
-            Download <span className="text-gradient text-shimmer">Reprog</span>.
+            DGS <span className="text-gradient text-shimmer">Access</span>.
           </>
         }
-        subtitle="We’ll publish the official download link here at launch. Until then, request access and we’ll reach out when builds are ready."
+        subtitle="DGS is in private development. Join the waitlist and we'll reach out when access opens."
       >
         <div className="glass rounded-3xl border border-border/70 p-8 glow">
           <div className="text-xs font-mono font-semibold uppercase tracking-wider text-muted">
@@ -33,10 +33,10 @@ export default function DownloadPage() {
               Request access
             </Link>
             <Link
-              href="/product"
+              href="/dgs"
               className="btn-secondary inline-flex h-12 items-center justify-center rounded-full px-6 text-sm font-semibold transition-all hover:scale-105"
             >
-              See what Reprog does
+              Learn about DGS
             </Link>
           </div>
         </div>

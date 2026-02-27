@@ -19,16 +19,16 @@ export default function ProductPage() {
       <Page
         eyebrow={
           <span>
-            Reprog <span className="text-white/30">by</span> Aternox
+            DGS <span className="text-white/30">by</span> Aternox
           </span>
         }
         title={
           <>
-            Autonomous engineering that <span className="text-gradient text-shimmer">ships</span> enterprise software.
+            Deterministic synthesis that <span className="text-gradient text-shimmer">verifies</span> every output.
           </>
         }
         subtitle={
-          "Reprog turns intent into production-ready code with clear change scopes, reviewable output, and controls designed for real organizations."
+          "DGS produces deterministic, verified output through structured reasoning gates. Traceable. Falsifiable. Consistent."
         }
       >
         <div className="grid gap-8 md:grid-cols-12">
@@ -42,8 +42,8 @@ export default function ProductPage() {
                   Spec → Scope → Implementation → Verification
                 </div>
                 <p className="mt-3 text-base text-muted md:text-lg">
-                  Reprog is built for outcomes: changes that fit the codebase, stay understandable, and survive
-                  production constraints. You get speed without giving up control.
+                  DGS is built for outcomes: structured, verifiable output that can be traced and falsified.
+                  You get verified answers without guessing.
                 </p>
                 <div className="mt-8 grid gap-3">
                   {[
@@ -86,10 +86,10 @@ export default function ProductPage() {
                     Security
                   </Link>
                   <Link
-                    href="/download"
+                    href="/waitlist"
                     className="btn-primary inline-flex h-12 items-center justify-center rounded-full px-5 text-sm font-semibold transition-all hover:scale-105"
                   >
-                    Get Reprog
+                    Join waitlist
                   </Link>
                 </div>
               </div>
@@ -112,7 +112,7 @@ export default function ProductPage() {
             <Feature
               delay={0.3}
               title="Verification Loops"
-              desc="Reprog helps you validate changes with checks and test coverage, iterating until behavior matches intent."
+              desc="DGS synthesizes through structured logic gates, iterating until each output meets the required evidentiary standard."
             />
           </div>
         </FadeIn>

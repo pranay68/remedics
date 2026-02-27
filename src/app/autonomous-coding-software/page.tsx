@@ -4,9 +4,9 @@ import { Shell } from "@/components/site/Shell";
 import { Page } from "@/components/site/Page";
 import { FadeIn } from "@/components/animations/FadeIn";
 
-const title = "Autonomous Coding Software for Enterprise Teams | Reprog";
+const title = "Deterministic Synthesis Software for Enterprise | DGS by Aternox";
 const description =
-  "Reprog is autonomous coding software built for enterprise teams — shipping production-ready changes with reviewable output, governance, and speed.";
+  "DGS is a deterministic synthesis engine built for enterprise teams — verifiable, traceable output across every domain.";
 
 export const metadata: Metadata = {
   title,
@@ -31,10 +31,10 @@ export default function AutonomousCodingSoftwarePage() {
       },
       {
         "@type": "Question",
-        name: "Is Reprog a chatbot?",
+        name: "Is DGS a chatbot?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "No. Reprog is a product built for engineering teams that need production-grade output and predictable workflows — not a casual chat toy.",
+          text: "No. DGS is a deterministic synthesis engine, not a chatbot. It produces structured, verifiable output through logic gates.",
         },
       },
       {
@@ -42,7 +42,7 @@ export default function AutonomousCodingSoftwarePage() {
         name: "Can teams review everything before shipping?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes. Reprog is designed to produce reviewable output and integrate with real team workflows so humans stay in control.",
+          text: "Yes. Every DGS output includes a complete logic trace that can be reviewed, validated, and falsified.",
         },
       },
     ],
@@ -58,7 +58,7 @@ export default function AutonomousCodingSoftwarePage() {
           </>
         }
         subtitle={
-          "Reprog is Aternox’s autonomous engineering product — built for teams that need speed without losing control."
+          "DGS is Aternox's deterministic synthesis engine — built for teams that need verified answers without guessing."
         }
       >
         <script
@@ -92,18 +92,17 @@ export default function AutonomousCodingSoftwarePage() {
         <FadeIn delay={0.25}>
           <div className="mt-10 glass rounded-3xl border border-gradient p-10 glow-intense">
             <h2 className="font-sans text-2xl font-semibold tracking-[-0.04em] md:text-3xl">
-              Reprog is built for teams, not demos.
+              DGS is built for enterprise, not demos.
             </h2>
             <p className="mt-4 max-w-3xl text-base text-muted md:text-lg">
-              If you’re searching for autonomous coding software, what you actually need is predictable delivery: scoped changes,
-              reviewable output, and an enterprise workflow that leadership can sign off on.
+              If you need deterministic, verifiable output at enterprise scale — structured reasoning, traceable logic, and consistent results every run.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
-                href="/product"
+                href="/dgs"
                 className="btn-primary inline-flex h-12 items-center justify-center rounded-full px-6 text-sm font-semibold transition-all hover:scale-105"
               >
-                See Reprog
+                Learn about DGS
               </Link>
               <Link
                 href="/contact"
@@ -127,9 +126,9 @@ export default function AutonomousCodingSoftwarePage() {
                 </p>
               </div>
               <div>
-                <h3 className="text-lg font-semibold">How is Reprog different?</h3>
+                <h3 className="text-lg font-semibold">How is DGS different?</h3>
                 <p className="mt-2 text-sm text-muted">
-                  Reprog is built for production workflows: review, governance, and output your team can actually maintain.
+                  DGS synthesizes through structured logic gates. Same input, same output — every time. Every conclusion is traceable and falsifiable.
                 </p>
               </div>
               <div>

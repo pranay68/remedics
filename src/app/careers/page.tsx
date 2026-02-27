@@ -25,7 +25,7 @@ export default function CareersPage() {
           </>
         }
         subtitle={
-          "Aternox is the company behind Reprog — an autonomous engineering product for enterprise teams. We hire builders who ship."
+          "Aternox is the company behind DGS — a deterministic synthesis engine for researchers, enterprises, and builders. We hire builders who ship."
         }
       >
         <div className="grid gap-10 md:grid-cols-12">
