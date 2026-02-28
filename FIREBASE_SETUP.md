@@ -170,7 +170,7 @@ Fields required (see `.env.local.example`):
 - `FIREBASE_TYPE`
 - `FIREBASE_PROJECT_ID` *(must be set; triggers production code path)*
 - `FIREBASE_PRIVATE_KEY_ID`
-- `FIREBASE_PRIVATE_KEY` *(if copy/pasting from JSON, replace newlines with `\n` or wrap the value in quotes)*
+- `FIREBASE_PRIVATE_KEY` *(if copy/pasting from JSON, replace newlines with `\\n` or wrap the value in quotes). **Alternatively** you can set this variable to the base64‑encoded key and the library will decode it automatically, which avoids issues with multiline editing on Vercel.*
 - `FIREBASE_CLIENT_EMAIL`
 - `FIREBASE_CLIENT_ID`
 - `FIREBASE_AUTH_URI`
@@ -181,8 +181,8 @@ Fields required (see `.env.local.example`):
 
 > **Important:** `FIREBASE_PROJECT_ID` must be non‑empty; if it’s missing or blank the build will fall back to the `require(...)` branch and fail because the JSON file isn’t present on Vercel.
 >
-> If you see an error pointing to line 24 of `firebase-admin.ts`, it means Vercel still didn’t have the project ID after importing your `.env` file. Double‑check the names and that no extra quotes were added.
-
+> If you see an error pointing to line 24 of `firebase-admin.ts`, it means Vercel still didn’t have the project ID after importing your `.env` file. Double‑check the names and that no extra quotes were added.>
+> **Private key errors:** if you see messages like "Failed to parse private key" or the client alert shows "Getting metadata from plugin failed…unsupported", then the value stored in `FIREBASE_PRIVATE_KEY` is malformed. Use the base64 alternative or carefully paste the exact PEM including `\n` escapes.
 ---
 
 ## 📂 File Structure
