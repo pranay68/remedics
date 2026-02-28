@@ -1,51 +1,47 @@
 import * as admin from "firebase-admin";
 
-// For local development, use the JSON file
-// For production, set environment variables (see .env.local.example)
-let serviceAccount: any;
+function buildServiceAccountFromEnv(): admin.ServiceAccount | null {
+    if (!process.env.FIREBASE_PROJECT_ID) return null;
 
-if (process.env.FIREBASE_PROJECT_ID) {
-    // Use environment variables whenever a project ID is provided.
-    // This branch will run on Vercel regardless of NODE_ENV.
     // private key may be base64 encoded or contain literal \n escapes
     let rawKey = process.env.FIREBASE_PRIVATE_KEY || "";
     if (rawKey && !rawKey.trim().startsWith("-----BEGIN")) {
-        // attempt base64 decode if looks encoded
         try {
             rawKey = Buffer.from(rawKey, "base64").toString("utf8");
         } catch {
             // leave as-is
         }
     }
-    serviceAccount = {
-        type: process.env.FIREBASE_TYPE,
-        project_id: process.env.FIREBASE_PROJECT_ID,
-        private_key_id: process.env.FIREBASE_PRIVATE_KEY_ID,
-        private_key: rawKey.replace(/\\n/g, "\n"),
-        client_email: process.env.FIREBASE_CLIENT_EMAIL,
-        client_id: process.env.FIREBASE_CLIENT_ID,
-        auth_uri: process.env.FIREBASE_AUTH_URI,
-        token_uri: process.env.FIREBASE_TOKEN_URI,
-        auth_provider_x509_cert_url: process.env.FIREBASE_AUTH_PROVIDER_X509_CERT_URL,
-        client_x509_cert_url: process.env.FIREBASE_CLIENT_X509_CERT_URL,
-        universe_domain: process.env.FIREBASE_UNIVERSE_DOMAIN,
-    };
-} else {
-    // No project ID in environment: fall back to local JSON (development only)
-    try {
-        serviceAccount = require("../reprog-web-firebase-adminsdk-fbsvc-c3c491f437.json");
-    } catch (err) {
-        throw new Error(
-            "Firebase configuration missing: set FIREBASE_PROJECT_ID in environment variables or provide the service account JSON"
-        );
-    }
+
+    return {
+        projectId: process.env.FIREBASE_PROJECT_ID,
+        clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+        privateKey: rawKey.replace(/\\n/g, "\n"),
+    } as admin.ServiceAccount;
 }
 
-if (!admin.apps.length) {
+function buildServiceAccountFromLocalJson(): admin.ServiceAccount {
+    // Local-only fallback. Do not commit this JSON.
+    // Keep the require inside a function so builds don't fail when the file is absent.
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const json = require("../reprog-web-firebase-adminsdk-fbsvc-c3c491f437.json");
+    return json as admin.ServiceAccount;
+}
+
+function ensureFirebaseAdmin() {
+    if (admin.apps.length) return;
+
+    const fromEnv = buildServiceAccountFromEnv();
+    const serviceAccount = fromEnv ?? buildServiceAccountFromLocalJson();
+
     admin.initializeApp({
-        credential: admin.credential.cert(serviceAccount as admin.ServiceAccount),
+        credential: admin.credential.cert(serviceAccount),
     });
 }
 
-export const db = admin.firestore();
+export function getDb() {
+    ensureFirebaseAdmin();
+    return admin.firestore();
+}
+
 export default admin;
