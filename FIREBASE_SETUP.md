@@ -160,15 +160,17 @@ curl -X POST http://localhost:3000/api/enterprise-inquiry \
 ## 🔐 Configuration
 
 ### Local Development
-The application uses the Firebase Admin SDK JSON file (`reprog-web-firebase-adminsdk-fbsvc-c3c491f437.json`) for local development. This file is already in place and configured.
+The application uses the Firebase Admin SDK JSON file (`reprog-web-firebase-adminsdk-fbsvc-c3c491f437.json`) for local development. This file is ignored by git and should remain on your local machine only.
 
 ### Production Deployment (Vercel)
-For production, use environment variables. See `.env.local.example` for required fields:
+On Vercel you **must** define each individual environment variable (do not upload the entire JSON file as a single variable). Set them under *Project Settings → Environment Variables*.
+
+Fields required (see `.env.local.example`):
 
 - `FIREBASE_TYPE`
-- `FIREBASE_PROJECT_ID`
+- `FIREBASE_PROJECT_ID` *(must be set; triggers production code path)*
 - `FIREBASE_PRIVATE_KEY_ID`
-- `FIREBASE_PRIVATE_KEY`
+- `FIREBASE_PRIVATE_KEY` *(if copy/pasting from JSON, replace newlines with `\n` or wrap the value in quotes)*
 - `FIREBASE_CLIENT_EMAIL`
 - `FIREBASE_CLIENT_ID`
 - `FIREBASE_AUTH_URI`
@@ -176,6 +178,10 @@ For production, use environment variables. See `.env.local.example` for required
 - `FIREBASE_AUTH_PROVIDER_X509_CERT_URL`
 - `FIREBASE_CLIENT_X509_CERT_URL`
 - `FIREBASE_UNIVERSE_DOMAIN`
+
+> **Important:** `FIREBASE_PROJECT_ID` must be non‑empty; if it’s missing or blank the build will fall back to the `require(...)` branch and fail because the JSON file isn’t present on Vercel.
+>
+> If you see an error pointing to line 24 of `firebase-admin.ts`, it means Vercel still didn’t have the project ID after importing your `.env` file. Double‑check the names and that no extra quotes were added.
 
 ---
 
