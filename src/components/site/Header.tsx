@@ -31,11 +31,10 @@ export function Header() {
 
 	return (
 		<header
-			className={`sticky top-0 z-50 border-b transition-all duration-300 ${
-				scrolled
+			className={`sticky top-0 z-50 border-b transition-all duration-300 ${scrolled
 					? "border-white/[0.08] bg-black/70 backdrop-blur-xl"
 					: "border-white/[0.04] bg-black/30 backdrop-blur-md"
-			} supports-[backdrop-filter]:bg-black/30`}
+				} supports-[backdrop-filter]:bg-black/30`}
 		>
 			<div className="mx-auto flex max-w-4xl items-center justify-between gap-6 px-5 py-4">
 				<Link
@@ -43,9 +42,9 @@ export function Header() {
 					className="group flex items-center gap-2.5 transition-opacity hover:opacity-80"
 				>
 					<div className="relative h-9 w-9 overflow-hidden rounded-xl border border-white/10 bg-gradient-to-br from-white/10 to-white/[0.02] shadow-2xl transition-transform duration-500 group-hover:scale-110">
-						<Image 
-							src="/logo.png" 
-							alt="Aternox Logo" 
+						<Image
+							src="/logo.png"
+							alt="Aternox Logo"
 							width={36}
 							height={36}
 							className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-125 group-hover:rotate-3"
@@ -57,10 +56,10 @@ export function Header() {
 							Aternox
 						</div>
 						<div className="mt-0.5 flex items-center gap-2">
-						<div className="text-[11px] font-medium tracking-tight text-white/40">LLC</div>
-						<span className="h-1 w-1 rounded-full bg-white/20" />
-						<div className="text-[11px] font-medium tracking-tight text-white/70">
-							Delaware, USA
+							<div className="text-[11px] font-medium tracking-tight text-white/40">LLC</div>
+							<span className="h-1 w-1 rounded-full bg-white/20" />
+							<div className="text-[11px] font-medium tracking-tight text-white/70">
+								Delaware, USA
 							</div>
 						</div>
 					</div>
@@ -73,11 +72,10 @@ export function Header() {
 							<Link
 								key={item.href}
 								href={item.href}
-								className={`rounded-full px-3 py-1.5 text-[13px] transition-all duration-200 ${
-									active
+								className={`rounded-full px-3 py-1.5 text-[13px] transition-all duration-200 ${active
 										? "bg-white/[0.08] text-white"
 										: "text-white/50 hover:text-white/80 hover:bg-white/[0.04]"
-								}`}
+									}`}
 							>
 								{item.label}
 							</Link>

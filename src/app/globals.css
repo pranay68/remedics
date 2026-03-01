@@ -7,8 +7,10 @@
   --surface: rgba(255, 255, 255, 0.02);
   --surface-2: rgba(255, 255, 255, 0.04);
   --border: rgba(255, 255, 255, 0.08);
-  --brand: #E5E7EB; /* Silver/Platinum */
-  --brand-2: #D1D5DB; /* Light Silver */
+  --brand: #E5E7EB;
+  /* Silver/Platinum */
+  --brand-2: #D1D5DB;
+  /* Light Silver */
   --accent: #FFFFFF;
   --glow-cyan: rgba(255, 255, 255, 0.15);
   --glow-blue: rgba(200, 200, 200, 0.1);
@@ -78,24 +80,20 @@ body {
 }
 
 .text-gradient {
-  background: linear-gradient(
-    to bottom right,
-    #ffffff 0%,
-    #ffffff 40%,
-    #9ca3af 100%
-  );
+  background: linear-gradient(to bottom right,
+      #ffffff 0%,
+      #ffffff 40%,
+      #9ca3af 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
 .text-shimmer {
-  background: linear-gradient(
-    110deg,
-    #ffffff 45%,
-    #9ca3af 50%,
-    #ffffff 55%
-  );
+  background: linear-gradient(110deg,
+      #ffffff 45%,
+      #9ca3af 50%,
+      #ffffff 55%);
   background-size: 200% 100%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -107,6 +105,7 @@ body {
   0% {
     background-position: 200% 0;
   }
+
   100% {
     background-position: -200% 0;
   }
@@ -142,7 +141,8 @@ body {
 /* Premium primitives */
 .container-page {
   width: 100%;
-  max-width: 64rem; /* ~max-w-4xl */
+  max-width: 64rem;
+  /* ~max-w-4xl */
   margin-left: auto;
   margin-right: auto;
   padding-left: 1.25rem;
@@ -167,23 +167,47 @@ body {
 
 /* (Intentionally minimal motion for premium feel) */
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px var(--glow-cyan), 0 0 40px var(--glow-blue); }
-  50% { box-shadow: 0 0 40px var(--glow-cyan), 0 0 80px var(--glow-blue); }
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px var(--glow-cyan), 0 0 40px var(--glow-blue);
+  }
+
+  50% {
+    box-shadow: 0 0 40px var(--glow-cyan), 0 0 80px var(--glow-blue);
+  }
 }
 
 @keyframes shimmer {
-  0% { background-position: -1000px 0; }
-  100% { background-position: 1000px 0; }
+  0% {
+    background-position: -1000px 0;
+  }
+
+  100% {
+    background-position: 1000px 0;
+  }
 }
 
 @keyframes scan {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(100%); }
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
 }
 
 @keyframes fade-up {
@@ -191,6 +215,7 @@ body {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -206,12 +231,10 @@ body {
 }
 
 .text-shimmer {
-  background: linear-gradient(
-    90deg,
-    var(--foreground) 0%,
-    var(--brand-2) 50%,
-    var(--foreground) 100%
-  );
+  background: linear-gradient(90deg,
+      var(--foreground) 0%,
+      var(--brand-2) 50%,
+      var(--foreground) 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
@@ -228,12 +251,10 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgba(0, 229, 255, 0.3) 50%,
-    transparent 100%
-  );
+  background: linear-gradient(180deg,
+      transparent 0%,
+      rgba(0, 229, 255, 0.3) 50%,
+      transparent 100%);
   height: 100%;
   animation: scan 4s ease-in-out infinite;
 }
@@ -257,13 +278,11 @@ body {
   inset: -1px;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(
-    135deg,
-    var(--brand-2),
-    var(--brand),
-    transparent,
-    transparent
-  );
+  background: linear-gradient(135deg,
+      var(--brand-2),
+      var(--brand),
+      transparent,
+      transparent);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
