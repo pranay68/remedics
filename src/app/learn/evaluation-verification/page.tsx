@@ -19,6 +19,16 @@ export const metadata: Metadata = {
 
 const clusters = [
   {
+    href: "/learn/evaluation-verification/rubric",
+    title: "Verification rubric",
+    desc: "A reviewer-ready rubric with deterministic gates.",
+  },
+  {
+    href: "/learn/evaluation-verification/failure-modes",
+    title: "Failure modes checklist",
+    desc: "Common workflow failures and the gates that prevent them.",
+  },
+  {
     href: "/safety",
     title: "Safety",
     desc: "Guardrails and governance.",

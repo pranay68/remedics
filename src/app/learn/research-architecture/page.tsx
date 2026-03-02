@@ -19,6 +19,11 @@ export const metadata: Metadata = {
 
 const clusters = [
   {
+    href: "/learn/research-architecture/template",
+    title: "Research program template",
+    desc: "A reusable template with deterministic review gates.",
+  },
+  {
     href: "/research",
     title: "Research",
     desc: "How Aternox approaches research workflows and outputs.",
