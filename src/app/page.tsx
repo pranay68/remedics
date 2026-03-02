@@ -40,28 +40,12 @@ function PDFButton() {
       <a
         href={pdfPath}
         download
-        onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
-          fetch(pdfPath, { method: "HEAD" }).then((r) => {
-            if (!r.ok) {
-              e.preventDefault();
-              alert("Summary PDF coming soon.");
-            }
-          });
-        }}
         className="inline-flex h-11 items-center justify-center rounded-full bg-white text-black px-6 text-[13px] font-medium transition-all duration-200 hover:bg-white/90"
       >
         Download summary (PDF)
       </a>
       <a
         href={viewPath}
-        onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
-          fetch(pdfPath, { method: "HEAD" }).then((r) => {
-            if (!r.ok) {
-              e.preventDefault();
-              alert("Summary PDF coming soon.");
-            }
-          });
-        }}
         className="inline-flex h-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] px-6 text-[13px] text-white transition-all duration-200 hover:bg-white/[0.08]"
       >
         View PDF
