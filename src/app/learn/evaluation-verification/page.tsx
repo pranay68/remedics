@@ -5,9 +5,9 @@ import { Page } from "@/components/site/Page";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { ScaleIn } from "@/components/animations/ScaleIn";
 
-const title = "Evaluation & Verification | Aternox Learn";
+const title = "Evaluation & Verification | Learn | Aternox";
 const description =
-  "A pillar on evaluating AI outputs for real workflows: acceptance criteria, review loops, and verification before adoption.";
+  "A pillar on evaluating AI outputs for real workflows: acceptance criteria, deterministic verification gates, and review loops before adoption.";
 
 export const metadata: Metadata = {
   title,

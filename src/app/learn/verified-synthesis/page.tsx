@@ -5,9 +5,9 @@ import { Page } from "@/components/site/Page";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { ScaleIn } from "@/components/animations/ScaleIn";
 
-const title = "Verified Synthesis | Aternox Learn";
+const title = "Verified Synthesis | Learn | Aternox";
 const description =
-  "A practical pillar on turning model output into reviewable, checkable artifacts — with scope control, evidence, and human approval.";
+  "A practical pillar on turning synthesis into reviewable, checkable artifacts — with deterministic decision gates, scope control, evidence, and human approval.";
 
 export const metadata: Metadata = {
   title,

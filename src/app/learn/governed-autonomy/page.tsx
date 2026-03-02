@@ -5,9 +5,9 @@ import { Page } from "@/components/site/Page";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { ScaleIn } from "@/components/animations/ScaleIn";
 
-const title = "Governed Autonomy | Aternox Learn";
+const title = "Governed Autonomy | Learn | Aternox";
 const description =
-  "A pillar on autonomy with guardrails: approvals, auditability, and outputs designed for human review in real workflows.";
+  "A pillar on autonomy with guardrails: deterministic approvals, auditability, and outputs designed for human review in real workflows.";
 
 export const metadata: Metadata = {
   title,

@@ -5,9 +5,9 @@ import { Page } from "@/components/site/Page";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { ScaleIn } from "@/components/animations/ScaleIn";
 
-const title = "Autonomous Coding | Aternox Learn";
+const title = "Autonomous Coding | Learn | Aternox";
 const description =
-  "A pillar on autonomous coding workflows: plans, diffs, reviews, and guardrails that turn assistance into shippable changes.";
+  "A pillar on autonomous coding workflows: plans, diffs, reviews, and deterministic guardrails that turn assistance into shippable changes.";
 
 export const metadata: Metadata = {
   title,

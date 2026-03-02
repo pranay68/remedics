@@ -5,9 +5,9 @@ import { Page } from "@/components/site/Page";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { ScaleIn } from "@/components/animations/ScaleIn";
 
-const title = "Research Architecture | Aternox Learn";
+const title = "Research Architecture | Learn | Aternox";
 const description =
-  "A pillar on designing research workflows that produce reusable artifacts: problem framing, method selection, and reviewable outputs.";
+  "A pillar on designing research workflows that produce reusable artifacts: problem framing, method selection, and deterministic review gates for outputs.";
 
 export const metadata: Metadata = {
   title,
