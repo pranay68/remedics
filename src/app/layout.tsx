@@ -31,9 +31,6 @@ export const metadata: Metadata = {
   description:
     "DGS is a deterministic synthesis engine by Aternox. Not a language model. Not prediction. Verifiable, traceable output across every domain.",
   metadataBase: site,
-  alternates: {
-    canonical: "/",
-  },
   applicationName: "DGS",
   category: "Software",
   robots: {

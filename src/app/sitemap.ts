@@ -8,12 +8,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const routes: Array<{ path: string; changeFrequency?: MetadataRoute.Sitemap[number]["changeFrequency"]; priority?: number }> = [
     { path: "/", changeFrequency: "weekly", priority: 1 },
+    { path: "/dgs", changeFrequency: "weekly", priority: 0.9 },
+    { path: "/research", changeFrequency: "weekly", priority: 0.9 },
+    { path: "/waitlist", changeFrequency: "weekly", priority: 0.85 },
     { path: "/product", changeFrequency: "weekly", priority: 0.9 },
     { path: "/pricing", changeFrequency: "monthly", priority: 0.7 },
+    { path: "/careers", changeFrequency: "monthly", priority: 0.5 },
     { path: "/safety", changeFrequency: "monthly", priority: 0.6 },
     { path: "/about", changeFrequency: "monthly", priority: 0.5 },
     { path: "/download", changeFrequency: "weekly", priority: 0.6 },
     { path: "/contact", changeFrequency: "monthly", priority: 0.5 },
+    { path: "/view/flt3-program-summary", changeFrequency: "monthly", priority: 0.4 },
     { path: "/terms", changeFrequency: "yearly", priority: 0.2 },
     { path: "/privacy", changeFrequency: "yearly", priority: 0.2 },
     // Keyword landing pages
