@@ -101,6 +101,10 @@ export default function Home() {
                 DGS produces deterministic, verified output across every domain. No hallucination. No hedging. Pure synthesized logic.
               </h2>
 
+              <p className="mt-6 max-w-2xl text-balance font-sans text-[15px] font-semibold leading-relaxed tracking-tight text-white/70">
+                Not for “chat.” Built to solve professional problems with structured, deterministic output.
+              </p>
+
               <div className="mt-12 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <Link href="/waitlist" className="group inline-flex h-11 items-center justify-center rounded-full bg-white text-black px-6 text-[13px] font-medium transition-all duration-200 hover:bg-white/90 hover:shadow-[0_0_20px_-5px_rgba(255,255,255,0.3)]">
                   Join the waitlist
