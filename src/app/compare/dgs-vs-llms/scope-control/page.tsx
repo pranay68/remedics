@@ -7,7 +7,7 @@ import { ScaleIn } from "@/components/animations/ScaleIn";
 
 const title = "Scope Control and Assumptions | DGS vs LLMs | Aternox";
 const description =
-  "Why scope control matters in AI workflows: explicit constraints, assumptions, and boundaries that reviewers can verify.";
+  "Why scope control matters in AI workflows: explicit constraints, assumptions, and boundaries — enforced by deterministic decision rules reviewers can verify.";
 
 export const metadata: Metadata = {
   title,

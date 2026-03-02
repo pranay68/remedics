@@ -7,7 +7,7 @@ import { ScaleIn } from "@/components/animations/ScaleIn";
 
 const title = "DGS vs Chatbots | Aternox";
 const description =
-  "Why chat UX fails for high-stakes work, and what changes when a system is built for structured, reviewable outputs.";
+  "Why chat UX fails for high-stakes work, and what changes when outputs are built as reviewable artifacts with deterministic decision rules.";
 
 export const metadata: Metadata = {
   title,

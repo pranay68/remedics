@@ -7,7 +7,7 @@ import { ScaleIn } from "@/components/animations/ScaleIn";
 
 const title = "Compare | DGS by Aternox";
 const description =
-  "Clear, factual comparisons: DGS vs LLMs, chatbots, and agent frameworks — what changes in workflow, outputs, and trust.";
+  "Clear, factual comparisons: DGS vs LLMs, chatbots, and agent frameworks — focused on workflow, artifacts, and deterministic decision gates.";
 
 export const metadata: Metadata = {
   title,

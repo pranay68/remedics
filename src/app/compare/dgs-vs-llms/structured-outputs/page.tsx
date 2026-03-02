@@ -7,7 +7,7 @@ import { ScaleIn } from "@/components/animations/ScaleIn";
 
 const title = "Structured Outputs vs Chat Output | DGS vs LLMs | Aternox";
 const description =
-  "Why structured outputs matter for professional work: review, reuse, and governance — beyond fluent chat responses.";
+  "Why structured outputs matter for professional work: review, reuse, and governance — and how deterministic output gates make artifacts checkable.";
 
 export const metadata: Metadata = {
   title,

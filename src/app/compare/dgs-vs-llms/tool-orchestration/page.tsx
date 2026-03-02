@@ -7,7 +7,7 @@ import { ScaleIn } from "@/components/animations/ScaleIn";
 
 const title = "Tool Orchestration vs Governed Outputs | DGS vs LLMs | Aternox";
 const description =
-  "Tool calling can automate steps. Governed outputs make adoption safe: reviewable artifacts, verification gates, and clear accountability.";
+  "Tool calling can automate steps. Adoption still needs deterministic verification gates, reviewable artifacts, and clear accountability.";
 
 export const metadata: Metadata = {
   title,

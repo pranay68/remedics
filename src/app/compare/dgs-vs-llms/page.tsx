@@ -7,7 +7,7 @@ import { ScaleIn } from "@/components/animations/ScaleIn";
 
 const title = "DGS vs LLMs (Not a Chatbot) | Aternox";
 const description =
-  "A clear comparison between LLM-based tools and DGS: where LLMs shine, what breaks in professional workflows, and what changes with verified synthesis.";
+  "A clear comparison between LLM-based tools and DGS: where LLMs shine, what breaks in professional workflows, and what changes when synthesis is governed by deterministic logic gates.";
 
 export const metadata: Metadata = {
   title,

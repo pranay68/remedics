@@ -7,7 +7,7 @@ import { ScaleIn } from "@/components/animations/ScaleIn";
 
 const title = "Tool Calling: Agent Frameworks vs Governed Outputs | Aternox";
 const description =
-  "Tool calling is how agent frameworks execute actions. This page explains the mechanics and why governance still needs reviewable artifacts.";
+  "Tool calling is how agent frameworks execute actions. This page explains the mechanics and why deterministic governance still needs reviewable artifacts.";
 
 export const metadata: Metadata = {
   title,

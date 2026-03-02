@@ -7,7 +7,7 @@ import { ScaleIn } from "@/components/animations/ScaleIn";
 
 const title = "DGS vs Agent Frameworks | Aternox";
 const description =
-  "Agent frameworks help orchestrate tools. DGS focuses on producing governed, reviewable artifacts for real workflows.";
+  "Agent frameworks help orchestrate tools. DGS focuses on governed, reviewable artifacts with deterministic logic gates and traceable decision rules.";
 
 export const metadata: Metadata = {
   title,

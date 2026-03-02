@@ -7,7 +7,7 @@ import { ScaleIn } from "@/components/animations/ScaleIn";
 
 const title = "Evaluating Agents: Frameworks vs Governed Outputs | Aternox";
 const description =
-  "How to evaluate agent systems with facts: task success, review time, tool-call errors, and replayability — not just “it seems smart.”";
+  "How to evaluate agent systems with facts: task success, review time, tool-call errors, and replayability — and whether approval gates are deterministic.";
 
 export const metadata: Metadata = {
   title,

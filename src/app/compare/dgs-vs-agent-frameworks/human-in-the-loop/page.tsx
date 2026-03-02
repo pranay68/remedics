@@ -7,7 +7,7 @@ import { ScaleIn } from "@/components/animations/ScaleIn";
 
 const title = "Human-in-the-Loop for Agents | Aternox";
 const description =
-  "Human-in-the-loop isn’t a slogan — it’s a workflow step. This page explains what it means operationally and how to implement it.";
+  "Human-in-the-loop isn’t a slogan — it’s a deterministic workflow gate. This page explains what it means operationally and how to implement it.";
 
 export const metadata: Metadata = {
   title,

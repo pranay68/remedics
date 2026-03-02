@@ -7,7 +7,7 @@ import { ScaleIn } from "@/components/animations/ScaleIn";
 
 const title = "RAG vs Verified Synthesis | DGS vs LLMs | Aternox";
 const description =
-  "RAG improves retrieval. Verified synthesis improves workflow reliability: structured artifacts, review gates, and governance.";
+  "RAG improves retrieval. DGS improves workflow reliability with deterministic logic gates: structured artifacts, review gates, and governance.";
 
 export const metadata: Metadata = {
   title,

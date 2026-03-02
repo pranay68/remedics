@@ -7,7 +7,7 @@ import { ScaleIn } from "@/components/animations/ScaleIn";
 
 const title = "Enterprise Workflow Fit | DGS vs LLMs | Aternox";
 const description =
-  "Why enterprise adoption requires reviewable artifacts, governance, and clear accountability — not just fluent model responses.";
+  "Why enterprise adoption requires reviewable artifacts, governance, and clear accountability — with deterministic decision rules, not just fluent model responses.";
 
 export const metadata: Metadata = {
   title,

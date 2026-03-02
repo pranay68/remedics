@@ -7,7 +7,7 @@ import { ScaleIn } from "@/components/animations/ScaleIn";
 
 const title = "Verification Gates in AI Workflows | DGS vs LLMs | Aternox";
 const description =
-  "Why verification gates matter: separating draft from approved artifacts, reducing risk, and making adoption safe for real teams.";
+  "Why verification gates matter: deterministic checkpoints that separate draft from approved artifacts, reduce risk, and make adoption safe for real teams.";
 
 export const metadata: Metadata = {
   title,

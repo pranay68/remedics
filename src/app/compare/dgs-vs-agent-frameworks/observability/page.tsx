@@ -7,7 +7,7 @@ import { ScaleIn } from "@/components/animations/ScaleIn";
 
 const title = "Observability for Agents | DGS vs Agent Frameworks | Aternox";
 const description =
-  "Agent systems need logs, traces, and replayable runs. This page explains what to instrument and why “prompt logs” alone aren’t enough.";
+  "Agent systems need logs, traces, and replayable runs. This page explains what to instrument and how deterministic decision points make runs auditable.";
 
 export const metadata: Metadata = {
   title,

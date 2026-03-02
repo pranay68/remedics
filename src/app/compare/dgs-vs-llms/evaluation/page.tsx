@@ -7,7 +7,7 @@ import { ScaleIn } from "@/components/animations/ScaleIn";
 
 const title = "How to Evaluate LLM Workflows vs DGS | Aternox";
 const description =
-  "A practical evaluation lens: artifacts, review time, failure modes, and governance — instead of subjective “answer quality.”";
+  "A practical evaluation lens: artifacts, review time, failure modes, and governance — and whether decision gates are deterministic and auditable.";
 
 export const metadata: Metadata = {
   title,

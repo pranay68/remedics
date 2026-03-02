@@ -7,7 +7,7 @@ import { ScaleIn } from "@/components/animations/ScaleIn";
 
 const title = "Auditability of AI Outputs | DGS vs LLMs | Aternox";
 const description =
-  "Auditability isn’t a vibe. It’s traceability, explicit scope, and artifacts that a reviewer can check — not just fluent responses.";
+  "Auditability isn’t a vibe. It’s traceability, explicit scope, and artifacts a reviewer can check — supported by deterministic decision gates.";
 
 export const metadata: Metadata = {
   title,

@@ -7,7 +7,7 @@ import { ScaleIn } from "@/components/animations/ScaleIn";
 
 const title = "Safety Guardrails for Agents | Aternox";
 const description =
-  "Guardrails are concrete mechanisms: allowlists, sandboxing, approvals, and policy checks. This page covers the facts and what to require.";
+  "Guardrails are concrete mechanisms: deterministic allowlists, sandboxing, approvals, and policy checks. This page covers the facts and what to require.";
 
 export const metadata: Metadata = {
   title,

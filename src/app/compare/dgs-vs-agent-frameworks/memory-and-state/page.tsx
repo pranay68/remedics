@@ -7,7 +7,7 @@ import { ScaleIn } from "@/components/animations/ScaleIn";
 
 const title = "Memory & State in Agent Frameworks | Aternox";
 const description =
-  "Agent “memory” is usually stored state (messages, docs, embeddings). This page explains what it is, what it isn’t, and why reviewable artifacts still matter.";
+  "Agent “memory” is usually stored state (messages, docs, embeddings). This page explains what it is, what it isn’t, and why deterministic review gates still matter.";
 
 export const metadata: Metadata = {
   title,
