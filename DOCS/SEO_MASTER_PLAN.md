@@ -163,7 +163,7 @@ We pick **primary themes** and then create:
 - 10–30 cluster pages per pillar
 
 Example pillars (draft):
-- Verified synthesis for enterprise
+- Deterministic general synthesis for enterprise work
 - Research program architecture generation
 - Safety gating and verification workflows
 - Autonomous coding for professional teams

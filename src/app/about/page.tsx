@@ -5,7 +5,7 @@ import { Page } from "@/components/site/Page";
 import { FadeIn } from "@/components/animations/FadeIn";
 
 const title = "About | Aternox";
-const description = "Aternox is the company behind DGS — Deep General Synthesis. Delaware, USA.";
+const description = "Aternox is the company behind DGS — Deterministic General Synthesis. Delaware, USA.";
 
 export const metadata: Metadata = {
   title,
@@ -56,7 +56,7 @@ export default function AboutPage() {
         <FadeIn>
           <div className="max-w-3xl space-y-8">
             <p className="text-base leading-relaxed text-white/60">
-              Aternox is the company behind DGS — Deep General Synthesis. We are building a synthesis engine for researchers, enterprises, and builders who need verified answers, not confident guesses. Aternox is incorporated in Delaware, USA.
+              Aternox is the company behind DGS — Deterministic General Synthesis. We are building a synthesis engine for researchers, enterprises, and builders who need verified answers, not confident guesses. Aternox is incorporated in Delaware, USA.
             </p>
             <p className="text-base leading-relaxed text-white/60">
               DGS was designed and built by Lennox Hayes, founder of Aternox. The FLT3 research program was DGS&apos;s first major proof of concept — a complete preclinical research architecture for a problem that has occupied major pharmaceutical R&amp;D teams for decades.

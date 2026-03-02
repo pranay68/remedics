@@ -100,7 +100,7 @@ export default function HomeClient() {
             <div className="mx-auto flex min-h-[calc(100vh-72px)] max-w-4xl flex-col items-center justify-center text-center">
               <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-gradient-to-b from-white/[0.08] to-transparent px-3 py-1.5 text-[11px] font-medium tracking-wide text-white/80 backdrop-blur-sm shadow-[0_0_15px_-5px_rgba(255,255,255,0.2)]">
                 <span className="h-1 w-1 rounded-full bg-white/60 shadow-[0_0_5px_rgba(255,255,255,0.8)]" />
-                DGS — DEEP GENERAL SYNTHESIS
+                DGS — DETERMINISTIC GENERAL SYNTHESIS
               </div>
 
               <h1 className="mt-10 text-balance font-sans text-5xl font-semibold leading-[1.1] tracking-[-0.05em] md:text-7xl lg:text-[5.5rem]">
@@ -109,7 +109,7 @@ export default function HomeClient() {
               </h1>
 
               <h2 className="mt-8 max-w-2xl text-balance font-sans text-xl font-light leading-relaxed tracking-tight text-white/40 md:text-2xl">
-                DGS produces verified, traceable output across every domain. No hallucination. No hedging. Pure synthesized logic.
+                Deterministic logic gates with a traceable reasoning chain. The synthesis can vary — the logic structure does not.
               </h2>
 
               <p className="mt-6 max-w-2xl text-balance font-sans text-[15px] font-semibold leading-relaxed tracking-tight text-white/70">

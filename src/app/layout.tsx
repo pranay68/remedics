@@ -25,11 +25,11 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "DGS — Deep General Synthesis | Aternox",
+    default: "DGS — Deterministic General Synthesis | Aternox",
     template: "%s | Aternox",
   },
   description:
-    "DGS is a synthesis engine by Aternox. Not a language model. Not prediction. Verified, traceable output across every domain.",
+    "DGS is a synthesis engine by Aternox: deterministic logic gates with traceable decision rules. The synthesis can vary; the logic structure does not.",
   metadataBase: site,
   applicationName: "DGS",
   category: "Software",
@@ -47,18 +47,18 @@ export const metadata: Metadata = {
   // Add your Search Console verification when ready.
   // verification: { google: "<token>" },
   openGraph: {
-    title: "DGS — Deep General Synthesis | Aternox",
+    title: "DGS — Deterministic General Synthesis | Aternox",
     description:
-      "DGS is a synthesis engine by Aternox. Not a language model. Not prediction. Verified, traceable output across every domain.",
+      "DGS is a synthesis engine by Aternox: deterministic logic gates with traceable decision rules. The synthesis can vary; the logic structure does not.",
     type: "website",
     siteName: "Aternox",
     url: site,
   },
   twitter: {
     card: "summary_large_image",
-    title: "DGS — Deep General Synthesis | Aternox",
+    title: "DGS — Deterministic General Synthesis | Aternox",
     description:
-      "DGS is a synthesis engine by Aternox. Not a language model. Not prediction. Verified, traceable output across every domain.",
+      "DGS is a synthesis engine by Aternox: deterministic logic gates with traceable decision rules. The synthesis can vary; the logic structure does not.",
   },
 };
 
@@ -86,7 +86,7 @@ export default function RootLayout({
   const softwareAppJsonLd = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: "DGS — Deep General Synthesis",
+    name: "DGS — Deterministic General Synthesis",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     offers: {
@@ -106,7 +106,7 @@ export default function RootLayout({
     },
     url: new URL("/dgs", site).href,
     description:
-      "DGS is a synthesis engine by Aternox. Not a language model. Not prediction. Verified, traceable output across every domain.",
+      "DGS is a synthesis engine by Aternox: deterministic logic gates with traceable decision rules. The synthesis can vary; the logic structure does not.",
   };
 
   return (

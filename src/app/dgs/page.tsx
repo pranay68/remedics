@@ -6,21 +6,21 @@ import { FadeIn } from "@/components/animations/FadeIn";
 import { ScaleIn } from "@/components/animations/ScaleIn";
 
 export const metadata: Metadata = {
-    title: "DGS — Deep General Synthesis | Aternox",
+    title: "DGS — Deterministic General Synthesis | Aternox",
     description:
-        "DGS is a synthesis engine. Not a language model. Not prediction. Verified, traceable output across every domain.",
+        "DGS is a synthesis engine with deterministic logic gates and traceable decision rules. The synthesis can vary; the logic structure does not.",
     alternates: { canonical: "/dgs" },
     openGraph: {
-        title: "DGS — Deep General Synthesis | Aternox",
+        title: "DGS — Deterministic General Synthesis | Aternox",
         description:
-            "DGS is a synthesis engine. Not a language model. Not prediction. Verified, traceable output across every domain.",
+            "DGS is a synthesis engine with deterministic logic gates and traceable decision rules. The synthesis can vary; the logic structure does not.",
         url: "/dgs",
     },
     twitter: {
         card: "summary_large_image",
-        title: "DGS — Deep General Synthesis | Aternox",
+        title: "DGS — Deterministic General Synthesis | Aternox",
         description:
-            "DGS is a synthesis engine. Not a language model. Not prediction. Verified, traceable output across every domain.",
+            "DGS is a synthesis engine with deterministic logic gates and traceable decision rules. The synthesis can vary; the logic structure does not.",
     },
 };
 
@@ -79,10 +79,10 @@ export default function DGSPage() {
     const webPageJsonLd = {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        name: "DGS — Deep General Synthesis",
+        name: "DGS — Deterministic General Synthesis",
         url: canonicalUrl,
         description:
-            "DGS is a synthesis engine. Not a language model. Not prediction. Verified, traceable output across every domain.",
+            "DGS is a synthesis engine with deterministic logic gates and traceable decision rules. The synthesis can vary; the logic structure does not.",
         isPartOf: {
             "@type": "WebSite",
             name: "Aternox",
@@ -98,9 +98,9 @@ export default function DGSPage() {
     return (
         <Shell>
             <Page
-                eyebrow="DEEP GENERAL SYNTHESIS"
-                title="DGS — Deep General Synthesis"
-                subtitle="A synthesis engine. Not a language model. Not a prediction system. A structured reasoning architecture that produces verifiable output."
+                eyebrow="DETERMINISTIC GENERAL SYNTHESIS"
+                title="DGS — Deterministic General Synthesis"
+                subtitle="A synthesis engine with deterministic logic gates. Not a language model. The synthesis can vary — the logic structure does not."
             >
                 <script
                     type="application/ld+json"
@@ -141,6 +141,7 @@ export default function DGSPage() {
                                 <ul className="space-y-3 text-sm text-muted">
                                     {[
                                         "Synthesizes through structured logic gates",
+                                        "Logic gates are deterministic; synthesis can vary",
                                         "Outputs are structured and reviewable",
                                         "Every conclusion is traceable",
                                         "Uncertain outputs are flagged, not hidden",

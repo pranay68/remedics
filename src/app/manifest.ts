@@ -4,7 +4,8 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "DGS | Aternox",
     short_name: "DGS",
-    description: "DGS is Aternox's synthesis engine — verified, traceable output across every domain.",
+    description:
+      "DGS is Aternox's deterministic logic-gate synthesis engine with traceable decision rules. Synthesis can vary; logic structure does not.",
     start_url: "/",
     display: "standalone",
     background_color: "#000000",

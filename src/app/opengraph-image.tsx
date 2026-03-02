@@ -37,14 +37,14 @@ export default function OpenGraphImage() {
 
         <div style={{ display: "flex", flexDirection: "column", gap: 18, maxWidth: 980 }}>
           <div style={{ fontSize: 22, letterSpacing: 2, color: "rgba(255,255,255,0.7)", textTransform: "uppercase" }}>
-            DGS — Deep General Synthesis | Aternox
+            DGS — Deterministic General Synthesis | Aternox
           </div>
           <div style={{ fontSize: 82, fontWeight: 700, letterSpacing: -3, lineHeight: 1.02 }}>
             Synthesis.
             <span style={{ color: "rgba(255,255,255,0.86)" }}> Not prediction.</span>
           </div>
           <div style={{ fontSize: 28, color: "rgba(255,255,255,0.6)", lineHeight: 1.35 }}>
-            Verified, traceable output across every domain. No hallucination. No hedging.
+            Deterministic logic gates with traceable decision rules. Synthesis can vary; logic structure does not.
           </div>
         </div>
       </div>

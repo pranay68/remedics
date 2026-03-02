@@ -37,13 +37,13 @@ export default function TwitterImage() {
 
         <div style={{ display: "flex", flexDirection: "column", gap: 18, maxWidth: 980 }}>
           <div style={{ fontSize: 22, letterSpacing: 2, color: "rgba(255,255,255,0.7)", textTransform: "uppercase" }}>
-            DGS — Deep General Synthesis | Aternox
+            DGS — Deterministic General Synthesis | Aternox
           </div>
           <div style={{ fontSize: 78, fontWeight: 700, letterSpacing: -3, lineHeight: 1.02 }}>
             Synthesis. Not prediction.
           </div>
           <div style={{ fontSize: 28, color: "rgba(255,255,255,0.6)", lineHeight: 1.35 }}>
-            Verified synthesis engine by Aternox.
+            Deterministic logic gates with traceable decision rules.
           </div>
         </div>
       </div>

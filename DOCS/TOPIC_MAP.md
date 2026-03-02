@@ -21,7 +21,7 @@ Rules
 
 ---
 
-## Theme 2 — Verified Synthesis for Professional Work
+## Theme 2 — Deterministic General Synthesis for Professional Work
 
 **Pillar**
 - `/learn/verified-synthesis`

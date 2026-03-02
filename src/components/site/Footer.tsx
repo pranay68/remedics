@@ -13,7 +13,7 @@ export function Footer() {
         <div className="text-sm">
           <div className="text-display text-sm font-medium tracking-[-0.01em] text-white/90">Aternox</div>
           <div className="mt-2 text-[13px] leading-relaxed text-white/50">
-            Deep General Synthesis
+            Deterministic General Synthesis
           </div>
           <div className="mt-2 text-[11px] font-mono text-white/40">
             Aternox LLC, Delaware, USA

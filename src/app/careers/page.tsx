@@ -5,7 +5,7 @@ import { Page } from "@/components/site/Page";
 
 const title = "Careers | Aternox";
 const description =
-  "Aternox builds DGS — Deep General Synthesis — for researchers, enterprises, and builders. We hire builders who ship.";
+  "Aternox builds DGS — Deterministic General Synthesis — for researchers, enterprises, and builders. We hire builders who ship.";
 
 export const metadata: Metadata = {
   title,
@@ -61,7 +61,7 @@ export default function CareersPage() {
           </>
         }
         subtitle={
-          "Aternox is the company behind DGS — Deep General Synthesis — for researchers, enterprises, and builders. We hire builders who ship."
+          "Aternox is the company behind DGS — Deterministic General Synthesis — for researchers, enterprises, and builders. We hire builders who ship."
         }
       >
         <script
