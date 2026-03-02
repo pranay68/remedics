@@ -7,19 +7,19 @@ export async function POST(request: NextRequest) {
     try {
         const db = getDb();
         const body = await request.json();
-        const { email, modes, userType, specialIdentity } = body;
+        const { email, problemToSolve } = body;
 
         // Validation
-        if (!email || !userType) {
+        if (!email) {
             return NextResponse.json(
                 { error: "Missing required fields" },
                 { status: 400 }
             );
         }
 
-        if (userType === "Special" && !specialIdentity) {
+        if (typeof problemToSolve === "string" && problemToSolve.length > 10000) {
             return NextResponse.json(
-                { error: "Special type requires identity" },
+                { error: "Problem description is too long" },
                 { status: 400 }
             );
         }
@@ -27,9 +27,7 @@ export async function POST(request: NextRequest) {
         // Add to Firestore
         const docRef = await db.collection("waitlist").add({
             email: email.trim(),
-            modes: modes || [],
-            userType,
-            specialIdentity: userType === "Special" ? specialIdentity?.trim() : null,
+            problemToSolve: typeof problemToSolve === "string" ? problemToSolve.trim() : "",
             timestamp: new Date(),
             status: "pending",
         });
