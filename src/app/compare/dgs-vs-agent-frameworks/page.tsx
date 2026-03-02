@@ -116,6 +116,24 @@ export default function DgsVsAgentFrameworksPage() {
               <Link href="/compare/dgs-vs-llms" className="text-sm text-foreground underline decoration-muted underline-offset-4 hover:decoration-foreground">
                 DGS vs LLMs (not a chatbot)
               </Link>
+              <Link href="/compare/dgs-vs-agent-frameworks/tool-calling" className="text-sm text-foreground underline decoration-muted underline-offset-4 hover:decoration-foreground">
+                Tool calling
+              </Link>
+              <Link href="/compare/dgs-vs-agent-frameworks/memory-and-state" className="text-sm text-foreground underline decoration-muted underline-offset-4 hover:decoration-foreground">
+                Memory & state
+              </Link>
+              <Link href="/compare/dgs-vs-agent-frameworks/observability" className="text-sm text-foreground underline decoration-muted underline-offset-4 hover:decoration-foreground">
+                Observability
+              </Link>
+              <Link href="/compare/dgs-vs-agent-frameworks/evaluation" className="text-sm text-foreground underline decoration-muted underline-offset-4 hover:decoration-foreground">
+                Evaluating agents
+              </Link>
+              <Link href="/compare/dgs-vs-agent-frameworks/safety-guardrails" className="text-sm text-foreground underline decoration-muted underline-offset-4 hover:decoration-foreground">
+                Safety guardrails
+              </Link>
+              <Link href="/compare/dgs-vs-agent-frameworks/human-in-the-loop" className="text-sm text-foreground underline decoration-muted underline-offset-4 hover:decoration-foreground">
+                Human-in-the-loop
+              </Link>
               <Link href="/learn/governed-autonomy" className="text-sm text-foreground underline decoration-muted underline-offset-4 hover:decoration-foreground">
                 Governed autonomy (pillar)
               </Link>
