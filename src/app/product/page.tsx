@@ -1,8 +1,21 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Shell } from "@/components/site/Shell";
 import { Page } from "@/components/site/Page";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { ScaleIn } from "@/components/animations/ScaleIn";
+
+const title = "Product | DGS by Aternox";
+const description =
+  "Structured synthesis that verifies every output. Traceable. Falsifiable. Built for real teams.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: "/product" },
+  openGraph: { title, description, url: "/product" },
+  twitter: { title, description, card: "summary_large_image" },
+};
 
 function Feature({ title, desc, delay = 0 }: { title: string; desc: string; delay?: number }) {
   return (
@@ -14,6 +27,29 @@ function Feature({ title, desc, delay = 0 }: { title: string; desc: string; dela
 }
 
 export default function ProductPage() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aternox.com";
+  const site = new URL(siteUrl);
+  const canonicalUrl = new URL("/product", site).href;
+
+  const breadCrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: new URL("/", site).href },
+      { "@type": "ListItem", position: 2, name: "Product", item: canonicalUrl },
+    ],
+  };
+
+  const webPageJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Product",
+    url: canonicalUrl,
+    description,
+    isPartOf: { "@type": "WebSite", name: "Aternox", url: site.href },
+    publisher: { "@type": "Organization", name: "Aternox", url: site.href },
+  };
+
   return (
     <Shell>
       <Page
@@ -24,13 +60,21 @@ export default function ProductPage() {
         }
         title={
           <>
-            Deterministic synthesis that <span className="text-gradient text-shimmer">verifies</span> every output.
+            Structured synthesis that <span className="text-gradient text-shimmer">verifies</span> every output.
           </>
         }
         subtitle={
-          "DGS produces deterministic, verified output through structured reasoning gates. Traceable. Falsifiable. Consistent."
+          "DGS produces verified output through structured reasoning gates. Traceable. Falsifiable. Built for real teams."
         }
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadCrumbJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
+        />
         <div className="grid gap-8 md:grid-cols-12">
           <div className="md:col-span-7">
             <FadeIn>

@@ -1,10 +1,47 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Shell } from "@/components/site/Shell";
 import { Page } from "@/components/site/Page";
 
 const PDF_PATH = "/downloads/flt3-summary.pdf";
 
+const title = "FLT3 Program Summary (PDF) | Aternox";
+const description =
+  "View the one-page FLT3 program summary in your browser, or download it as a PDF.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: "/view/flt3-program-summary" },
+  openGraph: { title, description, url: "/view/flt3-program-summary" },
+  twitter: { title, description, card: "summary_large_image" },
+};
+
 export default function FLT3ProgramSummaryViewPage() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aternox.com";
+  const site = new URL(siteUrl);
+  const canonicalUrl = new URL("/view/flt3-program-summary", site).href;
+
+  const breadCrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: new URL("/", site).href },
+      { "@type": "ListItem", position: 2, name: "Research", item: new URL("/research", site).href },
+      { "@type": "ListItem", position: 3, name: "FLT3 Program Summary", item: canonicalUrl },
+    ],
+  };
+
+  const webPageJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "FLT3 Program Summary (PDF)",
+    url: canonicalUrl,
+    description,
+    isPartOf: { "@type": "WebSite", name: "Aternox", url: site.href },
+    publisher: { "@type": "Organization", name: "Aternox", url: site.href },
+  };
+
   return (
     <Shell>
       <Page
@@ -16,6 +53,14 @@ export default function FLT3ProgramSummaryViewPage() {
         }
         subtitle="View the one-page public summary in-browser, or download it as a PDF."
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadCrumbJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
+        />
         <div className="glass rounded-3xl border border-border/70 p-5 glow md:p-8">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <div className="text-xs font-mono font-semibold uppercase tracking-wider text-muted">

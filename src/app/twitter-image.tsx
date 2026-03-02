@@ -43,7 +43,7 @@ export default function TwitterImage() {
             Synthesis. Not prediction.
           </div>
           <div style={{ fontSize: 28, color: "rgba(255,255,255,0.6)", lineHeight: 1.35 }}>
-            Deterministic synthesis engine by Aternox.
+            Verified synthesis engine by Aternox.
           </div>
         </div>
       </div>

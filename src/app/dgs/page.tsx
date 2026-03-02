@@ -8,7 +8,20 @@ import { ScaleIn } from "@/components/animations/ScaleIn";
 export const metadata: Metadata = {
     title: "DGS — Deep General Synthesis | Aternox",
     description:
-        "DGS is a deterministic synthesis engine. Not a language model. Not prediction. Verifiable, traceable output across every domain.",
+        "DGS is a synthesis engine. Not a language model. Not prediction. Verified, traceable output across every domain.",
+    alternates: { canonical: "/dgs" },
+    openGraph: {
+        title: "DGS — Deep General Synthesis | Aternox",
+        description:
+            "DGS is a synthesis engine. Not a language model. Not prediction. Verified, traceable output across every domain.",
+        url: "/dgs",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "DGS — Deep General Synthesis | Aternox",
+        description:
+            "DGS is a synthesis engine. Not a language model. Not prediction. Verified, traceable output across every domain.",
+    },
 };
 
 function ModeCard({
@@ -40,13 +53,63 @@ function ModeCard({
 }
 
 export default function DGSPage() {
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aternox.com";
+    const site = new URL(siteUrl);
+    const canonicalUrl = new URL("/dgs", site).href;
+
+    const breadCrumbJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+            {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: new URL("/", site).href,
+            },
+            {
+                "@type": "ListItem",
+                position: 2,
+                name: "DGS",
+                item: canonicalUrl,
+            },
+        ],
+    };
+
+    const webPageJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: "DGS — Deep General Synthesis",
+        url: canonicalUrl,
+        description:
+            "DGS is a synthesis engine. Not a language model. Not prediction. Verified, traceable output across every domain.",
+        isPartOf: {
+            "@type": "WebSite",
+            name: "Aternox",
+            url: site.href,
+        },
+        publisher: {
+            "@type": "Organization",
+            name: "Aternox",
+            url: site.href,
+        },
+    };
+
     return (
         <Shell>
             <Page
                 eyebrow="DEEP GENERAL SYNTHESIS"
                 title="DGS — Deep General Synthesis"
-                subtitle="A deterministic synthesis engine. Not a language model. Not a prediction system. A structured reasoning architecture that produces verifiable output."
+                subtitle="A synthesis engine. Not a language model. Not a prediction system. A structured reasoning architecture that produces verifiable output."
             >
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(breadCrumbJsonLd) }}
+                />
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
+                />
                 {/* HOW DGS DIFFERS */}
                 <FadeIn>
                     <div className="glass rounded-3xl border border-gradient p-8 glow-intense scan-line">
@@ -78,7 +141,7 @@ export default function DGSPage() {
                                 <ul className="space-y-3 text-sm text-muted">
                                     {[
                                         "Synthesizes through structured logic gates",
-                                        "Same input produces same output — always",
+                                        "Outputs are structured and reviewable",
                                         "Every conclusion is traceable",
                                         "Uncertain outputs are flagged, not hidden",
                                         "Mode-specific depth — right tool for right problem",
@@ -104,8 +167,8 @@ export default function DGSPage() {
                             <ModeCard
                                 delay={0.1}
                                 label="FAST MODE"
-                                headline="Complex everyday tasks. Deterministic output."
-                                body="Fast Mode is the entry point. It handles problems that frontier models fumble — complex reasoning tasks that require structured thinking rather than fluent generation. Faster than GPT-4. No hallucination. Same output on every run."
+                                headline="Complex everyday tasks. Verified output."
+                                body="Fast Mode is the entry point. It handles problems that frontier models fumble — complex reasoning tasks that require structured thinking rather than fluent generation. Faster than GPT-4. No hallucination. Consistent structure and traceability."
                                 access="PUBLIC — Coming soon"
                             />
                             <ModeCard

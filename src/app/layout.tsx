@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     template: "%s | Aternox",
   },
   description:
-    "DGS is a deterministic synthesis engine by Aternox. Not a language model. Not prediction. Verifiable, traceable output across every domain.",
+    "DGS is a synthesis engine by Aternox. Not a language model. Not prediction. Verified, traceable output across every domain.",
   metadataBase: site,
   applicationName: "DGS",
   category: "Software",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "DGS — Deep General Synthesis | Aternox",
     description:
-      "DGS is a deterministic synthesis engine by Aternox. Not a language model. Not prediction. Verifiable, traceable output across every domain.",
+      "DGS is a synthesis engine by Aternox. Not a language model. Not prediction. Verified, traceable output across every domain.",
     type: "website",
     siteName: "Aternox",
     url: site,
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "DGS — Deep General Synthesis | Aternox",
     description:
-      "DGS is a deterministic synthesis engine by Aternox. Not a language model. Not prediction. Verifiable, traceable output across every domain.",
+      "DGS is a synthesis engine by Aternox. Not a language model. Not prediction. Verified, traceable output across every domain.",
   },
 };
 
@@ -106,7 +106,7 @@ export default function RootLayout({
     },
     url: new URL("/dgs", site).href,
     description:
-      "DGS is a deterministic synthesis engine by Aternox. Not a language model. Not prediction. Verifiable, traceable output across every domain.",
+      "DGS is a synthesis engine by Aternox. Not a language model. Not prediction. Verified, traceable output across every domain.",
   };
 
   return (

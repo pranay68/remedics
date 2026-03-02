@@ -1,7 +1,42 @@
+import type { Metadata } from "next";
 import { Shell } from "@/components/site/Shell";
 import { Page } from "@/components/site/Page";
 
+const title = "Terms of Service | Aternox";
+const description = "Terms of Service for Aternox LLC.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: "/terms" },
+  openGraph: { title, description, url: "/terms" },
+  twitter: { title, description, card: "summary_large_image" },
+};
+
 export default function TermsPage() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aternox.com";
+  const site = new URL(siteUrl);
+  const canonicalUrl = new URL("/terms", site).href;
+
+  const breadCrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: new URL("/", site).href },
+      { "@type": "ListItem", position: 2, name: "Terms", item: canonicalUrl },
+    ],
+  };
+
+  const webPageJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Terms of Service",
+    url: canonicalUrl,
+    description,
+    isPartOf: { "@type": "WebSite", name: "Aternox", url: site.href },
+    publisher: { "@type": "Organization", name: "Aternox", url: site.href },
+  };
+
   return (
     <Shell>
       <Page
@@ -15,6 +50,14 @@ export default function TermsPage() {
           "Last updated: January 2026"
         }
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadCrumbJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
+        />
         <div className="prose prose-invert max-w-none">
           <p className="text-muted">
             Welcome to Aternox. By accessing or using our website, products, and services, you agree to be bound by these Terms of Service.

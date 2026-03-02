@@ -4,19 +4,47 @@ import { Shell } from "@/components/site/Shell";
 import { Page } from "@/components/site/Page";
 import { FadeIn } from "@/components/animations/FadeIn";
 
-const title = "Deterministic Synthesis Software for Enterprise | DGS by Aternox";
+const title = "Synthesis Software for Enterprise | DGS by Aternox";
 const description =
-  "DGS is a deterministic synthesis engine built for enterprise teams — verifiable, traceable output across every domain.";
+  "DGS is a synthesis engine built for enterprise teams — verifiable, traceable output across every domain.";
 
 export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "/autonomous-coding-software" },
-  openGraph: { title, description },
+  openGraph: { title, description, url: "/autonomous-coding-software" },
   twitter: { title, description, card: "summary_large_image" },
 };
 
 export default function AutonomousCodingSoftwarePage() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aternox.com";
+  const site = new URL(siteUrl);
+  const canonicalUrl = new URL("/autonomous-coding-software", site).href;
+
+  const breadCrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: new URL("/", site).href },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Autonomous Coding Software",
+        item: canonicalUrl,
+      },
+    ],
+  };
+
+  const webPageJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: title,
+    url: canonicalUrl,
+    description,
+    isPartOf: { "@type": "WebSite", name: "Aternox", url: site.href },
+    publisher: { "@type": "Organization", name: "Aternox", url: site.href },
+  };
+
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -34,7 +62,7 @@ export default function AutonomousCodingSoftwarePage() {
         name: "Is DGS a chatbot?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "No. DGS is a deterministic synthesis engine, not a chatbot. It produces structured, verifiable output through logic gates.",
+          text: "No. DGS is a synthesis engine, not a chatbot. It produces structured, verifiable output through logic gates.",
         },
       },
       {
@@ -58,9 +86,17 @@ export default function AutonomousCodingSoftwarePage() {
           </>
         }
         subtitle={
-          "DGS is Aternox's deterministic synthesis engine — built for teams that need verified answers without guessing."
+          "DGS is Aternox's synthesis engine — built for teams that need verified answers without guessing."
         }
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadCrumbJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
@@ -95,7 +131,7 @@ export default function AutonomousCodingSoftwarePage() {
               DGS is built for enterprise, not demos.
             </h2>
             <p className="mt-4 max-w-3xl text-base text-muted md:text-lg">
-              If you need deterministic, verifiable output at enterprise scale — structured reasoning, traceable logic, and consistent results every run.
+              If you need verified, traceable output at enterprise scale — structured reasoning, logic traces, and reviewable results.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
@@ -128,7 +164,7 @@ export default function AutonomousCodingSoftwarePage() {
               <div>
                 <h3 className="text-lg font-semibold">How is DGS different?</h3>
                 <p className="mt-2 text-sm text-muted">
-                  DGS synthesizes through structured logic gates. Same input, same output — every time. Every conclusion is traceable and falsifiable.
+                  DGS synthesizes through structured logic gates. Outputs are traceable and falsifiable, with a reviewable logic trace.
                 </p>
               </div>
               <div>

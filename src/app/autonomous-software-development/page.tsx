@@ -4,19 +4,33 @@ import { Shell } from "@/components/site/Shell";
 import { Page } from "@/components/site/Page";
 import { FadeIn } from "@/components/animations/FadeIn";
 
-const title = "Deterministic Synthesis for Enterprise | DGS by Aternox";
+const title = "Synthesis for Enterprise | DGS by Aternox";
 const description =
-  "DGS is a deterministic synthesis engine by Aternox — verifiable, traceable output across every domain.";
+  "DGS is a synthesis engine by Aternox — verifiable, traceable output across every domain.";
 
 export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "/autonomous-software-development" },
-  openGraph: { title, description },
+  openGraph: { title, description, url: "/autonomous-software-development" },
   twitter: { title, description, card: "summary_large_image" },
 };
 
 export default function AutonomousSoftwareDevelopmentPage() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aternox.com";
+  const site = new URL(siteUrl);
+  const canonicalUrl = new URL("/autonomous-software-development", site).href;
+
+  const webPageJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: title,
+    url: canonicalUrl,
+    description,
+    isPartOf: { "@type": "WebSite", name: "Aternox", url: site.href },
+    publisher: { "@type": "Organization", name: "Aternox", url: site.href },
+  };
+
   const breadCrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -25,13 +39,13 @@ export default function AutonomousSoftwareDevelopmentPage() {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://aternox.com/",
+        item: new URL("/", site).href,
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Autonomous Software Development",
-        item: "https://aternox.com/autonomous-software-development",
+        item: canonicalUrl,
       },
     ],
   };
@@ -46,12 +60,16 @@ export default function AutonomousSoftwareDevelopmentPage() {
           </>
         }
         subtitle={
-          "DGS is built for teams that need verified, deterministic output — structured, traceable, and falsifiable."
+          "DGS is built for teams that need verified, traceable output — structured, reviewable, and falsifiable."
         }
       >
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(breadCrumbJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
         />
 
         <FadeIn>
@@ -76,7 +94,7 @@ export default function AutonomousSoftwareDevelopmentPage() {
                 <div className="text-xs font-mono font-semibold uppercase tracking-wider text-muted">Built by</div>
                 <div className="mt-3 text-2xl font-semibold">Aternox</div>
                 <p className="mt-3 text-sm leading-6 text-muted">
-                  DGS is Aternox's deterministic synthesis engine — designed for enterprise workflows that require verified, structured output.
+                  DGS is Aternox's synthesis engine — designed for enterprise workflows that require verified, structured output.
                 </p>
                 <div className="mt-8 flex flex-col gap-3">
                   <Link

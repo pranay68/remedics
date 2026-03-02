@@ -1,7 +1,20 @@
+import type { Metadata } from "next";
 import { Shell } from "@/components/site/Shell";
 import { Page } from "@/components/site/Page";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { ScaleIn } from "@/components/animations/ScaleIn";
+
+const title = "Safety | Aternox";
+const description =
+  "Privacy-first defaults and enterprise-ready handling. We’re explicit about data handling and design for review.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: "/safety" },
+  openGraph: { title, description, url: "/safety" },
+  twitter: { title, description, card: "summary_large_image" },
+};
 
 function Row({ title, desc, delay = 0 }: { title: string; desc: string; delay?: number }) {
   return (
@@ -13,6 +26,29 @@ function Row({ title, desc, delay = 0 }: { title: string; desc: string; delay?: 
 }
 
 export default function SafetyPage() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aternox.com";
+  const site = new URL(siteUrl);
+  const canonicalUrl = new URL("/safety", site).href;
+
+  const breadCrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: new URL("/", site).href },
+      { "@type": "ListItem", position: 2, name: "Safety", item: canonicalUrl },
+    ],
+  };
+
+  const webPageJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Safety",
+    url: canonicalUrl,
+    description,
+    isPartOf: { "@type": "WebSite", name: "Aternox", url: site.href },
+    publisher: { "@type": "Organization", name: "Aternox", url: site.href },
+  };
+
   return (
     <Shell>
       <Page
@@ -26,6 +62,14 @@ export default function SafetyPage() {
           "DGS is built by Aternox with privacy-first defaults. We're explicit about data handling, and we design for enterprise review."
         }
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadCrumbJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
+        />
         <FadeIn>
           <div className="grid gap-4 md:grid-cols-2">
             <Row

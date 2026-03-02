@@ -1,8 +1,44 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Shell } from "@/components/site/Shell";
 import { Page } from "@/components/site/Page";
 
+const title = "Download | DGS by Aternox";
+const description =
+  "DGS is in private development. Join the waitlist and we’ll reach out when access opens.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: "/download" },
+  openGraph: { title, description, url: "/download" },
+  twitter: { title, description, card: "summary_large_image" },
+};
+
 export default function DownloadPage() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aternox.com";
+  const site = new URL(siteUrl);
+  const canonicalUrl = new URL("/download", site).href;
+
+  const breadCrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: new URL("/", site).href },
+      { "@type": "ListItem", position: 2, name: "Download", item: canonicalUrl },
+    ],
+  };
+
+  const webPageJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Download",
+    url: canonicalUrl,
+    description,
+    isPartOf: { "@type": "WebSite", name: "Aternox", url: site.href },
+    publisher: { "@type": "Organization", name: "Aternox", url: site.href },
+  };
+
   return (
     <Shell>
       <Page
@@ -14,6 +50,14 @@ export default function DownloadPage() {
         }
         subtitle="DGS is in private development. Join the waitlist and we'll reach out when access opens."
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadCrumbJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
+        />
         <div className="glass rounded-3xl border border-border/70 p-8 glow">
           <div className="text-xs font-mono font-semibold uppercase tracking-wider text-muted">
             Status

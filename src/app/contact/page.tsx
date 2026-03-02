@@ -9,9 +9,46 @@ export const metadata: Metadata = {
   title: "Contact | Aternox",
   description:
     "Research collaboration, enterprise access, or general inquiries. Get in touch with Aternox.",
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact | Aternox",
+    description:
+      "Research collaboration, enterprise access, or general inquiries. Get in touch with Aternox.",
+    url: "/contact",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact | Aternox",
+    description:
+      "Research collaboration, enterprise access, or general inquiries. Get in touch with Aternox.",
+  },
 };
 
 export default function ContactPage() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aternox.com";
+  const site = new URL(siteUrl);
+  const canonicalUrl = new URL("/contact", site).href;
+
+  const breadCrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: new URL("/", site).href },
+      { "@type": "ListItem", position: 2, name: "Contact", item: canonicalUrl },
+    ],
+  };
+
+  const webPageJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Contact",
+    url: canonicalUrl,
+    description:
+      "Research collaboration, enterprise access, or general inquiries. Get in touch with Aternox.",
+    isPartOf: { "@type": "WebSite", name: "Aternox", url: site.href },
+    publisher: { "@type": "Organization", name: "Aternox", url: site.href },
+  };
+
   return (
     <Shell>
       <Page
@@ -19,6 +56,14 @@ export default function ContactPage() {
         title="Get in touch."
         subtitle="Two routes. Choose the one that fits."
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadCrumbJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
+        />
         <div className="grid gap-12 md:grid-cols-2">
           {/* ROUTE 1 */}
           <FadeIn>

@@ -1,8 +1,21 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Shell } from "@/components/site/Shell";
 import { Page } from "@/components/site/Page";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { ScaleIn } from "@/components/animations/ScaleIn";
+
+const title = "Pricing | DGS by Aternox";
+const description =
+  "Pilot, team, and enterprise tiers. Start with evaluation and scale into production deployments.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: "/pricing" },
+  openGraph: { title, description, url: "/pricing" },
+  twitter: { title, description, card: "summary_large_image" },
+};
 
 function Tier({
   name,
@@ -32,6 +45,29 @@ function Tier({
 }
 
 export default function PricingPage() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aternox.com";
+  const site = new URL(siteUrl);
+  const canonicalUrl = new URL("/pricing", site).href;
+
+  const breadCrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: new URL("/", site).href },
+      { "@type": "ListItem", position: 2, name: "Pricing", item: canonicalUrl },
+    ],
+  };
+
+  const webPageJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Pricing",
+    url: canonicalUrl,
+    description,
+    isPartOf: { "@type": "WebSite", name: "Aternox", url: site.href },
+    publisher: { "@type": "Organization", name: "Aternox", url: site.href },
+  };
+
   return (
     <Shell>
       <Page
@@ -45,6 +81,14 @@ export default function PricingPage() {
           "Start with a pilot. Upgrade as you move from evaluation to production deployments."
         }
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadCrumbJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
+        />
         <FadeIn>
           <div className="grid gap-5 md:grid-cols-3">
             <Tier

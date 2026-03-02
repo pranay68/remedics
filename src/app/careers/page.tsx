@@ -1,6 +1,19 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Shell } from "@/components/site/Shell";
 import { Page } from "@/components/site/Page";
+
+const title = "Careers | Aternox";
+const description =
+  "Aternox builds DGS — Deep General Synthesis — for researchers, enterprises, and builders. We hire builders who ship.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: "/careers" },
+  openGraph: { title, description, url: "/careers" },
+  twitter: { title, description, card: "summary_large_image" },
+};
 
 function Job({ title, loc }: { title: string; loc: string }) {
   return (
@@ -15,6 +28,29 @@ function Job({ title, loc }: { title: string; loc: string }) {
 }
 
 export default function CareersPage() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aternox.com";
+  const site = new URL(siteUrl);
+  const canonicalUrl = new URL("/careers", site).href;
+
+  const breadCrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: new URL("/", site).href },
+      { "@type": "ListItem", position: 2, name: "Careers", item: canonicalUrl },
+    ],
+  };
+
+  const webPageJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Careers",
+    url: canonicalUrl,
+    description,
+    isPartOf: { "@type": "WebSite", name: "Aternox", url: site.href },
+    publisher: { "@type": "Organization", name: "Aternox", url: site.href },
+  };
+
   return (
     <Shell>
       <Page
@@ -25,9 +61,17 @@ export default function CareersPage() {
           </>
         }
         subtitle={
-          "Aternox is the company behind DGS — a deterministic synthesis engine for researchers, enterprises, and builders. We hire builders who ship."
+          "Aternox is the company behind DGS — Deep General Synthesis — for researchers, enterprises, and builders. We hire builders who ship."
         }
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadCrumbJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
+        />
         <div className="grid gap-10 md:grid-cols-12">
           <div className="md:col-span-4">
             <div className="text-sm font-semibold">Open roles</div>

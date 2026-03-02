@@ -44,7 +44,7 @@ export default function OpenGraphImage() {
             <span style={{ color: "rgba(255,255,255,0.86)" }}> Not prediction.</span>
           </div>
           <div style={{ fontSize: 28, color: "rgba(255,255,255,0.6)", lineHeight: 1.35 }}>
-            Deterministic, verified output across every domain. No hallucination. No hedging.
+            Verified, traceable output across every domain. No hallucination. No hedging.
           </div>
         </div>
       </div>
