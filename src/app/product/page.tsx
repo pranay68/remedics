@@ -7,7 +7,7 @@ import { ScaleIn } from "@/components/animations/ScaleIn";
 
 const title = "Product | DGS by Aternox";
 const description =
-  "Structured synthesis that verifies every output. Traceable. Falsifiable. Built for real teams.";
+  "DGS Core turns complex work into reviewer-ready artifacts. Vertical engines (LexDGS, FinDGS, ArchDGS) are coming as the platform expands across domains.";
 
 export const metadata: Metadata = {
   title,
@@ -60,12 +60,10 @@ export default function ProductPage() {
         }
         title={
           <>
-            Structured synthesis that <span className="text-gradient text-shimmer">verifies</span> every output.
+            DGS <span className="text-gradient text-shimmer">Core</span> and the vertical engines.
           </>
         }
-        subtitle={
-          "DGS produces verified output through structured reasoning gates. Traceable. Falsifiable. Built for real teams."
-        }
+        subtitle="One core engine, then sector engines. Built for professional artifacts teams can review, govern, and adopt."
       >
         <script
           type="application/ld+json"
@@ -79,27 +77,18 @@ export default function ProductPage() {
           <div className="md:col-span-7">
             <FadeIn>
               <div className="glass rounded-3xl border border-gradient p-8 glow-intense scan-line">
-                <div className="text-xs font-mono font-semibold uppercase tracking-wider text-brand-2">
-                  Workflow
-                </div>
-                <div className="mt-3 font-sans text-2xl font-semibold tracking-[-0.04em] md:text-3xl">
-                  Spec → Scope → Implementation → Verification
-                </div>
+                <div className="text-xs font-mono font-semibold uppercase tracking-wider text-brand-2">What you get</div>
+                <div className="mt-3 font-sans text-2xl font-semibold tracking-[-0.04em] md:text-3xl">Reviewer-ready artifacts.</div>
                 <p className="mt-3 text-base text-muted md:text-lg">
-                  DGS is built for outcomes: structured, verifiable output that can be traced and falsified.
-                  You get verified answers without guessing.
+                  DGS Core is designed to produce outputs that teams can review and adopt: structured artifacts with explicit scope, assumptions, and decision checkpoints.
+                  This page describes outcomes and product direction — not internal mechanics.
                 </p>
+
                 <div className="mt-8 grid gap-3">
-                  {[
-                    { label: "Spec-to-System Planning", tag: "decomposition" },
-                    { label: "Coordinated Implementation", tag: "multi-agent" },
-                    { label: "Tests + Fix Loops", tag: "verification" },
-                    { label: "Enterprise Guardrails", tag: "governance" },
-                  ].map((item, i) => (
-                    <ScaleIn key={item.label} delay={0.1 * (i + 1)}>
-                      <div className="group flex items-center justify-between rounded-2xl border border-border/70 bg-background/40 px-5 py-4 transition-all duration-300 hover:scale-[1.02] hover:border-brand-2/50 hover:bg-background/60">
-                        <div className="text-base font-medium">{item.label}</div>
-                        <div className="text-mono text-xs text-brand-2">{item.tag}</div>
+                  {["Specs and plans", "Checklists and tables", "Policies and research artifacts", "Implementation-ready diffs"].map((label, i) => (
+                    <ScaleIn key={label} delay={0.08 * (i + 1)}>
+                      <div className="rounded-2xl border border-border/70 bg-background/40 px-5 py-4">
+                        <div className="text-base font-medium">{label}</div>
                       </div>
                     </ScaleIn>
                   ))}
@@ -111,23 +100,32 @@ export default function ProductPage() {
           <div className="md:col-span-5">
             <FadeIn delay={0.2}>
               <div className="glass rounded-3xl border border-border/70 p-8 glow">
-                <div className="text-xs font-mono font-semibold uppercase tracking-wider text-muted">
-                  Experience
-                </div>
+                <div className="text-xs font-mono font-semibold uppercase tracking-wider text-muted">Roadmap</div>
                 <h2 className="mt-3 font-sans text-2xl font-semibold tracking-[-0.04em] md:text-3xl">
-                  Feels like magic.{" "}
-                  <span className="text-shimmer">Works like engineering.</span>
+                  Core first. <span className="text-shimmer">Then vertical engines.</span>
                 </h2>
                 <p className="mt-4 text-base text-muted">
-                  Output is designed for real teams: readable diffs, predictable structure, and governance-friendly
-                  workflow.
+                  DGS Core is the foundation. Over time, it will split into sector engines tailored to domain workflows and artifacts.
                 </p>
-                <div className="mt-8 flex gap-3">
+                <div className="mt-6 grid gap-3">
+                  {[
+                    { name: "LexDGS", desc: "Legal workflows" },
+                    { name: "FinDGS", desc: "Finance workflows" },
+                    { name: "ArchDGS", desc: "Architecture + engineering workflows" },
+                  ].map((v) => (
+                    <div key={v.name} className="flex items-center justify-between rounded-2xl border border-border/70 bg-background/40 px-5 py-4">
+                      <div className="text-base font-medium">{v.name}</div>
+                      <div className="text-sm text-muted">{v.desc}</div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-8 flex flex-wrap gap-3">
                   <Link
-                    href="/safety"
+                    href="/dgs"
                     className="btn-secondary inline-flex h-12 items-center justify-center rounded-full px-5 text-sm font-semibold transition-all hover:scale-105"
                   >
-                    Security
+                    What is DGS?
                   </Link>
                   <Link
                     href="/waitlist"
@@ -145,19 +143,37 @@ export default function ProductPage() {
           <div className="mt-12 grid gap-4 md:grid-cols-3">
             <Feature
               delay={0.1}
-              title="Consistency"
-              desc="Architecture, naming, and conventions stay coherent across the codebase — not just a single file."
+              title="Artifacts, not chat"
+              desc="DGS is oriented around deliverables teams can store, version, review, and approve — not conversational output."
             />
             <Feature
               delay={0.2}
-              title="Enterprise-Grade Outputs"
-              desc="From services to web apps: strong defaults, tests, and maintainable code that your team can own."
+              title="Governance-ready"
+              desc="Outputs are designed to fit real review workflows: scoping, approvals, and clear accountability for adoption."
             />
             <Feature
               delay={0.3}
-              title="Verification Loops"
-              desc="DGS synthesizes through structured logic gates, iterating until each output meets the required evidentiary standard."
+              title="Vertical expansion"
+              desc="DGS Core will expand into sector engines (LexDGS, FinDGS, ArchDGS) as domain-specific artifact standards mature."
             />
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={0.55}>
+          <div className="mt-12 glass rounded-3xl border border-border/70 p-10 glow">
+            <div className="text-xs font-mono font-semibold uppercase tracking-wider text-muted">Security</div>
+            <h2 className="mt-3 font-sans text-2xl font-semibold tracking-[-0.04em] md:text-3xl">High-stakes by default</h2>
+            <p className="mt-4 max-w-3xl text-base text-muted md:text-lg">
+              If you’re evaluating DGS for enterprise workflows, start with governance and safety requirements.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href="/safety" className="btn-secondary inline-flex h-12 items-center justify-center rounded-full px-6 text-sm font-semibold transition-all hover:scale-105">
+                Safety
+              </Link>
+              <Link href="/contact" className="btn-primary inline-flex h-12 items-center justify-center rounded-full px-6 text-sm font-semibold transition-all hover:scale-105">
+                Talk to Aternox
+              </Link>
+            </div>
           </div>
         </FadeIn>
       </Page>
