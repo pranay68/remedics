@@ -4,6 +4,7 @@ import "./globals.css";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aternox.site";
 const site = new URL(siteUrl);
+const googleSiteVerification = process.env.GOOGLE_SITE_VERIFICATION;
 
 const inter = Inter({
   variable: "--font-inter",
@@ -44,8 +45,9 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-  // Add your Search Console verification when ready.
-  // verification: { google: "<token>" },
+  verification: googleSiteVerification
+    ? { google: googleSiteVerification }
+    : undefined,
   openGraph: {
     title: "DGS — Deterministic General Synthesis | Aternox",
     description:
