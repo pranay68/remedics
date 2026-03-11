@@ -38,6 +38,16 @@ const clusters = [
     title: "DGS vs LLMs",
     desc: "Where chat-style outputs break and artifact-first wins.",
   },
+  {
+    href: "/compare/dgs-vs-llms/rag-and-synthesis",
+    title: "RAG vs verified synthesis",
+    desc: "A useful contrast for research-heavy workflows.",
+  },
+  {
+    href: "/learn/evaluation-verification/rubric",
+    title: "Verification rubric",
+    desc: "Define how research artifacts get checked before adoption.",
+  },
 ];
 
 export default function ResearchArchitectureLearnPage() {
@@ -108,6 +118,17 @@ export default function ResearchArchitectureLearnPage() {
               <Link href="/contact" className="btn-primary inline-flex h-12 items-center justify-center rounded-full px-6 text-sm font-semibold transition-all hover:scale-105">
                 Talk to Aternox
               </Link>
+            </div>
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={0.45}>
+          <div className="mt-12 rounded-3xl border border-border/70 bg-surface/40 p-8">
+            <div className="text-xs font-mono font-semibold uppercase tracking-wider text-muted">Proof and context</div>
+            <div className="mt-6 flex flex-col gap-3">
+              <Link href="/research" className="text-sm text-foreground underline decoration-muted underline-offset-4 hover:decoration-foreground">FLT3 proof of concept</Link>
+              <Link href="/learn/verified-synthesis" className="text-sm text-foreground underline decoration-muted underline-offset-4 hover:decoration-foreground">Verified synthesis</Link>
+              <Link href="/compare" className="text-sm text-foreground underline decoration-muted underline-offset-4 hover:decoration-foreground">Compare hub</Link>
             </div>
           </div>
         </FadeIn>

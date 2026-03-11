@@ -33,6 +33,21 @@ const clusters = [
     title: "Safety and governance",
     desc: "How we think about guardrails, review, and failure modes.",
   },
+  {
+    href: "/compare/dgs-vs-llms/structured-outputs",
+    title: "Structured outputs",
+    desc: "Why artifact shape matters more than fluent prose.",
+  },
+  {
+    href: "/compare/dgs-vs-llms/verification-gates",
+    title: "Verification gates",
+    desc: "How synthesis becomes something a team can actually trust.",
+  },
+  {
+    href: "/learn/evaluation-verification",
+    title: "Evaluation & verification",
+    desc: "The review loop that turns synthesis into adoption.",
+  },
 ];
 
 export default function VerifiedSynthesisLearnPage() {
@@ -103,6 +118,17 @@ export default function VerifiedSynthesisLearnPage() {
               <Link href="/waitlist" className="btn-primary inline-flex h-12 items-center justify-center rounded-full px-6 text-sm font-semibold transition-all hover:scale-105">
                 Join the waitlist
               </Link>
+            </div>
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={0.45}>
+          <div className="mt-12 rounded-3xl border border-border/70 bg-surface/40 p-8">
+            <div className="text-xs font-mono font-semibold uppercase tracking-wider text-muted">Continue the topic</div>
+            <div className="mt-6 flex flex-col gap-3">
+              <Link href="/learn/governed-autonomy" className="text-sm text-foreground underline decoration-muted underline-offset-4 hover:decoration-foreground">Governed autonomy</Link>
+              <Link href="/learn/research-architecture" className="text-sm text-foreground underline decoration-muted underline-offset-4 hover:decoration-foreground">Research architecture</Link>
+              <Link href="/research" className="text-sm text-foreground underline decoration-muted underline-offset-4 hover:decoration-foreground">FLT3 proof of concept</Link>
             </div>
           </div>
         </FadeIn>

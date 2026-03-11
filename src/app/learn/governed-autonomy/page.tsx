@@ -33,6 +33,16 @@ const clusters = [
     title: "Product",
     desc: "Where governance shows up in the product direction.",
   },
+  {
+    href: "/learn/evaluation-verification",
+    title: "Evaluation & verification",
+    desc: "Governance depends on explicit acceptance criteria.",
+  },
+  {
+    href: "/compare/dgs-vs-agent-frameworks/safety-guardrails",
+    title: "Safety guardrails",
+    desc: "What guardrails look like when outcomes matter.",
+  },
 ];
 
 export default function GovernedAutonomyLearnPage() {
@@ -103,6 +113,17 @@ export default function GovernedAutonomyLearnPage() {
               <Link href="/waitlist" className="btn-primary inline-flex h-12 items-center justify-center rounded-full px-6 text-sm font-semibold transition-all hover:scale-105">
                 Join the waitlist
               </Link>
+            </div>
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={0.45}>
+          <div className="mt-12 rounded-3xl border border-border/70 bg-surface/40 p-8">
+            <div className="text-xs font-mono font-semibold uppercase tracking-wider text-muted">Related reading</div>
+            <div className="mt-6 flex flex-col gap-3">
+              <Link href="/compare/dgs-vs-agent-frameworks/human-in-the-loop" className="text-sm text-foreground underline decoration-muted underline-offset-4 hover:decoration-foreground">Human in the loop</Link>
+              <Link href="/compare/dgs-vs-agent-frameworks/observability" className="text-sm text-foreground underline decoration-muted underline-offset-4 hover:decoration-foreground">Observability</Link>
+              <Link href="/safety" className="text-sm text-foreground underline decoration-muted underline-offset-4 hover:decoration-foreground">Safety</Link>
             </div>
           </div>
         </FadeIn>

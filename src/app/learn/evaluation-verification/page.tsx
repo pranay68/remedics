@@ -43,6 +43,16 @@ const clusters = [
     title: "Pricing",
     desc: "Where evaluation impacts ROI.",
   },
+  {
+    href: "/compare/dgs-vs-llms/auditability",
+    title: "Auditability",
+    desc: "How to judge whether outputs hold up under review.",
+  },
+  {
+    href: "/compare/dgs-vs-llms/verification-gates",
+    title: "Verification gates",
+    desc: "A deeper look at acceptance logic and review checkpoints.",
+  },
 ];
 
 export default function EvaluationVerificationLearnPage() {
@@ -113,6 +123,17 @@ export default function EvaluationVerificationLearnPage() {
               <Link href="/contact" className="btn-primary inline-flex h-12 items-center justify-center rounded-full px-6 text-sm font-semibold transition-all hover:scale-105">
                 Talk to Aternox
               </Link>
+            </div>
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={0.45}>
+          <div className="mt-12 rounded-3xl border border-border/70 bg-surface/40 p-8">
+            <div className="text-xs font-mono font-semibold uppercase tracking-wider text-muted">Related pillars</div>
+            <div className="mt-6 flex flex-col gap-3">
+              <Link href="/learn/verified-synthesis" className="text-sm text-foreground underline decoration-muted underline-offset-4 hover:decoration-foreground">Verified synthesis</Link>
+              <Link href="/learn/governed-autonomy" className="text-sm text-foreground underline decoration-muted underline-offset-4 hover:decoration-foreground">Governed autonomy</Link>
+              <Link href="/compare" className="text-sm text-foreground underline decoration-muted underline-offset-4 hover:decoration-foreground">Compare hub</Link>
             </div>
           </div>
         </FadeIn>

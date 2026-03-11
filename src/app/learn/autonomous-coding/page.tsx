@@ -33,6 +33,16 @@ const clusters = [
     title: "DGS vs LLMs",
     desc: "Why “chat output” is not enough.",
   },
+  {
+    href: "/learn/evaluation-verification",
+    title: "Evaluation & verification",
+    desc: "How code assistance becomes shippable reviewable output.",
+  },
+  {
+    href: "/product",
+    title: "Product",
+    desc: "Where reviewer-ready artifacts matter across workflows.",
+  },
 ];
 
 export default function AutonomousCodingLearnPage() {
@@ -103,6 +113,17 @@ export default function AutonomousCodingLearnPage() {
               <Link href="/waitlist" className="btn-primary inline-flex h-12 items-center justify-center rounded-full px-6 text-sm font-semibold transition-all hover:scale-105">
                 Join the waitlist
               </Link>
+            </div>
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={0.45}>
+          <div className="mt-12 rounded-3xl border border-border/70 bg-surface/40 p-8">
+            <div className="text-xs font-mono font-semibold uppercase tracking-wider text-muted">Related reading</div>
+            <div className="mt-6 flex flex-col gap-3">
+              <Link href="/compare/dgs-vs-llms/structured-outputs" className="text-sm text-foreground underline decoration-muted underline-offset-4 hover:decoration-foreground">Structured outputs</Link>
+              <Link href="/learn/governed-autonomy" className="text-sm text-foreground underline decoration-muted underline-offset-4 hover:decoration-foreground">Governed autonomy</Link>
+              <Link href="/compare" className="text-sm text-foreground underline decoration-muted underline-offset-4 hover:decoration-foreground">Compare hub</Link>
             </div>
           </div>
         </FadeIn>
