@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Shell } from "@/components/site/Shell";
 import { Page } from "@/components/site/Page";
 import { FadeIn } from "@/components/animations/FadeIn";
@@ -7,7 +6,7 @@ import { ScaleIn } from "@/components/animations/ScaleIn";
 
 const title = "Pricing | DGS by Aternox";
 const description =
-  "Flux-based pricing for DGS. 1 Flux = $1 (always). Buy Flux bundles and spend credits as you use DGS.";
+  "Flux pricing for DGS. 1 Flux = $1, with indicative bundle sizes and typical usage guidance.";
 
 export const metadata: Metadata = {
   title,
@@ -78,7 +77,7 @@ export default function PricingPage() {
           </>
         }
         subtitle={
-          "Flux is fuel for DGS. 1 Flux = $1 (always). Buy credits in bundles and spend them as you run DGS."
+          "Flux is the internal usage unit for DGS. 1 Flux = $1, always. Informational pricing only — no purchasing flow right now."
         }
       >
         <script
@@ -94,7 +93,7 @@ export default function PricingPage() {
             <div className="text-xs font-mono font-semibold uppercase tracking-wider text-muted">Flux</div>
             <h2 className="mt-3 font-sans text-2xl font-semibold tracking-[-0.04em] md:text-3xl">Simple currency. Usage-based spend.</h2>
             <p className="mt-4 max-w-3xl text-base text-muted md:text-lg">
-              There are no subscriptions. You buy Flux credits and spend them on DGS runs. One Flux equals one dollar — always.
+              There are no subscriptions. Flux is the accounting unit for DGS usage. One Flux equals one dollar — always.
             </p>
           </div>
         </FadeIn>
@@ -103,11 +102,11 @@ export default function PricingPage() {
           <div className="mt-10">
             <div className="text-xs font-mono font-semibold uppercase tracking-wider text-muted mb-6">Bundles</div>
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
-              <Tier delay={0.05} name="20 Flux" forWhom="$20 bundle" bullets={["20 Flux credit", "Spend on DGS usage"]} />
-              <Tier delay={0.1} name="50 Flux" forWhom="$50 bundle" bullets={["50 Flux credit", "Spend on DGS usage"]} />
-              <Tier delay={0.15} name="100 Flux" forWhom="$100 bundle" bullets={["100 Flux credit", "Spend on DGS usage"]} />
-              <Tier delay={0.2} name="250 Flux" forWhom="$250 bundle" bullets={["250 Flux credit", "Spend on DGS usage"]} />
-              <Tier delay={0.25} name="1000 Flux" forWhom="$1000 bundle" bullets={["1000 Flux credit", "Spend on DGS usage"]} />
+              <Tier delay={0.05} name="20 Flux" forWhom="Indicative bundle" bullets={["Equivalent value: $20", "Reference bundle size only"]} />
+              <Tier delay={0.1} name="50 Flux" forWhom="Indicative bundle" bullets={["Equivalent value: $50", "Reference bundle size only"]} />
+              <Tier delay={0.15} name="100 Flux" forWhom="Indicative bundle" bullets={["Equivalent value: $100", "Reference bundle size only"]} />
+              <Tier delay={0.2} name="250 Flux" forWhom="Indicative bundle" bullets={["Equivalent value: $250", "Reference bundle size only"]} />
+              <Tier delay={0.25} name="1000 Flux" forWhom="Indicative bundle" bullets={["Equivalent value: $1000", "Reference bundle size only"]} />
             </div>
           </div>
         </FadeIn>
@@ -125,25 +124,13 @@ export default function PricingPage() {
 
         <FadeIn delay={0.5}>
           <div className="mt-12 glass rounded-3xl border border-gradient p-10 glow-intense">
-            <div className="grid gap-8 md:grid-cols-12 md:items-center">
-              <div className="md:col-span-8">
-                <div className="text-xs font-mono font-semibold uppercase tracking-wider text-brand-2">Enterprise</div>
-                <h2 className="mt-3 font-sans text-3xl font-semibold tracking-[-0.04em] md:text-4xl">
-                  Invoicing, procurement, or large Flux purchases?
-                </h2>
-                <p className="mt-4 text-base text-muted md:text-lg">
-                  We support enterprise onboarding (security review and contract workflows) and can help with larger Flux bundles.
-                </p>
-              </div>
-              <div className="md:col-span-4 md:text-right">
-                <Link
-                  href="/contact"
-                  className="btn-primary inline-flex h-14 items-center justify-center rounded-full px-7 text-base font-semibold transition-all hover:scale-105"
-                >
-                  Contact Sales
-                </Link>
-              </div>
-            </div>
+            <div className="text-xs font-mono font-semibold uppercase tracking-wider text-brand-2">Current status</div>
+            <h2 className="mt-3 font-sans text-3xl font-semibold tracking-[-0.04em] md:text-4xl">
+              Informational pricing only.
+            </h2>
+            <p className="mt-4 max-w-3xl text-base text-muted md:text-lg">
+              This page defines the Flux rate and reference bundle sizes. Public purchasing is not enabled right now.
+            </p>
           </div>
         </FadeIn>
       </Page>

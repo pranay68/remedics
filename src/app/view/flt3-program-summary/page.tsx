@@ -3,11 +3,11 @@ import Link from "next/link";
 import { Shell } from "@/components/site/Shell";
 import { Page } from "@/components/site/Page";
 
-const PDF_PATH = "/downloads/flt3-summary.pdf";
+const PDF_PATH = "/downloads/DGS_FLT3_Scientific_Overview.pdf";
 
-const title = "FLT3 Program Summary (PDF) | Aternox";
+const title = "FLT3 Scientific Overview (PDF) | Aternox";
 const description =
-  "View the one-page FLT3 program summary in your browser, or download it as a PDF.";
+  "View the FLT3 scientific overview in your browser, or download it as a PDF.";
 
 export const metadata: Metadata = {
   title,
@@ -28,14 +28,14 @@ export default function FLT3ProgramSummaryViewPage() {
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: new URL("/", site).href },
       { "@type": "ListItem", position: 2, name: "Research", item: new URL("/research", site).href },
-      { "@type": "ListItem", position: 3, name: "FLT3 Program Summary", item: canonicalUrl },
+      { "@type": "ListItem", position: 3, name: "FLT3 Scientific Overview", item: canonicalUrl },
     ],
   };
 
   const webPageJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "FLT3 Program Summary (PDF)",
+    name: "FLT3 Scientific Overview (PDF)",
     url: canonicalUrl,
     description,
     isPartOf: { "@type": "WebSite", name: "Aternox", url: site.href },
@@ -51,7 +51,7 @@ export default function FLT3ProgramSummaryViewPage() {
             FLT3 Program <span className="text-gradient text-shimmer">Summary</span>.
           </>
         }
-        subtitle="View the one-page public summary in-browser, or download it as a PDF."
+        subtitle="View the FLT3 scientific overview in-browser, or download it as a PDF."
       >
         <script
           type="application/ld+json"
@@ -64,7 +64,7 @@ export default function FLT3ProgramSummaryViewPage() {
         <div className="glass rounded-3xl border border-border/70 p-5 glow md:p-8">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <div className="text-xs font-mono font-semibold uppercase tracking-wider text-muted">
-              One-page PDF
+              Public PDF
             </div>
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
               <Link
@@ -86,7 +86,7 @@ export default function FLT3ProgramSummaryViewPage() {
           <div className="mt-6 overflow-hidden rounded-2xl border border-border/70 bg-black/30">
             <iframe
               src={`${PDF_PATH}#view=FitH`}
-              title="FLT3 Program Summary PDF"
+              title="FLT3 Scientific Overview PDF"
               className="h-[75vh] w-full"
             />
           </div>

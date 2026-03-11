@@ -36,7 +36,7 @@ function Card({
 }
 
 function PDFButton() {
-  const pdfPath = "/downloads/flt3-summary.pdf";
+  const pdfPath = "/downloads/DGS_FLT3_Scientific_Overview.pdf";
   const viewPath = "/view/flt3-program-summary";
 
   return (
@@ -46,7 +46,7 @@ function PDFButton() {
         download
         className="inline-flex h-11 items-center justify-center rounded-full bg-white text-black px-6 text-[13px] font-medium transition-all duration-200 hover:bg-white/90"
       >
-        Download summary (PDF)
+        Download scientific overview
       </a>
       <a
         href={viewPath}

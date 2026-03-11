@@ -205,8 +205,8 @@ export default function ResearchPage() {
                         <div className="grid gap-5 md:grid-cols-3">
                             <ScaleIn delay={0.1} className="rounded-3xl border border-border/70 bg-surface/50 p-8 transition-all duration-500 hover:scale-105 hover:border-brand-2/50 hover:bg-surface/70 glow">
                                 <div className="font-mono text-[10px] font-semibold uppercase tracking-wider text-muted">PUBLIC</div>
-                                <div className="mt-3 font-sans text-lg font-semibold tracking-[-0.04em]">One-page program summary</div>
-                                <p className="mt-4 text-sm text-muted">Available now. No NDA required. A single-page overview of the program scope, key documents, and stage architecture.</p>
+                                <div className="mt-3 font-sans text-lg font-semibold tracking-[-0.04em]">Scientific overview PDF</div>
+                                <p className="mt-4 text-sm text-muted">Available now. No NDA required. Public scientific overview of the FLT3 program scope and architecture.</p>
                                 <div className="mt-6">
                                     <PDFButton />
                                 </div>
