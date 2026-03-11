@@ -56,6 +56,23 @@ export default function DGSPage() {
     const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aternox.site";
     const site = new URL(siteUrl);
     const canonicalUrl = new URL("/dgs", site).href;
+    const faqItems = [
+        {
+            question: "Is DGS a language model?",
+            answer:
+                "No. DGS is described as a synthesis engine with deterministic logic gates and traceable decision structure, not a general chat interface.",
+        },
+        {
+            question: "Which DGS engine is coming first?",
+            answer:
+                "The Standard engine is the first planned public release. Deep is private-access, and Synthetic is restricted.",
+        },
+        {
+            question: "Can DGS replace domain experts?",
+            answer:
+                "No. DGS does not replace domain expertise or make legal, clinical, or financial decisions on a team's behalf.",
+        },
+    ];
 
     const breadCrumbJsonLd = {
         "@context": "https://schema.org",
@@ -95,6 +112,19 @@ export default function DGSPage() {
         },
     };
 
+    const faqJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqItems.map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: item.answer,
+            },
+        })),
+    };
+
     return (
         <Shell>
             <Page
@@ -109,6 +139,10 @@ export default function DGSPage() {
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
+                />
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
                 />
                 {/* HOW DGS DIFFERS */}
                 <FadeIn>
@@ -228,6 +262,20 @@ export default function DGSPage() {
                             >
                                 View the research →
                             </Link>
+                        </div>
+                    </div>
+                </FadeIn>
+
+                <FadeIn delay={0.75}>
+                    <div className="mt-12 rounded-2xl border border-border/70 bg-surface/50 p-8">
+                        <div className="text-xs font-mono font-semibold uppercase tracking-wider text-muted">FAQ</div>
+                        <div className="mt-6 grid gap-4 md:grid-cols-3">
+                            {faqItems.map((item) => (
+                                <div key={item.question} className="rounded-2xl border border-border/70 bg-background/30 p-5">
+                                    <h2 className="text-base font-semibold tracking-tight text-foreground">{item.question}</h2>
+                                    <p className="mt-3 text-sm leading-relaxed text-muted">{item.answer}</p>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </FadeIn>

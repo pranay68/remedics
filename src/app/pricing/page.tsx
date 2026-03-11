@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Shell } from "@/components/site/Shell";
 import { Page } from "@/components/site/Page";
 import { FadeIn } from "@/components/animations/FadeIn";
@@ -47,6 +48,21 @@ export default function PricingPage() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aternox.site";
   const site = new URL(siteUrl);
   const canonicalUrl = new URL("/pricing", site).href;
+  const faqItems = [
+    {
+      question: "What is Flux?",
+      answer: "Flux is the internal usage unit for DGS. The page defines 1 Flux as equal to $1.",
+    },
+    {
+      question: "Can I buy DGS right now?",
+      answer: "No. Pricing is informational only right now, and there is no public purchasing flow.",
+    },
+    {
+      question: "What does a Standard run cost?",
+      answer:
+        "The page states a typical Standard run is about 6.5 Flux approximately, with final charge based on actual usage cost.",
+    },
+  ];
 
   const breadCrumbJsonLd = {
     "@context": "https://schema.org",
@@ -65,6 +81,19 @@ export default function PricingPage() {
     description,
     isPartOf: { "@type": "WebSite", name: "Aternox", url: site.href },
     publisher: { "@type": "Organization", name: "Aternox", url: site.href },
+  };
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
   };
 
   return (
@@ -87,6 +116,10 @@ export default function PricingPage() {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
         />
         <FadeIn>
           <div className="glass rounded-3xl border border-border/70 bg-surface/50 p-10 glow">
@@ -131,6 +164,28 @@ export default function PricingPage() {
             <p className="mt-4 max-w-3xl text-base text-muted md:text-lg">
               This page defines the Flux rate and reference bundle sizes. Public purchasing is not enabled right now.
             </p>
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={0.65}>
+          <div className="mt-12 rounded-3xl border border-border/70 bg-surface/50 p-10 glow">
+            <div className="text-xs font-mono font-semibold uppercase tracking-wider text-muted">FAQ</div>
+            <div className="mt-6 grid gap-4 md:grid-cols-3">
+              {faqItems.map((item) => (
+                <div key={item.question} className="rounded-2xl border border-border/70 bg-background/30 p-6">
+                  <h2 className="text-base font-semibold tracking-tight text-foreground">{item.question}</h2>
+                  <p className="mt-3 text-sm leading-6 text-muted">{item.answer}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href="/waitlist" className="btn-primary inline-flex h-12 items-center justify-center rounded-full px-6 text-sm font-semibold transition-all hover:scale-105">
+                Join waitlist
+              </Link>
+              <Link href="/contact" className="btn-secondary inline-flex h-12 items-center justify-center rounded-full px-6 text-sm font-semibold transition-all hover:scale-105">
+                Ask about enterprise access
+              </Link>
+            </div>
           </div>
         </FadeIn>
       </Page>

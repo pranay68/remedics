@@ -200,6 +200,55 @@ export default function HomeClient() {
           </div>
         </Section>
 
+        <Section className="pb-24">
+          <div className="rounded-3xl border border-white/[0.08] bg-white/[0.02] p-10 md:p-16 backdrop-blur">
+            <div className="font-mono text-[10px] font-semibold tracking-widest text-white/40 uppercase">
+              FAQ
+            </div>
+            <h2 className="mt-6 font-sans text-3xl font-semibold leading-[1.15] tracking-[-0.04em] md:text-4xl">
+              Common questions about DGS.
+            </h2>
+            <div className="mt-8 grid gap-4 md:grid-cols-3">
+              {[
+                {
+                  question: "Is DGS a chatbot?",
+                  answer:
+                    "No. DGS is built for structured artifacts and governed workflows, not open-ended conversational output.",
+                },
+                {
+                  question: "Which engine comes first?",
+                  answer:
+                    "Standard is the first planned public engine. Deep is selective, and Synthetic is restricted.",
+                },
+                {
+                  question: "Where can I see proof?",
+                  answer:
+                    "The FLT3 research page and public scientific overview show the current proof case and scope.",
+                },
+              ].map((item) => (
+                <div key={item.question} className="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-6">
+                  <h3 className="text-[15px] font-semibold tracking-tight text-white/90">{item.question}</h3>
+                  <p className="mt-3 text-[13px] leading-relaxed text-white/50">{item.answer}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link
+                href="/dgs"
+                className="inline-flex h-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] px-6 text-[13px] text-white transition-all duration-200 hover:bg-white/[0.08]"
+              >
+                What is DGS? →
+              </Link>
+              <Link
+                href="/research"
+                className="inline-flex h-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] px-6 text-[13px] text-white transition-all duration-200 hover:bg-white/[0.08]"
+              >
+                View proof →
+              </Link>
+            </div>
+          </div>
+        </Section>
+
         {/* SECTION 5 — WAITLIST */}
         <Section className="pb-32">
           <div className="rounded-3xl border border-white/[0.08] bg-white/[0.02] p-10 md:p-16 text-center backdrop-blur">

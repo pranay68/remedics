@@ -31,6 +31,23 @@ export default function ProductPage() {
   const site = new URL(siteUrl);
   const canonicalUrl = new URL("/product", site).href;
   const softwareId = new URL("/dgs#software", site).href;
+  const faqItems = [
+    {
+      question: "What does DGS Core produce?",
+      answer:
+        "DGS Core is positioned around reviewer-ready artifacts such as specs, plans, policies, research artifacts, tables, and implementation-ready diffs.",
+    },
+    {
+      question: "Is the product focused on chat?",
+      answer:
+        "No. The product page explicitly positions DGS around artifacts teams can review, govern, store, version, and adopt.",
+    },
+    {
+      question: "How should teams evaluate it?",
+      answer:
+        "Teams should start with governance, safety requirements, and real reviewer workflows rather than speculative feature lists.",
+    },
+  ];
 
   const breadCrumbJsonLd = {
     "@context": "https://schema.org",
@@ -79,6 +96,19 @@ export default function ProductPage() {
     },
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+
   return (
     <Shell>
       <Page
@@ -105,6 +135,10 @@ export default function ProductPage() {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
         />
         <div className="grid gap-8 md:grid-cols-12">
           <div className="md:col-span-7">
@@ -194,6 +228,20 @@ export default function ProductPage() {
               <Link href="/contact" className="btn-primary inline-flex h-12 items-center justify-center rounded-full px-6 text-sm font-semibold transition-all hover:scale-105">
                 Talk to Aternox
               </Link>
+            </div>
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={0.7}>
+          <div className="mt-12 rounded-3xl border border-border/70 bg-surface/50 p-10 glow">
+            <div className="text-xs font-mono font-semibold uppercase tracking-wider text-muted">FAQ</div>
+            <div className="mt-6 grid gap-4 md:grid-cols-3">
+              {faqItems.map((item) => (
+                <div key={item.question} className="rounded-2xl border border-border/70 bg-background/30 p-6">
+                  <h2 className="text-base font-semibold tracking-tight text-foreground">{item.question}</h2>
+                  <p className="mt-3 text-sm leading-6 text-muted">{item.answer}</p>
+                </div>
+              ))}
             </div>
           </div>
         </FadeIn>
