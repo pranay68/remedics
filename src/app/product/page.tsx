@@ -7,7 +7,7 @@ import { ScaleIn } from "@/components/animations/ScaleIn";
 
 const title = "Product | DGS by Aternox";
 const description =
-  "DGS Core turns complex work into reviewer-ready artifacts. Vertical engines (LexDGS, FinDGS, ArchDGS) are coming as the platform expands across domains.";
+  "DGS Core turns complex work into reviewer-ready artifacts teams can review, govern, and adopt.";
 
 export const metadata: Metadata = {
   title,
@@ -60,10 +60,10 @@ export default function ProductPage() {
         }
         title={
           <>
-            DGS <span className="text-gradient text-shimmer">Core</span> and the vertical engines.
+            DGS <span className="text-gradient text-shimmer">Core</span>.
           </>
         }
-        subtitle="One core engine, then sector engines. Built for professional artifacts teams can review, govern, and adopt."
+        subtitle="Built for professional artifacts teams can review, govern, and adopt."
       >
         <script
           type="application/ld+json"
@@ -102,23 +102,11 @@ export default function ProductPage() {
               <div className="glass rounded-3xl border border-border/70 p-8 glow">
                 <div className="text-xs font-mono font-semibold uppercase tracking-wider text-muted">Roadmap</div>
                 <h2 className="mt-3 font-sans text-2xl font-semibold tracking-[-0.04em] md:text-3xl">
-                  Core first. <span className="text-shimmer">Then vertical engines.</span>
+                  Core first. <span className="text-shimmer">Proof cases next.</span>
                 </h2>
                 <p className="mt-4 text-base text-muted">
-                  DGS Core is the foundation. Over time, it will split into sector engines tailored to domain workflows and artifacts.
+                  DGS Core is the foundation. Expansion follows validated proof cases and real reviewer workflows.
                 </p>
-                <div className="mt-6 grid gap-3">
-                  {[
-                    { name: "LexDGS", desc: "Legal workflows" },
-                    { name: "FinDGS", desc: "Finance workflows" },
-                    { name: "ArchDGS", desc: "Architecture + engineering workflows" },
-                  ].map((v) => (
-                    <div key={v.name} className="flex items-center justify-between rounded-2xl border border-border/70 bg-background/40 px-5 py-4">
-                      <div className="text-base font-medium">{v.name}</div>
-                      <div className="text-sm text-muted">{v.desc}</div>
-                    </div>
-                  ))}
-                </div>
 
                 <div className="mt-8 flex flex-wrap gap-3">
                   <Link
@@ -153,8 +141,8 @@ export default function ProductPage() {
             />
             <Feature
               delay={0.3}
-              title="Vertical expansion"
-              desc="DGS Core will expand into sector engines (LexDGS, FinDGS, ArchDGS) as domain-specific artifact standards mature."
+              title="Proof-led expansion"
+              desc="DGS expands based on proof cases and domain review standards — not hype roadmaps."
             />
           </div>
         </FadeIn>

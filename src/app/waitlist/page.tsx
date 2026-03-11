@@ -71,7 +71,7 @@ export default function WaitlistPage() {
             <Page
                 eyebrow="Early Access"
                 title="Early access to DGS."
-                subtitle="Fast and Mid modes are coming first. Deep Mode for enterprise shortly after. Synthetic Mode is not publicly available."
+                subtitle="Fast and Mid modes are coming first. Deterministic Mode for enterprise shortly after. Synthetic Mode is not publicly available."
             >
                 <script
                     type="application/ld+json"

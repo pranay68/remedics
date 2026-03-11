@@ -145,7 +145,7 @@ export default function HomeClient() {
             <Card
               label="01 / VERIFIED"
               headline="Every output follows a logic chain."
-              body="DGS does not generate probable answers. It synthesizes verified conclusions through structured reasoning gates. The output is traceable, falsifiable, and consistent."
+              body="DGS synthesizes reviewer-ready conclusions through structured reasoning gates. Outputs are traceable and falsifiable, with explicit scope and checkpoints."
             />
             <Card
               label="02 / DOMAIN-AGNOSTIC"
@@ -155,7 +155,7 @@ export default function HomeClient() {
             <Card
               label="03 / FOUR MODES"
               headline="From fast synthesis to discovery."
-              body="Fast and Mid for complex everyday tasks. Deep for problems that break standard AI. Synthetic for generating genuinely new structured knowledge — restricted access only."
+              body="Fast and Mid for complex everyday tasks. Deterministic for problems that break standard AI. Synthetic for generating genuinely new structured knowledge — restricted access only."
             />
           </div>
         </Section>
@@ -196,17 +196,17 @@ export default function HomeClient() {
             <Card
               label="FAST"
               headline="Structured synthesis for complex everyday tasks."
-              body="Faster than frontier models. No hallucination. Consistent output on every run."
+              body="Low-latency structured synthesis with traceable checkpoints and a stable artifact format."
               badge="PUBLIC — Coming soon"
             />
             <Card
               label="MID"
-              headline="Deep structured reasoning for multi-step problems."
+              headline="Deeper structured reasoning for multi-step problems."
               body="Cross-domain synthesis for logic problems that require more than one reasoning pass."
               badge="PUBLIC — Coming soon"
             />
             <Card
-              label="DEEP"
+              label="DETERMINISTIC"
               headline="Ultra-complex problem solving for enterprise challenges."
               body="For problems that break standard AI systems. Enterprise-grade structured output."
               badge="ENTERPRISE — Private access"

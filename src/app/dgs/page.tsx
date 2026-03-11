@@ -169,7 +169,7 @@ export default function DGSPage() {
                                 delay={0.1}
                                 label="FAST MODE"
                                 headline="Complex everyday tasks. Verified output."
-                                body="Fast Mode is the entry point. It handles problems that frontier models fumble — complex reasoning tasks that require structured thinking rather than fluent generation. Faster than GPT-4. No hallucination. Consistent structure and traceability."
+                                body="Fast Mode is the entry point. It handles complex everyday tasks with structured artifacts and traceable checkpoints. Built for low-latency synthesis without losing auditability."
                                 access="PUBLIC — Coming soon"
                             />
                             <ModeCard
@@ -181,9 +181,9 @@ export default function DGSPage() {
                             />
                             <ModeCard
                                 delay={0.3}
-                                label="DEEP MODE"
+                                label="DETERMINISTIC MODE"
                                 headline="Enterprise-grade. For problems that break standard AI."
-                                body="Deep Mode is for the problems that should not be solvable by existing tools. Ultra-complex, multi-layer synthesis tasks. Enterprise pricing. Private access. Outputs are structured, verified, and delivered with a complete logic trace."
+                                body="Deterministic Mode is for ultra-complex, multi-layer synthesis tasks where strict scoping, checkpoints, and traceability matter. Private access. Outputs are structured and delivered with a complete logic trace."
                                 access="ENTERPRISE — Private access"
                             />
                             <ModeCard
