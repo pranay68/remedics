@@ -44,7 +44,7 @@ function Tier({
 }
 
 export default function PricingPage() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aternox.com";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aternox.site";
   const site = new URL(siteUrl);
   const canonicalUrl = new URL("/pricing", site).href;
 

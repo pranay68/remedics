@@ -33,7 +33,7 @@ const facts = [
 ];
 
 export default function SafetyGuardrailsPage() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aternox.com";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aternox.site";
   const site = new URL(siteUrl);
   const canonicalUrl = new URL("/compare/dgs-vs-agent-frameworks/safety-guardrails", site).href;
 

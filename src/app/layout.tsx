@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aternox.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aternox.site";
 const site = new URL(siteUrl);
 
 const inter = Inter({

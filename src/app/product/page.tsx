@@ -27,7 +27,7 @@ function Feature({ title, desc, delay = 0 }: { title: string; desc: string; dela
 }
 
 export default function ProductPage() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aternox.com";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aternox.site";
   const site = new URL(siteUrl);
   const canonicalUrl = new URL("/product", site).href;
 

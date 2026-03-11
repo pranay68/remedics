@@ -51,7 +51,7 @@ const failureModes = [
 ];
 
 export default function FailureModesChecklistPage() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aternox.com";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aternox.site";
   const site = new URL(siteUrl);
   const canonicalUrl = new URL("/learn/evaluation-verification/failure-modes", site).href;
 

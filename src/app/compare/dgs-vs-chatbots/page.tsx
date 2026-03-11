@@ -33,7 +33,7 @@ const points = [
 ];
 
 export default function DgsVsChatbotsPage() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aternox.com";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aternox.site";
   const site = new URL(siteUrl);
   const canonicalUrl = new URL("/compare/dgs-vs-chatbots", site).href;
 

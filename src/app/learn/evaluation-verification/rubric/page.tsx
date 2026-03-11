@@ -45,7 +45,7 @@ const criteria = [
 ];
 
 export default function VerificationRubricPage() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aternox.com";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aternox.site";
   const site = new URL(siteUrl);
   const canonicalUrl = new URL("/learn/evaluation-verification/rubric", site).href;
 

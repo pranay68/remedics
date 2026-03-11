@@ -26,7 +26,7 @@ function Row({ title, desc, delay = 0 }: { title: string; desc: string; delay?: 
 }
 
 export default function SafetyPage() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aternox.com";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aternox.site";
   const site = new URL(siteUrl);
   const canonicalUrl = new URL("/safety", site).href;
 

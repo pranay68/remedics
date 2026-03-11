@@ -37,7 +37,7 @@ const criteria = [
 ];
 
 export default function EvaluationPage() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aternox.com";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aternox.site";
   const site = new URL(siteUrl);
   const canonicalUrl = new URL("/compare/dgs-vs-llms/evaluation", site).href;
 
