@@ -2,24 +2,55 @@
 
 import { useState } from "react";
 
-export function WaitlistForm() {
+const ENGINE_OPTIONS = [
+    {
+        value: "standard",
+        label: "Standard",
+        description: "General structured synthesis. Public availability soon.",
+    },
+    {
+        value: "deep",
+        label: "Deep",
+        description: "Higher-depth synthesis for harder professional workflows.",
+    },
+    {
+        value: "synthetic",
+        label: "Synthetic",
+        description: "Restricted discovery-tier engine. Not public.",
+    },
+] as const;
+
+type EngineInterest = (typeof ENGINE_OPTIONS)[number]["value"];
+
+export function WaitlistForm({
+    compact = false,
+    source = "waitlist-page",
+}: {
+    compact?: boolean;
+    source?: string;
+}) {
     const [email, setEmail] = useState("");
     const [problemToSolve, setProblemToSolve] = useState("");
+    const [engineInterest, setEngineInterest] = useState<EngineInterest>("standard");
     const [submitted, setSubmitted] = useState(false);
     const [sending, setSending] = useState(false);
+    const [errorMessage, setErrorMessage] = useState("");
 
     async function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
         if (!email.trim() || sending) return;
 
         setSending(true);
+        setErrorMessage("");
         try {
             const response = await fetch("/api/waitlist", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    email,
+                    email: email.trim(),
+                    engineInterest,
                     problemToSolve,
+                    source,
                 }),
             });
 
@@ -30,7 +61,7 @@ export function WaitlistForm() {
             }
         } catch (error) {
             console.error("Submission error:", error);
-            alert("Failed to join waitlist. Please try again.");
+            setErrorMessage("Waitlist submission is temporarily unavailable. Please try again shortly.");
             setSending(false);
             return;
         }
@@ -41,7 +72,7 @@ export function WaitlistForm() {
     if (submitted) {
         return (
             <div className="py-6 text-center text-[15px] text-white/70">
-                You&apos;re on the list. We will reach out when access opens — and not before.
+                You&apos;re on the list. We&apos;ll reach out when the Standard engine opens and use your engine interest to prioritize access.
             </div>
         );
     }
@@ -50,6 +81,10 @@ export function WaitlistForm() {
 
     return (
         <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white/70">
+                DGS is not public yet. The <span className="font-semibold text-white">Standard engine</span> is the first public release and will be available soon.
+            </div>
+
             <div>
                 <label className="block text-xs font-semibold text-white mb-2">Email address</label>
                 <input
@@ -63,18 +98,57 @@ export function WaitlistForm() {
             </div>
 
             <div>
-                <label className="block text-xs font-semibold text-white mb-2">
-                    What problem would you like DGS to solve first?
+                <label className="block text-xs font-semibold text-white mb-3">
+                    Which engine are you most interested in?
                 </label>
-                <textarea
-                    value={problemToSolve}
-                    onChange={(e) => setProblemToSolve(e.target.value)}
-                    placeholder="Describe the first problem you'd like to solve."
-                    maxLength={10000}
-                    rows={6}
-                    className="w-full resize-none rounded-2xl border border-white/20 bg-white/5 px-4 py-3 text-sm outline-none focus:border-white/50 focus:bg-white/10 placeholder:text-white/40 text-white transition-all"
-                />
+                <div className={`grid gap-3 ${compact ? "md:grid-cols-3" : "sm:grid-cols-3"}`}>
+                    {ENGINE_OPTIONS.map((option) => {
+                        const active = engineInterest === option.value;
+                        return (
+                            <label
+                                key={option.value}
+                                className={`cursor-pointer rounded-2xl border px-4 py-4 transition-all ${active
+                                    ? "border-white/50 bg-white/10"
+                                    : "border-white/15 bg-white/5 hover:border-white/30 hover:bg-white/[0.08]"
+                                    }`}
+                            >
+                                <input
+                                    type="radio"
+                                    name="engineInterest"
+                                    value={option.value}
+                                    checked={active}
+                                    onChange={() => setEngineInterest(option.value)}
+                                    className="sr-only"
+                                />
+                                <div className="text-sm font-semibold text-white">{option.label}</div>
+                                <div className="mt-1 text-xs leading-relaxed text-white/50">{option.description}</div>
+                            </label>
+                        );
+                    })}
+                </div>
             </div>
+
+            {!compact && (
+                <div>
+                    <label className="block text-xs font-semibold text-white mb-2">
+                        What problem would you like DGS to solve first?
+                    </label>
+                    <textarea
+                        value={problemToSolve}
+                        onChange={(e) => setProblemToSolve(e.target.value)}
+                        placeholder="Describe the first problem you'd like to solve."
+                        maxLength={10000}
+                        rows={6}
+                        className="w-full resize-none rounded-2xl border border-white/20 bg-white/5 px-4 py-3 text-sm outline-none focus:border-white/50 focus:bg-white/10 placeholder:text-white/40 text-white transition-all"
+                    />
+                </div>
+            )}
+
+            {errorMessage && (
+                <div className="rounded-2xl border border-red-500/20 bg-red-500/10 px-4 py-3 text-sm text-red-100">
+                    {errorMessage}
+                </div>
+            )}
 
             <button
                 type="submit"

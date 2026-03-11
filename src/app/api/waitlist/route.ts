@@ -7,7 +7,7 @@ export async function POST(request: NextRequest) {
     try {
         const db = getDb();
         const body = await request.json();
-        const { email, problemToSolve } = body;
+        const { email, problemToSolve, engineInterest, source } = body;
 
         // Validation
         if (!email) {
@@ -24,10 +24,19 @@ export async function POST(request: NextRequest) {
             );
         }
 
+        if (engineInterest && !["standard", "deep", "synthetic"].includes(engineInterest)) {
+            return NextResponse.json(
+                { error: "Invalid engine interest" },
+                { status: 400 }
+            );
+        }
+
         // Add to Firestore
         const docRef = await db.collection("waitlist").add({
             email: email.trim(),
+            engineInterest: typeof engineInterest === "string" ? engineInterest : "standard",
             problemToSolve: typeof problemToSolve === "string" ? problemToSolve.trim() : "",
+            source: typeof source === "string" ? source.trim() : "unknown",
             timestamp: new Date(),
             status: "pending",
         });

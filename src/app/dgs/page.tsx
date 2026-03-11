@@ -158,39 +158,32 @@ export default function DGSPage() {
                     </div>
                 </FadeIn>
 
-                {/* THE FOUR MODES */}
+                {/* THE THREE ENGINES */}
                 <FadeIn delay={0.2}>
                     <div className="mt-12">
                         <div className="text-xs font-mono font-semibold uppercase tracking-wider text-muted mb-6">
-                            The Four Modes
+                            The Three Engines
                         </div>
-                        <div className="grid gap-4 md:grid-cols-2">
+                        <div className="grid gap-4 md:grid-cols-3">
                             <ModeCard
                                 delay={0.1}
-                                label="FAST MODE"
-                                headline="Complex everyday tasks. Verified output."
-                                body="Fast Mode is the entry point. It handles complex everyday tasks with structured artifacts and traceable checkpoints. Built for low-latency synthesis without losing auditability."
+                                label="STANDARD ENGINE"
+                                headline="The first public release."
+                                body="Standard is the first DGS engine planned for public availability. It is built for structured, reviewable output in real professional workflows."
                                 access="PUBLIC — Coming soon"
                             />
                             <ModeCard
                                 delay={0.2}
-                                label="MID MODE"
-                                headline="Multi-step logic. Cross-domain synthesis."
-                                body="Mid Mode goes deeper. For problems that require reasoning across domains — connecting a legal principle to a financial structure, or a scientific method to an engineering constraint. Structured output at every step."
-                                access="PUBLIC — Coming soon"
-                            />
-                            <ModeCard
-                                delay={0.3}
-                                label="DETERMINISTIC MODE"
-                                headline="Enterprise-grade. For problems that break standard AI."
-                                body="Deterministic Mode is for ultra-complex, multi-layer synthesis tasks where strict scoping, checkpoints, and traceability matter. Private access. Outputs are structured and delivered with a complete logic trace."
+                                label="DEEP ENGINE"
+                                headline="Higher-depth synthesis for hard workflows."
+                                body="Deep is for ultra-complex, multi-layer synthesis tasks where strict scoping, checkpoints, and traceability matter. Private access. Outputs are structured and delivered with a complete logic trace."
                                 access="ENTERPRISE — Private access"
                             />
                             <ModeCard
-                                delay={0.4}
-                                label="SYNTHETIC MODE"
+                                delay={0.3}
+                                label="SYNTHETIC ENGINE"
                                 headline="Discovery-level synthesis. This is the crown."
-                                body="Synthetic Mode generates genuinely new structured knowledge — not recombined information, not pattern completion. This is the mode that produced the FLT3 preclinical research program. It is not publicly available. It is not for sale. Access is by invitation only."
+                                body="Synthetic generates genuinely new structured knowledge — not recombined information, not pattern completion. This is the engine that produced the FLT3 preclinical research program. It is not publicly available. It is not for sale. Access is by invitation only."
                                 access="RESTRICTED — Not available"
                             />
                         </div>

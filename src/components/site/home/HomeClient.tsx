@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
 import { Shell } from "@/components/site/Shell";
 import { Section } from "@/components/site/Section";
+import { WaitlistForm } from "@/components/site/waitlist/WaitlistForm";
 
 function Card({
   label,
@@ -59,24 +59,6 @@ function PDFButton() {
 }
 
 export default function HomeClient() {
-  const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-
-  async function handleWaitlist(e: React.FormEvent) {
-    e.preventDefault();
-    if (!email.trim()) return;
-    try {
-      await fetch("https://formspree.io/f/PLACEHOLDER", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      });
-    } catch {
-      // noop
-    }
-    setSubmitted(true);
-  }
-
   return (
     <Shell>
       <main className="noise cursor-crosshair">
@@ -116,6 +98,10 @@ export default function HomeClient() {
                 Not for “chat.” Built to solve professional problems with structured, auditable output.
               </p>
 
+              <div className="mt-6 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-[12px] font-medium text-white/70">
+                DGS is not public yet. The <span className="text-white">Standard engine</span> is the first release and will be available soon.
+              </div>
+
               <div className="mt-12 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <Link
                   href="/waitlist"
@@ -153,9 +139,9 @@ export default function HomeClient() {
               body="The same synthesis architecture that produced a complete preclinical oncology research program can structure a legal argument or a financial analysis. Domain changes. Logic does not."
             />
             <Card
-              label="03 / FOUR MODES"
-              headline="From fast synthesis to discovery."
-              body="Fast and Mid for complex everyday tasks. Deterministic for problems that break standard AI. Synthetic for generating genuinely new structured knowledge — restricted access only."
+              label="03 / THREE ENGINES"
+              headline="From standard execution to discovery."
+              body="Standard is the first public engine. Deep is for harder professional workflows. Synthetic remains restricted."
             />
           </div>
         </Section>
@@ -190,25 +176,19 @@ export default function HomeClient() {
           </div>
         </Section>
 
-        {/* SECTION 4 — FOUR MODE CARDS */}
+        {/* SECTION 4 — ENGINE CARDS */}
         <Section className="pb-24">
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-4 md:grid-cols-3">
             <Card
-              label="FAST"
-              headline="Structured synthesis for complex everyday tasks."
-              body="Low-latency structured synthesis with traceable checkpoints and a stable artifact format."
+              label="STANDARD"
+              headline="The first public engine."
+              body="Structured synthesis for real work with traceable checkpoints and reviewer-ready artifact formats."
               badge="PUBLIC — Coming soon"
             />
             <Card
-              label="MID"
-              headline="Deeper structured reasoning for multi-step problems."
-              body="Cross-domain synthesis for logic problems that require more than one reasoning pass."
-              badge="PUBLIC — Coming soon"
-            />
-            <Card
-              label="DETERMINISTIC"
-              headline="Ultra-complex problem solving for enterprise challenges."
-              body="For problems that break standard AI systems. Enterprise-grade structured output."
+              label="DEEP"
+              headline="Higher-depth synthesis for harder workflows."
+              body="Built for multi-layer professional problems that need stricter scoping, more depth, and stronger reviewability."
               badge="ENTERPRISE — Private access"
             />
             <Card
@@ -224,32 +204,13 @@ export default function HomeClient() {
         <Section className="pb-32">
           <div className="rounded-3xl border border-white/[0.08] bg-white/[0.02] p-10 md:p-16 text-center backdrop-blur">
             <h2 className="font-sans text-3xl font-semibold leading-[1.15] tracking-[-0.04em] md:text-4xl">
-              DGS is in private development.
+              DGS is not public yet.
             </h2>
-            <p className="mt-4 text-white/50 text-[15px]">Join the waitlist. Be first when Fast and Mid modes open.</p>
-            <div className="mt-8 flex flex-col items-center">
-              {submitted ? (
-                <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-8 py-5 text-[14px] text-white/70">
-                  You&apos;re on the list. We will reach out when access opens — and not before.
-                </div>
-              ) : (
-                <form onSubmit={handleWaitlist} className="flex w-full max-w-md flex-col gap-3 sm:flex-row">
-                  <input
-                    type="email"
-                    required
-                    placeholder="Your email address"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="h-11 flex-1 rounded-full border border-white/10 bg-white/[0.04] px-5 text-[13px] text-white outline-none placeholder:text-white/30 focus:border-white/30"
-                  />
-                  <button
-                    type="submit"
-                    className="h-11 shrink-0 rounded-full bg-white px-6 text-[13px] font-medium text-black transition-all duration-200 hover:bg-white/90"
-                  >
-                    Join waitlist
-                  </button>
-                </form>
-              )}
+            <p className="mt-4 text-white/50 text-[15px]">
+              The Standard engine is coming soon. Tell us which engine you care about most and join the waitlist.
+            </p>
+            <div className="mt-8 mx-auto max-w-3xl text-left">
+              <WaitlistForm compact source="home-page" />
             </div>
             <p className="mt-4 text-[11px] text-white/30">No spam. No updates until there is something real to say.</p>
           </div>

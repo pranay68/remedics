@@ -1,22 +1,45 @@
 import * as admin from "firebase-admin";
 
+function stripWrappingQuotes(value: string) {
+    const trimmed = value.trim();
+    if (
+        (trimmed.startsWith('"') && trimmed.endsWith('"')) ||
+        (trimmed.startsWith("'") && trimmed.endsWith("'"))
+    ) {
+        return trimmed.slice(1, -1);
+    }
+    return trimmed;
+}
+
+function looksLikeBase64(value: string) {
+    const normalized = value.replace(/\s+/g, "");
+    return normalized.length > 128 && normalized.length % 4 === 0 && /^[A-Za-z0-9+/=]+$/.test(normalized);
+}
+
+function normalizePrivateKey(value: string) {
+    let key = stripWrappingQuotes(value || "").replace(/\\r/g, "").replace(/\\n/g, "\n");
+
+    if (key.startsWith("-----BEGIN")) {
+        return key;
+    }
+
+    if (looksLikeBase64(key)) {
+        const decoded = Buffer.from(key, "base64").toString("utf8");
+        key = stripWrappingQuotes(decoded).replace(/\\r/g, "").replace(/\\n/g, "\n");
+    }
+
+    return key;
+}
+
 function buildServiceAccountFromEnv(): admin.ServiceAccount | null {
     if (!process.env.FIREBASE_PROJECT_ID) return null;
 
-    // private key may be base64 encoded or contain literal \n escapes
-    let rawKey = process.env.FIREBASE_PRIVATE_KEY || "";
-    if (rawKey && !rawKey.trim().startsWith("-----BEGIN")) {
-        try {
-            rawKey = Buffer.from(rawKey, "base64").toString("utf8");
-        } catch {
-            // leave as-is
-        }
-    }
+    const rawKey = normalizePrivateKey(process.env.FIREBASE_PRIVATE_KEY || "");
 
     return {
         projectId: process.env.FIREBASE_PROJECT_ID,
         clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
-        privateKey: rawKey.replace(/\\n/g, "\n"),
+        privateKey: rawKey,
     } as admin.ServiceAccount;
 }
 

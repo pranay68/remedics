@@ -7,19 +7,19 @@ import { FadeIn } from "@/components/animations/FadeIn";
 export const metadata: Metadata = {
     title: "Join the Waitlist | DGS by Aternox",
     description:
-        "Join the DGS waitlist. Fast and Mid modes coming first. Built for verified, traceable output by Aternox.",
+        "Join the DGS waitlist. DGS is not public yet, and the Standard engine is the first release coming soon.",
     alternates: { canonical: "/waitlist" },
     openGraph: {
         title: "Join the Waitlist | DGS by Aternox",
         description:
-            "Join the DGS waitlist. Fast and Mid modes coming first. Built for verified, traceable output by Aternox.",
+            "Join the DGS waitlist. DGS is not public yet, and the Standard engine is the first release coming soon.",
         url: "/waitlist",
     },
     twitter: {
         card: "summary_large_image",
         title: "Join the Waitlist | DGS by Aternox",
         description:
-            "Join the DGS waitlist. Fast and Mid modes coming first. Built for verified, traceable output by Aternox.",
+            "Join the DGS waitlist. DGS is not public yet, and the Standard engine is the first release coming soon.",
     },
 };
 
@@ -53,7 +53,7 @@ export default function WaitlistPage() {
         name: "Join the Waitlist",
         url: canonicalUrl,
         description:
-            "Join the DGS waitlist. Fast and Mid modes coming first. Built for verified, traceable output by Aternox.",
+            "Join the DGS waitlist. DGS is not public yet, and the Standard engine is the first release coming soon.",
         isPartOf: {
             "@type": "WebSite",
             name: "Aternox",
@@ -71,7 +71,7 @@ export default function WaitlistPage() {
             <Page
                 eyebrow="Early Access"
                 title="Early access to DGS."
-                subtitle="Fast and Mid modes are coming first. Deterministic Mode for enterprise shortly after. Synthetic Mode is not publicly available."
+                subtitle="DGS is not public yet. The Standard engine is coming soon, Deep is selective, and Synthetic is not publicly available."
             >
                 <script
                     type="application/ld+json"
@@ -84,7 +84,7 @@ export default function WaitlistPage() {
                 {/* EMAIL FORM */}
                 <FadeIn>
                     <div className="glass rounded-3xl border border-gradient p-10 glow-intense max-w-2xl mx-auto">
-                        <WaitlistForm />
+                        <WaitlistForm source="waitlist-page" />
                     </div>
                 </FadeIn>
             </Page>
