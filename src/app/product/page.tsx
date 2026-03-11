@@ -30,6 +30,7 @@ export default function ProductPage() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aternox.site";
   const site = new URL(siteUrl);
   const canonicalUrl = new URL("/product", site).href;
+  const softwareId = new URL("/dgs#software", site).href;
 
   const breadCrumbJsonLd = {
     "@context": "https://schema.org",
@@ -48,6 +49,34 @@ export default function ProductPage() {
     description,
     isPartOf: { "@type": "WebSite", name: "Aternox", url: site.href },
     publisher: { "@type": "Organization", name: "Aternox", url: site.href },
+  };
+
+  const softwareJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "@id": softwareId,
+    name: "DGS Core",
+    url: new URL("/dgs", site).href,
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web",
+    description,
+    featureList: [
+      "Reviewer-ready artifacts",
+      "Governed workflows",
+      "Structured deliverables",
+      "Traceable decision checkpoints",
+    ],
+    brand: {
+      "@type": "Brand",
+      name: "Aternox",
+    },
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+      availability: "https://schema.org/PreOrder",
+      url: new URL("/pricing", site).href,
+    },
   };
 
   return (
@@ -72,6 +101,10 @@ export default function ProductPage() {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareJsonLd) }}
         />
         <div className="grid gap-8 md:grid-cols-12">
           <div className="md:col-span-7">

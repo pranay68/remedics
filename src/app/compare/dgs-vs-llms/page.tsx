@@ -50,11 +50,39 @@ export default function DgsVsLlmsPage() {
   const webPageJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "DGS vs LLMs (Not a Chatbot)",
+    name: "DGS vs LLMs",
     url: canonicalUrl,
     description,
     isPartOf: { "@type": "WebSite", name: "Aternox", url: site.href },
     publisher: { "@type": "Organization", name: "Aternox", url: site.href },
+  };
+
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description,
+    mainEntityOfPage: canonicalUrl,
+    author: {
+      "@type": "Organization",
+      name: "Aternox",
+      url: site.href,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Aternox",
+      url: site.href,
+      logo: {
+        "@type": "ImageObject",
+        url: new URL("/logo.png", site).href,
+      },
+    },
+    about: [
+      { "@type": "Thing", name: "LLMs" },
+      { "@type": "Thing", name: "Structured outputs" },
+      { "@type": "Thing", name: "Verification gates" },
+      { "@type": "Thing", name: "Auditability" },
+    ],
   };
 
   const faqJsonLd = {
@@ -101,6 +129,7 @@ export default function DgsVsLlmsPage() {
       >
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadCrumbJsonLd) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
         <FadeIn>

@@ -69,30 +69,54 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const organizationId = new URL("/#organization", site).href;
+  const websiteId = new URL("/#website", site).href;
+  const softwareId = new URL("/dgs#software", site).href;
+
   const orgJsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": organizationId,
     name: "Aternox",
     url: site.href,
     logo: new URL("/logo.png", site).href,
+    description:
+      "Aternox builds DGS, a verified synthesis engine for high-stakes work with structured outputs, traceable logic gates, and governed workflows.",
+    foundingLocation: {
+      "@type": "Place",
+      address: {
+        "@type": "PostalAddress",
+        addressRegion: "Delaware",
+        addressCountry: "US",
+      },
+    },
     sameAs: [],
   };
 
   const websiteJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": websiteId,
     name: "Aternox",
     url: site.href,
+    publisher: {
+      "@id": organizationId,
+    },
+    inLanguage: "en-US",
   };
 
   const softwareAppJsonLd = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
+    "@id": softwareId,
     name: "DGS — Deterministic General Synthesis",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
+    url: new URL("/dgs", site).href,
+    image: new URL("/logo.png", site).href,
     offers: {
       "@type": "Offer",
+      url: new URL("/pricing", site).href,
       price: "0",
       priceCurrency: "USD",
       availability: "https://schema.org/PreOrder",
@@ -102,13 +126,22 @@ export default function RootLayout({
       name: "Aternox",
     },
     publisher: {
-      "@type": "Organization",
-      name: "Aternox",
-      url: site.href,
+      "@id": organizationId,
     },
-    url: new URL("/dgs", site).href,
+    isPartOf: {
+      "@id": websiteId,
+    },
+    softwareVersion: "v1",
+    releaseNotes: "Private development; Standard engine availability planned soon.",
     description:
       "DGS is a verified synthesis engine for high-stakes work: structured outputs, traceable logic gates, reviewable artifacts, and governed workflows.",
+    featureList: [
+      "Structured outputs",
+      "Traceable logic gates",
+      "Reviewable artifacts",
+      "Governed workflows",
+      "Proof-led expansion",
+    ],
   };
 
   return (
