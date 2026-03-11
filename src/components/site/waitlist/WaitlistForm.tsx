@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
+import { TurnstileWidget } from "@/components/security/TurnstileWidget";
 
 const ENGINE_OPTIONS = [
     {
@@ -35,6 +36,10 @@ export function WaitlistForm({
     const [submitted, setSubmitted] = useState(false);
     const [sending, setSending] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
+    const [website, setWebsite] = useState("");
+    const [turnstileToken, setTurnstileToken] = useState("");
+
+    const turnstileEnabled = useMemo(() => Boolean(process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY), []);
 
     async function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
@@ -51,6 +56,8 @@ export function WaitlistForm({
                     engineInterest,
                     problemToSolve,
                     source,
+                    website,
+                    turnstileToken,
                 }),
             });
 
@@ -77,7 +84,7 @@ export function WaitlistForm({
         );
     }
 
-    const isFormValid = email.trim();
+    const isFormValid = email.trim() && (!turnstileEnabled || Boolean(turnstileToken));
 
     return (
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -94,6 +101,18 @@ export function WaitlistForm({
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     className="h-11 w-full rounded-2xl border border-white/20 bg-white/5 px-4 text-sm outline-none focus:border-white/50 focus:bg-white/10 placeholder:text-white/40 text-white transition-all"
+                />
+            </div>
+
+            <div className="hidden" aria-hidden="true">
+                <label className="block text-xs font-semibold text-white mb-2">Website</label>
+                <input
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={website}
+                    onChange={(e) => setWebsite(e.target.value)}
+                    className="h-0 w-0 opacity-0"
+                    name="website"
                 />
             </div>
 
@@ -149,6 +168,8 @@ export function WaitlistForm({
                     {errorMessage}
                 </div>
             )}
+
+            <TurnstileWidget onTokenChange={setTurnstileToken} />
 
             <button
                 type="submit"

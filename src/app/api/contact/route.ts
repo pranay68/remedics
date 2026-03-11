@@ -1,70 +1,109 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import {
+  applyRateLimit,
+  badRequest,
+  getClientIp,
+  internalServerError,
+  isSpamTrapTriggered,
+  isValidEmail,
+  normalizeText,
+  serviceUnavailable,
+  tooManyRequests,
+} from "@/lib/security/request";
+import { verifyTurnstileToken } from "@/lib/security/turnstile";
 
-export async function POST(req: Request) {
+export async function POST(req: NextRequest) {
+  const ip = getClientIp(req);
+  const rateLimit = applyRateLimit({
+    key: `contact:${ip}`,
+    limit: 5,
+    windowMs: 10 * 60 * 1000,
+  });
+
+  if (!rateLimit.allowed) {
+    return tooManyRequests(undefined, rateLimit.resetAt);
+  }
+
   const body = (await req.json().catch(() => null)) as
     | {
       name?: string;
       email?: string;
       company?: string;
       message?: string;
+      website?: string;
+      turnstileToken?: string;
     }
     | null;
 
-  const name = body?.name?.trim() || "Unknown";
-  const email = body?.email?.trim() || "";
-  const company = body?.company?.trim() || "N/A";
-  const message = body?.message?.trim() || "";
-
-  if (!email || message.length < 8) {
-    return NextResponse.json(
-      { ok: false, message: "Please include a valid email and message." },
-      { status: 400 },
-    );
+  if (!body) {
+    return badRequest("Invalid request body.");
   }
 
-  // Configure the transporter with Gmail
-  // NOTE: You must create an App Password for your Gmail account.
-  // Go to Google Account -> Security -> 2-Step Verification -> App Passwords
+  if (isSpamTrapTriggered(body.website)) {
+    return NextResponse.json({ ok: true, message: "Received. We’ll respond soon." });
+  }
+
+  const turnstile = await verifyTurnstileToken(req, body.turnstileToken);
+  if (!turnstile.ok) {
+    return badRequest("Security verification failed.");
+  }
+
+  const name = normalizeText(body?.name, 120) || "Unknown";
+  const email = normalizeText(body?.email, 320).toLowerCase();
+  const company = normalizeText(body?.company, 180) || "N/A";
+  const message = normalizeText(body?.message, 4000);
+
+  if (!email || !isValidEmail(email)) {
+    return badRequest("Please include a valid email address.");
+  }
+
+  if (message && message.length < 12) {
+    return badRequest("If you include a message, please provide a bit more detail.");
+  }
+
+  const mailUser = process.env.GMAIL_USER;
+  const mailPassword = process.env.GMAIL_APP_PASSWORD;
+
+  if (!mailUser || !mailPassword) {
+    return serviceUnavailable("Contact intake is temporarily unavailable.");
+  }
+
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: process.env.GMAIL_USER || "sulekhakapar123@gmail.com", // Fallback for dev, but env var is better
-      pass: process.env.GMAIL_APP_PASSWORD, // You must set this in .env.local
+      user: mailUser,
+      pass: mailPassword,
     },
   });
 
   try {
-    if (process.env.GMAIL_APP_PASSWORD) {
-      await transporter.sendMail({
-        from: `"Aternox Contact" <${process.env.GMAIL_USER || "sulekhakapar123@gmail.com"}>`,
-        to: "sulekhakapar123@gmail.com",
-        subject: `New Contact from ${name} (${company})`,
-        text: `
+    await transporter.sendMail({
+      from: `"Aternox Contact" <${mailUser}>`,
+      to: mailUser,
+      subject: `New Contact from ${name} (${company})`,
+      text: `
 Name: ${name}
 Email: ${email}
 Company: ${company}
+IP: ${ip}
 
 Message:
-${message}
+${message || "N/A"}
         `,
-        html: `
+      html: `
 <p><strong>Name:</strong> ${name}</p>
 <p><strong>Email:</strong> ${email}</p>
 <p><strong>Company:</strong> ${company}</p>
+<p><strong>IP:</strong> ${ip}</p>
 <br/>
 <p><strong>Message:</strong></p>
-<p>${message.replace(/\n/g, "<br>")}</p>
+<p>${(message || "N/A").replace(/\n/g, "<br>")}</p>
         `,
-      });
-      console.log("Email sent successfully to sulekhakapar123@gmail.com");
-    } else {
-      console.warn("GMAIL_APP_PASSWORD not set. Email was not sent.");
-    }
+    });
   } catch (error) {
     console.error("Failed to send email:", error);
-    // We still return success to the client so the UI doesn't break, 
-    // but we log the error on the server.
+    return internalServerError();
   }
 
   return NextResponse.json({

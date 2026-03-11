@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { TurnstileWidget } from "@/components/security/TurnstileWidget";
 
 type Status =
   | { state: "idle" }
@@ -10,6 +11,8 @@ type Status =
 
 export function ContactForm() {
   const [status, setStatus] = useState<Status>({ state: "idle" });
+  const [website, setWebsite] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState("");
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -20,9 +23,10 @@ export function ContactForm() {
   const canSubmit = useMemo(() => {
     return (
       form.email.trim().length > 3 &&
+      (!process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || Boolean(turnstileToken)) &&
       status.state !== "sending"
     );
-  }, [form.email, status.state]);
+  }, [form.email, status.state, turnstileToken]);
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -32,7 +36,7 @@ export function ContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, website, turnstileToken }),
       });
 
       const data = (await res.json().catch(() => null)) as
@@ -109,6 +113,22 @@ export function ContactForm() {
           placeholder="Tell us about your team's needs..."
         />
       </label>
+
+      <div className="hidden" aria-hidden="true">
+        <label className="space-y-2">
+          <div className="text-xs font-semibold text-muted">Website</div>
+          <input
+            tabIndex={-1}
+            autoComplete="off"
+            value={website}
+            onChange={(e) => setWebsite(e.target.value)}
+            className="h-0 w-0 opacity-0"
+            name="website"
+          />
+        </label>
+      </div>
+
+      <TurnstileWidget onTokenChange={setTurnstileToken} />
 
       <button
         disabled={!canSubmit}
