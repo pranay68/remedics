@@ -4,9 +4,9 @@ import { Shell } from "@/components/site/Shell";
 import { Page } from "@/components/site/Page";
 import { FadeIn } from "@/components/animations/FadeIn";
 
-const title = "Synthesis Software for Enterprise | DGS by Aternox";
+const title = "Autonomous Coding Software | Reviewable, Governed Output";
 const description =
-  "DGS is a synthesis engine built for enterprise teams — verifiable, traceable output across every domain.";
+  "Autonomous coding software for teams that need reviewable, governed output — not black-box code generation.";
 
 export const metadata: Metadata = {
   title,

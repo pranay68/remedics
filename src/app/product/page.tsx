@@ -5,9 +5,9 @@ import { Page } from "@/components/site/Page";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { ScaleIn } from "@/components/animations/ScaleIn";
 
-const title = "Product | DGS by Aternox";
+const title = "DGS Product | Reviewer-Ready Artifacts for Governed Workflows";
 const description =
-  "DGS Core turns complex work into reviewer-ready artifacts teams can review, govern, and adopt.";
+  "DGS turns complex work into reviewer-ready artifacts teams can inspect, govern, and adopt in high-stakes workflows.";
 
 export const metadata: Metadata = {
   title,

@@ -5,9 +5,9 @@ import { Page } from "@/components/site/Page";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { ScaleIn } from "@/components/animations/ScaleIn";
 
-const title = "DGS vs Agent Frameworks | Aternox";
+const title = "DGS vs Agent Frameworks | Governed Outputs vs Tool Orchestration";
 const description =
-  "Agent frameworks help orchestrate tools. DGS focuses on governed, reviewable artifacts with deterministic logic gates and traceable decision rules.";
+  "Agent frameworks orchestrate tools. DGS focuses on governed, reviewable artifacts with verification gates, scope control, and traceable logic.";
 
 export const metadata: Metadata = {
   title,

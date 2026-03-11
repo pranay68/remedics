@@ -5,9 +5,9 @@ import { Page } from "@/components/site/Page";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { ScaleIn } from "@/components/animations/ScaleIn";
 
-const title = "DGS vs LLMs (Not a Chatbot) | Aternox";
+const title = "DGS vs LLMs | Structured Outputs, Verification Gates, Auditability";
 const description =
-  "A clear comparison between LLM-based tools and DGS: where LLMs shine, what breaks in professional workflows, and what changes when synthesis is governed by deterministic logic gates.";
+  "A clear comparison of DGS vs LLMs: where LLM tools help, where they break in professional workflows, and what changes with structured outputs and verification gates.";
 
 export const metadata: Metadata = {
   title,

@@ -5,9 +5,9 @@ import { Page } from "@/components/site/Page";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { ScaleIn } from "@/components/animations/ScaleIn";
 
-const title = "DGS vs Chatbots | Aternox";
+const title = "DGS vs Chatbots | Reviewable Artifacts vs Chat UX";
 const description =
-  "Why chat UX fails for high-stakes work, and what changes when outputs are built as reviewable artifacts with deterministic decision rules.";
+  "Why chat UX breaks in high-stakes workflows, and what changes when outputs are built as reviewable artifacts with explicit logic and scope.";
 
 export const metadata: Metadata = {
   title,

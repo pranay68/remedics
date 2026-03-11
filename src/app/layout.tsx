@@ -26,11 +26,11 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "DGS — Deterministic General Synthesis | Aternox",
+    default: "DGS by Aternox | Verified Synthesis Engine for High-Stakes Work",
     template: "%s | Aternox",
   },
   description:
-    "DGS is a synthesis engine by Aternox: deterministic logic gates with traceable decision rules. The synthesis can vary; the logic structure does not.",
+    "DGS is a verified synthesis engine for high-stakes work: structured outputs, traceable logic gates, reviewable artifacts, and governed workflows.",
   metadataBase: site,
   applicationName: "DGS",
   category: "Software",
@@ -49,18 +49,18 @@ export const metadata: Metadata = {
     ? { google: googleSiteVerification }
     : undefined,
   openGraph: {
-    title: "DGS — Deterministic General Synthesis | Aternox",
+    title: "DGS by Aternox | Verified Synthesis Engine for High-Stakes Work",
     description:
-      "DGS is a synthesis engine by Aternox: deterministic logic gates with traceable decision rules. The synthesis can vary; the logic structure does not.",
+      "DGS is a verified synthesis engine for high-stakes work: structured outputs, traceable logic gates, reviewable artifacts, and governed workflows.",
     type: "website",
     siteName: "Aternox",
     url: site,
   },
   twitter: {
     card: "summary_large_image",
-    title: "DGS — Deterministic General Synthesis | Aternox",
+    title: "DGS by Aternox | Verified Synthesis Engine for High-Stakes Work",
     description:
-      "DGS is a synthesis engine by Aternox: deterministic logic gates with traceable decision rules. The synthesis can vary; the logic structure does not.",
+      "DGS is a verified synthesis engine for high-stakes work: structured outputs, traceable logic gates, reviewable artifacts, and governed workflows.",
   },
 };
 
@@ -108,7 +108,7 @@ export default function RootLayout({
     },
     url: new URL("/dgs", site).href,
     description:
-      "DGS is a synthesis engine by Aternox: deterministic logic gates with traceable decision rules. The synthesis can vary; the logic structure does not.",
+      "DGS is a verified synthesis engine for high-stakes work: structured outputs, traceable logic gates, reviewable artifacts, and governed workflows.",
   };
 
   return (

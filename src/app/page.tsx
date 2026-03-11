@@ -1,9 +1,9 @@
 ﻿import type { Metadata } from "next";
 import HomeClient from "@/components/site/home/HomeClient";
 
-const title = "DGS — Deterministic General Synthesis | Aternox";
+const title = "DGS by Aternox | Verified Synthesis Engine for High-Stakes Work";
 const description =
-  "Deterministic logic gates with traceable decision rules. The synthesis can vary; the logic structure does not.";
+  "DGS is a verified synthesis engine for high-stakes work: structured outputs, traceable logic gates, reviewable artifacts, and governed workflows.";
 
 export const metadata: Metadata = {
   title,

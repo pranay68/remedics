@@ -4,9 +4,9 @@ import { Page } from "@/components/site/Page";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { ScaleIn } from "@/components/animations/ScaleIn";
 
-const title = "Pricing | DGS by Aternox";
+const title = "DGS Pricing | Flux Usage Model";
 const description =
-  "Flux pricing for DGS. 1 Flux = $1, with indicative bundle sizes and typical usage guidance.";
+  "Flux pricing for DGS: 1 Flux = $1, with indicative bundle sizes and typical usage guidance for Standard runs.";
 
 export const metadata: Metadata = {
   title,

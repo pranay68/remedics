@@ -6,21 +6,21 @@ import { FadeIn } from "@/components/animations/FadeIn";
 import { ScaleIn } from "@/components/animations/ScaleIn";
 
 export const metadata: Metadata = {
-    title: "DGS — Deterministic General Synthesis | Aternox",
+    title: "What Is DGS? Verified Synthesis Engine | Aternox",
     description:
-        "DGS is a synthesis engine with deterministic logic gates and traceable decision rules. The synthesis can vary; the logic structure does not.",
+        "What DGS is, how it differs from chatbots and LLM tools, and why it is built for structured, reviewable, high-stakes output.",
     alternates: { canonical: "/dgs" },
     openGraph: {
-        title: "DGS — Deterministic General Synthesis | Aternox",
+        title: "What Is DGS? Verified Synthesis Engine | Aternox",
         description:
-            "DGS is a synthesis engine with deterministic logic gates and traceable decision rules. The synthesis can vary; the logic structure does not.",
+            "What DGS is, how it differs from chatbots and LLM tools, and why it is built for structured, reviewable, high-stakes output.",
         url: "/dgs",
     },
     twitter: {
         card: "summary_large_image",
-        title: "DGS — Deterministic General Synthesis | Aternox",
+        title: "What Is DGS? Verified Synthesis Engine | Aternox",
         description:
-            "DGS is a synthesis engine with deterministic logic gates and traceable decision rules. The synthesis can vary; the logic structure does not.",
+            "What DGS is, how it differs from chatbots and LLM tools, and why it is built for structured, reviewable, high-stakes output.",
     },
 };
 

@@ -5,9 +5,9 @@ import { Page } from "@/components/site/Page";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { ScaleIn } from "@/components/animations/ScaleIn";
 
-const title = "Compare | DGS by Aternox";
+const title = "DGS Comparisons | DGS vs LLMs, Chatbots, and Agent Frameworks";
 const description =
-  "Clear, factual comparisons: DGS vs LLMs, chatbots, and agent frameworks — focused on workflow, artifacts, and deterministic decision gates.";
+  "Compare DGS with LLMs, chatbots, and agent frameworks. Clear, factual pages focused on workflow, auditability, structured outputs, and verification gates.";
 
 export const metadata: Metadata = {
   title,
