@@ -1,85 +1,100 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { Shell } from "@/components/site/Shell";
-import { Page } from "@/components/site/Page";
-import { FadeIn } from "@/components/animations/FadeIn";
+import HomeClient from "@/components/site/home/HomeClient";
 
-const title = "About | Aternox";
+const title = "DGS by Aternox | Verified Synthesis Engine for High-Stakes Work";
 const description =
-  "Aternox is the company behind DGS \u2014 Deterministic General Synthesis. Build Recovery by DGS is Aternox\u2019s first active product. Delaware, USA.";
+  "DGS is a verified synthesis engine for high-stakes work. Build Recovery by DGS — for AI-assisted software builders — is in final development. Structured outputs, traceable logic gates, reviewable artifacts.";
 
 export const metadata: Metadata = {
   title,
   description,
-  alternates: { canonical: "/about" },
-  openGraph: { title, description, url: "/about" },
-  twitter: { title, description, card: "summary_large_image" },
+  alternates: { canonical: "/" },
+  openGraph: {
+    title,
+    description,
+    type: "website",
+    url: "/",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+  },
 };
 
-export default function AboutPage() {
+export default function HomePage() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aternox.site";
   const site = new URL(siteUrl);
-  const canonicalUrl = new URL("/about", site).href;
-
-  const breadCrumbJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: new URL("/", site).href },
-      { "@type": "ListItem", position: 2, name: "About", item: canonicalUrl },
-    ],
-  };
+  const canonicalUrl = new URL("/", site).href;
+  const faqItems = [
+    {
+      question: "What is DGS?",
+      answer:
+        "DGS is Aternox\u2019s deterministic general synthesis engine for structured, reviewable, high-stakes work. It is built around logic gates and reviewer-ready artifacts rather than chat output.",
+    },
+    {
+      question: "Is DGS public yet?",
+      answer:
+        "No. DGS is not public yet. The Standard engine is the first planned public release, while Deep is selective and Synthetic is restricted.",
+    },
+    {
+      question: "What is Build Recovery by DGS?",
+      answer:
+        "Build Recovery by DGS is Aternox\u2019s first active product \u2014 a recovery engine for AI-assisted builders with broken or failing software projects. It is in final development and launching soon.",
+    },
+    {
+      question: "What proof exists today?",
+      answer:
+        "Aternox has published a proof case showing DGS produced a complete preclinical FLT3 research architecture with 58 structured documents in one run.",
+    },
+  ];
 
   const webPageJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "About Aternox",
+    name: title,
     url: canonicalUrl,
     description,
-    isPartOf: { "@type": "WebSite", name: "Aternox", url: site.href },
-    publisher: { "@type": "Organization", name: "Aternox", url: site.href },
+    isPartOf: {
+      "@type": "WebSite",
+      name: "Aternox",
+      url: site.href,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Aternox",
+      url: site.href,
+      logo: {
+        "@type": "ImageObject",
+        url: new URL("/logo.png", site).href,
+      },
+    },
+  };
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
   };
 
   return (
-    <Shell>
-      <Page
-        eyebrow="About"
-        title="About Aternox"
-      >
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadCrumbJsonLd) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
-        />
-        <FadeIn>
-          <div className="max-w-3xl space-y-8">
-            <p className="text-base leading-relaxed text-white/60">
-              Aternox is the company behind DGS \u2014 Deterministic General Synthesis. We are building a synthesis engine for researchers, enterprises, and builders who need verified answers, not confident guesses. Aternox is incorporated in Delaware, USA.
-            </p>
-            <p className="text-base leading-relaxed text-white/60">
-              Aternox&apos;s current active product is{" "}
-              <strong className="text-white">Build Recovery by DGS</strong> \u2014 a recovery engine for AI-assisted builders with broken or failing software projects. Build Recovery is in final development and launching soon.
-            </p>
-            <p className="text-base leading-relaxed text-white/60">
-              DGS was designed and built by Lennox Hayes, founder of Aternox. The FLT3 research program was DGS&apos;s first major proof of concept \u2014 a complete preclinical research architecture for a problem that has occupied major pharmaceutical R&amp;D teams for decades.
-            </p>
-            <p className="text-base leading-relaxed text-white/60">
-              For research collaboration, validator inquiries, or enterprise access \u2014 use the contact page.
-            </p>
-            <div>
-              <Link
-                href="/contact"
-                className="inline-flex h-11 items-center justify-center rounded-full bg-white text-black px-6 text-[13px] font-medium transition-all duration-200 hover:bg-white/90"
-              >
-                Contact us
-              </Link>
-            </div>
-          </div>
-        </FadeIn>
-      </Page>
-    </Shell>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <HomeClient />
+    </>
   );
 }
