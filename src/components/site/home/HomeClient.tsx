@@ -65,8 +65,8 @@ export default function HomeClient() {
         {/* HERO */}
         <div className="relative overflow-hidden bg-black">
           <div className="absolute inset-0 bg-grid opacity-[0.05]" />
-          <div className="absolute inset-0 bg-[radial-gradient(1200px_600px_at_50%_0%,rgba(255,255,255,0.12),transparent_70%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(900px_520px_at_75%_30%,rgba(192,192,192,0.08),transparent_70%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(1200px_600px_at_50%0%,rgba(255,255,255,0.12),transparent_70%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(900px_520px_at_75%30%,rgba(192,192,192,0.08),transparent_70%)]" />
           <div className="absolute inset-0 flex items-center justify-center opacity-[0.04] pointer-events-none select-none mix-blend-overlay">
             <Image
               src="/logo.png"
@@ -80,7 +80,7 @@ export default function HomeClient() {
 
           <Section className="relative min-h-[calc(100vh-72px)] py-20 md:py-24">
             <div className="mx-auto flex min-h-[calc(100vh-72px)] max-w-4xl flex-col items-center justify-center text-center">
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-gradient-to-b from-white/[0.08] to-transparent px-3 py-1.5 text-[11px] font-medium tracking-wide text-white/80 backdrop-blur-sm shadow-[0_0_15px_-5px_rgba(255,255,255,0.2)]">
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-gradient-to-b from-white/[0.08] to-transparent px-3 py-1.5 text-[11px] font-medium tracking-wide text-white/80 backdrop-blur-sm shadow-[0_0_15px-5px_rgba(255,255,255,0.2)]">
                 <span className="h-1 w-1 rounded-full bg-white/60 shadow-[0_0_5px_rgba(255,255,255,0.8)]" />
                 DGS — DETERMINISTIC GENERAL SYNTHESIS
               </div>
@@ -95,17 +95,22 @@ export default function HomeClient() {
               </h2>
 
               <p className="mt-6 max-w-2xl text-balance font-sans text-[15px] font-semibold leading-relaxed tracking-tight text-white/70">
-                Not for “chat.” Built to solve professional problems with structured, auditable output.
+                Not for &ldquo;chat.&rdquo; Built to solve professional problems with structured, auditable output.
               </p>
 
               <div className="mt-6 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-[12px] font-medium text-white/70">
                 DGS is not public yet. The <span className="text-white">Standard engine</span> is the first release and will be available soon.
               </div>
 
+              {/* ✦ BUILD RECOVERY BADGE — ADDED */}
+              <div className="mt-3 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-[12px] font-medium text-white/70">
+                <span className="text-white">Build Recovery by DGS</span> — our first active product for AI-assisted software builders — is in final development.
+              </div>
+
               <div className="mt-12 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <Link
                   href="/waitlist"
-                  className="group inline-flex h-11 items-center justify-center rounded-full bg-white text-black px-6 text-[13px] font-medium transition-all duration-200 hover:bg-white/90 hover:shadow-[0_0_20px_-5px_rgba(255,255,255,0.3)]"
+                  className="group inline-flex h-11 items-center justify-center rounded-full bg-white text-black px-6 text-[13px] font-medium transition-all duration-200 hover:bg-white/90 hover:shadow-[0_0_20px-5px_rgba(255,255,255,0.3)]"
                 >
                   Join the waitlist
                   <span className="ml-2 transition-transform duration-200 group-hover:translate-x-0.5">→</span>
