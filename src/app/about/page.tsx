@@ -5,7 +5,8 @@ import { Page } from "@/components/site/Page";
 import { FadeIn } from "@/components/animations/FadeIn";
 
 const title = "About | Aternox";
-const description = "Aternox is the company behind DGS — Deterministic General Synthesis. Build Recovery by DGS is Aternox's first active product. Delaware, USA.";
+const description =
+  "Aternox is the company behind DGS \u2014 Deterministic General Synthesis. Build Recovery by DGS is Aternox\u2019s first active product. Delaware, USA.";
 
 export const metadata: Metadata = {
   title,
@@ -47,25 +48,26 @@ export default function AboutPage() {
       >
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML= __html: JSON.stringify(breadCrumbJsonLd) 
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadCrumbJsonLd) }}
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML= __html: JSON.stringify(webPageJsonLd) 
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
         />
         <FadeIn>
           <div className="max-w-3xl space-y-8">
             <p className="text-base leading-relaxed text-white/60">
-              Aternox is the company behind DGS — Deterministic General Synthesis. We are building a synthesis engine for researchers, enterprises, and builders who need verified answers, not confident guesses. Aternox is incorporated in Delaware, USA.
+              Aternox is the company behind DGS \u2014 Deterministic General Synthesis. We are building a synthesis engine for researchers, enterprises, and builders who need verified answers, not confident guesses. Aternox is incorporated in Delaware, USA.
             </p>
             <p className="text-base leading-relaxed text-white/60">
-              Aternox&apos;s current active product is <strong className="text-white">Build Recovery by DGS</strong> — a recovery engine for AI-assisted builders with broken or failing software projects. Build Recovery is in final development and launching soon.
+              Aternox&apos;s current active product is{" "}
+              <strong className="text-white">Build Recovery by DGS</strong> \u2014 a recovery engine for AI-assisted builders with broken or failing software projects. Build Recovery is in final development and launching soon.
             </p>
             <p className="text-base leading-relaxed text-white/60">
-              DGS was designed and built by Lennox Hayes, founder of Aternox. The FLT3 research program was DGS&apos;s first major proof of concept — a complete preclinical research architecture for a problem that has occupied major pharmaceutical R&D teams for decades.
+              DGS was designed and built by Lennox Hayes, founder of Aternox. The FLT3 research program was DGS&apos;s first major proof of concept \u2014 a complete preclinical research architecture for a problem that has occupied major pharmaceutical R&amp;D teams for decades.
             </p>
             <p className="text-base leading-relaxed text-white/60">
-              For research collaboration, validator inquiries, or enterprise access — use the contact page.
+              For research collaboration, validator inquiries, or enterprise access \u2014 use the contact page.
             </p>
             <div>
               <Link
