@@ -1,9 +1,9 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import HomeClient from "@/components/site/home/HomeClient";
 
 const title = "DGS by Aternox | Verified Synthesis Engine for High-Stakes Work";
 const description =
-  "DGS is a verified synthesis engine for high-stakes work: structured outputs, traceable logic gates, reviewable artifacts, and governed workflows.";
+  "DGS is a verified synthesis engine for high-stakes work. Build Recovery by DGS — for AI-assisted software builders — is in final development. Structured outputs, traceable logic gates, reviewable artifacts.";
 
 export const metadata: Metadata = {
   title,
@@ -36,6 +36,11 @@ export default function HomePage() {
       question: "Is DGS public yet?",
       answer:
         "No. DGS is not public yet. The Standard engine is the first planned public release, while Deep is selective and Synthetic is restricted.",
+    },
+    {
+      question: "What is Build Recovery by DGS?",
+      answer:
+        "Build Recovery by DGS is Aternox's first active product — a recovery engine for AI-assisted builders with broken or failing software projects. It is in final development and launching soon.",
     },
     {
       question: "What proof exists today?",
@@ -83,11 +88,11 @@ export default function HomePage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
+        dangerouslySetInnerHTML= __html: JSON.stringify(webPageJsonLd) 
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        dangerouslySetInnerHTML= __html: JSON.stringify(faqJsonLd) 
       />
       <HomeClient />
     </>
