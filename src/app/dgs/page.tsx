@@ -70,12 +70,12 @@ export default function DGSPage() {
     {
       question: "What is Build Recovery by DGS?",
       answer:
-        "Build Recovery by DGS is Aternox's first active product — a recovery engine for AI-assisted builders with broken or failing software projects. It is in final development.",
+        "Build Recovery by DGS is Aternox\u2019s first active product \u2014 a recovery engine for AI-assisted builders with broken or failing software projects. It is in final development.",
     },
     {
       question: "Can DGS replace domain experts?",
       answer:
-        "No. DGS does not replace domain expertise or make legal, clinical, or financial decisions on a team's behalf.",
+        "No. DGS does not replace domain expertise or make legal, clinical, or financial decisions on a team\u2019s behalf.",
     },
   ];
 
@@ -101,7 +101,7 @@ export default function DGSPage() {
   const webPageJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "DGS — Deterministic General Synthesis",
+    name: "DGS \u2014 Deterministic General Synthesis",
     url: canonicalUrl,
     description:
       "DGS is a synthesis engine with deterministic logic gates and traceable decision rules. The synthesis can vary; the logic structure does not.",
@@ -134,30 +134,30 @@ export default function DGSPage() {
     <Shell>
       <Page
         eyebrow="DETERMINISTIC GENERAL SYNTHESIS"
-        title="DGS — Deterministic General Synthesis"
-        subtitle="A synthesis engine with deterministic logic gates. Not a language model. The synthesis can vary — the logic structure does not."
+        title="DGS \u2014 Deterministic General Synthesis"
+        subtitle="A synthesis engine with deterministic logic gates. Not a language model. The synthesis can vary \u2014 the logic structure does not."
       >
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML= __html: JSON.stringify(breadCrumbJsonLd) 
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadCrumbJsonLd) }}
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML= __html: JSON.stringify(webPageJsonLd) 
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML= __html: JSON.stringify(faqJsonLd) 
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
         />
 
-        {/* ✦ BUILD RECOVERY CALLOUT — ADDED */}
+        {/* BUILD RECOVERY CALLOUT */}
         <FadeIn>
           <div className="mb-12 rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-5">
             <div className="font-mono text-[10px] font-semibold tracking-widest text-white/40 uppercase mb-2">
               Current Active Product
             </div>
             <p className="text-[15px] text-white/80">
-              <strong className="text-white">Build Recovery by DGS</strong> — a recovery engine for AI-assisted builders with broken or failing software projects — is in final development and launching soon.
+              <strong className="text-white">Build Recovery by DGS</strong> \u2014 a recovery engine for AI-assisted builders with broken or failing software projects \u2014 is in final development and launching soon.
             </p>
           </div>
         </FadeIn>
@@ -197,7 +197,7 @@ export default function DGSPage() {
                     "Outputs are structured and reviewable",
                     "Every conclusion is traceable",
                     "Uncertain outputs are flagged, not hidden",
-                    "Mode-specific depth — right tool for right problem",
+                    "Mode-specific depth \u2014 right tool for right problem",
                   ].map((item) => (
                     <li key={item} className="flex gap-3 items-start">
                       <span className="mt-[7px] h-1.5 w-1.5 flex-none rounded-full bg-brand-2" />
@@ -222,21 +222,21 @@ export default function DGSPage() {
                 label="STANDARD ENGINE"
                 headline="The first public release."
                 body="Standard is the first DGS engine planned for public availability. It is built for structured, reviewable output in real professional workflows."
-                access="PUBLIC — Coming soon"
+                access="PUBLIC \u2014 Coming soon"
               />
               <ModeCard
                 delay={0.2}
                 label="DEEP ENGINE"
                 headline="Higher-depth synthesis for hard workflows."
                 body="Deep is for ultra-complex, multi-layer synthesis tasks where strict scoping, checkpoints, and traceability matter. Private access. Outputs are structured and delivered with a complete logic trace."
-                access="ENTERPRISE — Private access"
+                access="ENTERPRISE \u2014 Private access"
               />
               <ModeCard
                 delay={0.3}
                 label="SYNTHETIC ENGINE"
                 headline="Discovery-level synthesis. This is the crown."
-                body="Synthetic generates genuinely new structured knowledge — not recombined information, not pattern completion. This is the engine that produced the FLT3 preclinical research program. It is not publicly available. It is not for sale. Access is by invitation only."
-                access="RESTRICTED — Not available"
+                body="Synthetic generates genuinely new structured knowledge \u2014 not recombined information, not pattern completion. This is the engine that produced the FLT3 preclinical research program. It is not publicly available. It is not for sale. Access is by invitation only."
+                access="RESTRICTED \u2014 Not available"
               />
             </div>
           </div>
@@ -251,7 +251,7 @@ export default function DGSPage() {
                 "Does not replace domain expertise",
                 "Does not have real-time internet access",
                 "Does not make clinical, legal, or financial decisions on your behalf",
-                "Does not reveal its internal architecture — ever",
+                "Does not reveal its internal architecture \u2014 ever",
                 "Synthetic Mode is not available to the public and will not be",
               ].map((item) => (
                 <li key={item} className="flex gap-3 items-start">
@@ -271,14 +271,14 @@ export default function DGSPage() {
             </div>
             <h2 className="mt-3 font-sans text-3xl font-semibold tracking-[-0.04em] md:text-4xl">See it in action.</h2>
             <p className="mt-4 max-w-3xl text-base text-muted md:text-lg">
-              DGS produced a complete preclinical research architecture for FLT3-mutated Acute Myeloid Leukemia — 58 documents, one run. The full program scope and public summary are available on the research page.
+              DGS produced a complete preclinical research architecture for FLT3-mutated Acute Myeloid Leukemia \u2014 58 documents, one run. The full program scope and public summary are available on the research page.
             </p>
             <div className="mt-6">
               <Link
                 href="/research"
                 className="btn-primary inline-flex h-12 items-center justify-center rounded-full px-6 text-sm font-semibold transition-all hover:scale-105"
               >
-                View the research →
+                View the research \u2192
               </Link>
             </div>
           </div>
