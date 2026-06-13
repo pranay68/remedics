@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import { productName, siteDescription, siteName, siteTitle } from "@/content/site";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aternox.site";
 const site = new URL(siteUrl);
@@ -26,13 +27,12 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "DGS by Aternox | Verified Synthesis Engine for High-Stakes Work",
+    default: siteTitle,
     template: "%s | Aternox",
   },
-  description:
-    "DGS is a verified synthesis engine for high-stakes work: structured outputs, traceable logic gates, reviewable artifacts, and governed workflows.",
+  description: siteDescription,
   metadataBase: site,
-  applicationName: "DGS",
+  applicationName: productName,
   category: "Software",
   robots: {
     index: true,
@@ -49,18 +49,16 @@ export const metadata: Metadata = {
     ? { google: googleSiteVerification }
     : undefined,
   openGraph: {
-    title: "DGS by Aternox | Verified Synthesis Engine for High-Stakes Work",
-    description:
-      "DGS is a verified synthesis engine for high-stakes work: structured outputs, traceable logic gates, reviewable artifacts, and governed workflows.",
+    title: siteTitle,
+    description: siteDescription,
     type: "website",
-    siteName: "Aternox",
+    siteName,
     url: site,
   },
   twitter: {
     card: "summary_large_image",
-    title: "DGS by Aternox | Verified Synthesis Engine for High-Stakes Work",
-    description:
-      "DGS is a verified synthesis engine for high-stakes work: structured outputs, traceable logic gates, reviewable artifacts, and governed workflows.",
+    title: siteTitle,
+    description: siteDescription,
   },
 };
 
@@ -71,25 +69,17 @@ export default function RootLayout({
 }>) {
   const organizationId = new URL("/#organization", site).href;
   const websiteId = new URL("/#website", site).href;
-  const softwareId = new URL("/dgs#software", site).href;
+  const softwareId = new URL("/#product", site).href;
 
   const orgJsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
     "@id": organizationId,
-    name: "Aternox",
+    name: siteName,
     url: site.href,
     logo: new URL("/logo.png", site).href,
     description:
-      "Aternox builds DGS, a verified synthesis engine for high-stakes work with structured outputs, traceable logic gates, and governed workflows.",
-    foundingLocation: {
-      "@type": "Place",
-      address: {
-        "@type": "PostalAddress",
-        addressRegion: "Delaware",
-        addressCountry: "US",
-      },
-    },
+      "Aternox is the parent company behind ReArch, a recovery service for broken or messy AI-built software.",
     sameAs: [],
   };
 
@@ -97,7 +87,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": websiteId,
-    name: "Aternox",
+    name: siteName,
     url: site.href,
     publisher: {
       "@id": organizationId,
@@ -109,21 +99,14 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "@id": softwareId,
-    name: "DGS — Deterministic General Synthesis",
+    name: productName,
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
-    url: new URL("/dgs", site).href,
+    url: site.href,
     image: new URL("/logo.png", site).href,
-    offers: {
-      "@type": "Offer",
-      url: new URL("/pricing", site).href,
-      price: "0",
-      priceCurrency: "USD",
-      availability: "https://schema.org/PreOrder",
-    },
     brand: {
       "@type": "Brand",
-      name: "Aternox",
+      name: siteName,
     },
     publisher: {
       "@id": organizationId,
@@ -131,23 +114,19 @@ export default function RootLayout({
     isPartOf: {
       "@id": websiteId,
     },
-    softwareVersion: "v1",
-    releaseNotes: "Private development; Standard engine availability planned soon.",
-    description:
-      "DGS is a verified synthesis engine for high-stakes work: structured outputs, traceable logic gates, reviewable artifacts, and governed workflows.",
+    description: siteDescription,
     featureList: [
-      "Structured outputs",
-      "Traceable logic gates",
-      "Reviewable artifacts",
-      "Governed workflows",
-      "Proof-led expansion",
+      "Case understanding before quote",
+      "Explicit confirmation before run",
+      "Scoped recovery for AI-built software",
+      "Bounded package delivery",
     ],
   };
 
   return (
     <html lang="en" className="h-full">
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased min-h-full bg-background text-foreground`}
+        className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} min-h-full bg-background text-foreground antialiased`}
         suppressHydrationWarning
       >
         <script

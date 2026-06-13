@@ -1,24 +1,27 @@
 import type { Metadata } from "next";
 import HomeClient from "@/components/site/home/HomeClient";
-
-const title = "DGS by Aternox | Verified Synthesis Engine for High-Stakes Work";
-const description =
-  "DGS is a verified synthesis engine for high-stakes work. Build Recovery by DGS — for AI-assisted software builders — is in final development. Structured outputs, traceable logic gates, reviewable artifacts.";
+import {
+  fiveStages,
+  productName,
+  siteDescription,
+  siteName,
+  siteTitle,
+} from "@/content/site";
 
 export const metadata: Metadata = {
-  title,
-  description,
+  title: siteTitle,
+  description: siteDescription,
   alternates: { canonical: "/" },
   openGraph: {
-    title,
-    description,
+    title: siteTitle,
+    description: siteDescription,
     type: "website",
     url: "/",
   },
   twitter: {
     card: "summary_large_image",
-    title,
-    description,
+    title: siteTitle,
+    description: siteDescription,
   },
 };
 
@@ -26,48 +29,45 @@ export default function HomePage() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aternox.site";
   const site = new URL(siteUrl);
   const canonicalUrl = new URL("/", site).href;
+
   const faqItems = [
     {
-      question: "What is DGS?",
+      question: "What is ReArch?",
       answer:
-        "DGS is Aternox\u2019s deterministic general synthesis engine for structured, reviewable, high-stakes work. It is built around logic gates and reviewer-ready artifacts rather than chat output.",
+        "ReArch is Aternox's recovery product for broken, messy, or stalled AI-built software. It starts with case understanding before any quote or run.",
     },
     {
-      question: "Is DGS public yet?",
+      question: "When does pricing appear?",
       answer:
-        "No. DGS is not public yet. The Standard engine is the first planned public release, while Deep is selective and Synthetic is restricted.",
+        "Pricing appears only after the case is built and explicitly confirmed.",
     },
     {
-      question: "What is Build Recovery by DGS?",
+      question: "What happens after confirmation?",
       answer:
-        "Build Recovery by DGS is Aternox\u2019s first active product \u2014 a recovery engine for AI-assisted builders with broken or failing software projects. It is in final development and launching soon.",
-    },
-    {
-      question: "What proof exists today?",
-      answer:
-        "Aternox has published a proof case showing DGS produced a complete preclinical FLT3 research architecture with 58 structured documents in one run.",
+        "Once the case is confirmed, ReArch can issue a scoped quote, run the recovery work, and deliver a bounded package.",
     },
   ];
 
   const webPageJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: title,
+    name: siteTitle,
     url: canonicalUrl,
-    description,
+    description: siteDescription,
     isPartOf: {
       "@type": "WebSite",
-      name: "Aternox",
+      name: siteName,
       url: site.href,
     },
     publisher: {
       "@type": "Organization",
-      name: "Aternox",
+      name: siteName,
       url: site.href,
-      logo: {
-        "@type": "ImageObject",
-        url: new URL("/logo.png", site).href,
-      },
+    },
+    mainEntity: {
+      "@type": "SoftwareApplication",
+      name: productName,
+      applicationCategory: "BusinessApplication",
     },
   };
 
@@ -84,6 +84,18 @@ export default function HomePage() {
     })),
   };
 
+  const howItWorksJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "How ReArch recovery works",
+    step: fiveStages.map((stage, index) => ({
+      "@type": "HowToStep",
+      position: index + 1,
+      name: stage.name,
+      text: stage.summary,
+    })),
+  };
+
   return (
     <>
       <script
@@ -93,6 +105,10 @@ export default function HomePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howItWorksJsonLd) }}
       />
       <HomeClient />
     </>

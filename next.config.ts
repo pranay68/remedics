@@ -70,6 +70,55 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: "/dgs",
+        destination: "/how-it-works",
+        permanent: true,
+      },
+      {
+        source: "/product",
+        destination: "/how-it-works",
+        permanent: true,
+      },
+      {
+        source: "/research",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/view/flt3-program-summary",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/learn",
+        destination: "/how-it-works",
+        permanent: true,
+      },
+      {
+        source: "/learn/:path*",
+        destination: "/how-it-works",
+        permanent: true,
+      },
+      {
+        source: "/compare",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/compare/:path*",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/safety",
+        destination: "/trust",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

@@ -73,7 +73,7 @@ export async function POST(request: NextRequest) {
             },
             { status: 201 }
         );
-    } catch (error: any) {
+    } catch (error) {
         console.error("Enterprise inquiry error:", error);
         return internalServerError();
     }

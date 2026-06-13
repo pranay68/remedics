@@ -16,7 +16,6 @@ This repository includes application-level hardening for the public Aternox webs
 
 - `/api/waitlist`
 - `/api/contact`
-- `/api/research-inquiry`
 - `/api/enterprise-inquiry`
 
 ## Environment variables used by security features

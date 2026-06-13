@@ -1,26 +1,25 @@
-﻿import type { Metadata } from "next";
-import { Shell } from "@/components/site/Shell";
-import { Page } from "@/components/site/Page";
+import type { Metadata } from "next";
 import { FadeIn } from "@/components/animations/FadeIn";
-import { ResearchForm } from "@/components/site/contact/ResearchForm";
+import { Page } from "@/components/site/Page";
 import { EnterpriseForm } from "@/components/site/contact/EnterpriseForm";
+import { Shell } from "@/components/site/Shell";
 
 export const metadata: Metadata = {
-  title: "Contact | Aternox",
+  title: "Contact",
   description:
-    "Research collaboration, enterprise access, or general inquiries. Get in touch with Aternox.",
+    "Start a ReArch intake conversation or send a general company inquiry to Aternox.",
   alternates: { canonical: "/contact" },
   openGraph: {
-    title: "Contact | Aternox",
+    title: "Contact",
     description:
-      "Research collaboration, enterprise access, or general inquiries. Get in touch with Aternox.",
+      "Start a ReArch intake conversation or send a general company inquiry to Aternox.",
     url: "/contact",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact | Aternox",
+    title: "Contact",
     description:
-      "Research collaboration, enterprise access, or general inquiries. Get in touch with Aternox.",
+      "Start a ReArch intake conversation or send a general company inquiry to Aternox.",
   },
 };
 
@@ -38,65 +37,44 @@ export default function ContactPage() {
     ],
   };
 
-  const webPageJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    name: "Contact",
-    url: canonicalUrl,
-    description:
-      "Research collaboration, enterprise access, or general inquiries. Get in touch with Aternox.",
-    isPartOf: { "@type": "WebSite", name: "Aternox", url: site.href },
-    publisher: { "@type": "Organization", name: "Aternox", url: site.href },
-  };
-
   return (
     <Shell>
       <Page
         eyebrow="Contact"
-        title="Get in touch."
-        subtitle="Two routes. Choose the one that fits."
+        title="Start the intake conversation."
+        subtitle="Use this page for ReArch case intake, company questions, or press. We retired the old research-only path."
       >
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(breadCrumbJsonLd) }}
         />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
-        />
-        <div className="grid gap-12 md:grid-cols-2">
-          {/* ROUTE 1 */}
+        <div className="grid gap-12 md:grid-cols-[0.9fr_1.1fr]">
           <FadeIn>
             <div className="rounded-3xl border border-border/70 bg-surface/50 p-8 glow">
               <div className="text-xs font-mono font-semibold uppercase tracking-wider text-brand-2 mb-3">
-                RESEARCH COLLABORATION
+                What to send
               </div>
-              <p className="text-sm text-muted mb-6">
-                For scientists, researchers, and institutional partners. Submit your details and we will follow up with NDA documentation if applicable.
-              </p>
-              <ResearchForm />
+              <div className="space-y-3 text-sm leading-6 text-muted">
+                <p>The broken app or repo signal.</p>
+                <p>The current failure or confusion you need resolved.</p>
+                <p>Anything that clarifies urgency, scope, or buyer constraints.</p>
+              </div>
             </div>
           </FadeIn>
 
-          {/* ROUTE 2 */}
-          <FadeIn delay={0.2}>
+          <FadeIn delay={0.15}>
             <div className="rounded-3xl border border-border/70 bg-surface/50 p-8 glow">
               <div className="text-xs font-mono font-semibold uppercase tracking-wider text-brand-2 mb-3">
-                GENERAL / ENTERPRISE
+                Intake / Company Inquiry
               </div>
-              <p className="text-sm text-muted mb-6">
-                For enterprise access inquiries, press, or anything else.
+              <p className="mb-6 text-sm text-muted">
+                This form routes ReArch intake and general company questions
+                without pretending there is already a separate live intake portal.
               </p>
               <EnterpriseForm />
             </div>
           </FadeIn>
         </div>
-
-        <FadeIn delay={0.4}>
-          <div className="mt-10 text-center text-[11px] text-white/30">
-            No phone. No physical address. Aternox LLC, Delaware, USA.
-          </div>
-        </FadeIn>
       </Page>
     </Shell>
   );

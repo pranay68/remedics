@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Shell } from "@/components/site/Shell";
 import { Page } from "@/components/site/Page";
+import { Shell } from "@/components/site/Shell";
 
-const title = "Privacy Policy | Aternox";
-const description = "Privacy Policy for Aternox LLC.";
+const title = "Privacy";
+const description = "Privacy information for the Aternox public site and ReArch intake surfaces.";
 
 export const metadata: Metadata = {
   title,
@@ -14,78 +14,27 @@ export const metadata: Metadata = {
 };
 
 export default function PrivacyPage() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aternox.site";
-  const site = new URL(siteUrl);
-  const canonicalUrl = new URL("/privacy", site).href;
-
-  const breadCrumbJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: new URL("/", site).href },
-      { "@type": "ListItem", position: 2, name: "Privacy", item: canonicalUrl },
-    ],
-  };
-
-  const webPageJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    name: "Privacy Policy",
-    url: canonicalUrl,
-    description,
-    isPartOf: { "@type": "WebSite", name: "Aternox", url: site.href },
-    publisher: { "@type": "Organization", name: "Aternox", url: site.href },
-  };
-
   return (
     <Shell>
       <Page
-        eyebrow="Legal"
-        title={
-          <>
-            Privacy <span className="text-gradient">Policy</span>
-          </>
-        }
-        subtitle={
-          "Last updated: January 2026"
-        }
+        eyebrow="Privacy"
+        title="We keep the public promise narrow."
+        subtitle="This page states only the privacy posture we can honestly support on the public site and intake forms."
       >
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadCrumbJsonLd) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
-        />
-        <div className="prose prose-invert max-w-none">
-          <p className="text-muted">
-            At Aternox, we take your privacy seriously. This Privacy Policy explains how we collect, use, and protect your information when you use our website and products.
+        <div className="space-y-6 rounded-3xl border border-border/70 bg-surface/50 p-10 text-sm leading-7 text-muted">
+          <p>
+            The Aternox public site collects only the information people submit
+            through contact and waitlist forms, along with basic security and rate
+            limiting data required to protect those forms.
           </p>
-
-          <h2 className="mt-8 text-lg font-semibold">1. Information We Collect</h2>
-          <p className="text-muted">
-            We collect information you provide directly to us, such as when you fill out a contact form or sign up for our services. This may include your name, email address, and company information.
+          <p>
+            We do not use this page to promise more than the current product
+            foundations support. Detailed handling for any client case belongs in
+            direct agreements, not public guesswork.
           </p>
-
-          <h2 className="mt-8 text-lg font-semibold">2. How We Use Your Information</h2>
-          <p className="text-muted">
-            We use the information we collect to provide, maintain, and improve our Services, to communicate with you, and to comply with legal obligations.
-          </p>
-
-          <h2 className="mt-8 text-lg font-semibold">3. Data Security</h2>
-          <p className="text-muted">
-            We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction.
-          </p>
-
-          <h2 className="mt-8 text-lg font-semibold">4. Code Privacy</h2>
-          <p className="text-muted">
-            For DGS and our other products, we prioritize privacy-first defaults and minimal retention where applicable. We do not use your data to train models unless explicitly authorized by you.
-          </p>
-
-          <h2 className="mt-8 text-lg font-semibold">5. Contact Us</h2>
-          <p className="text-muted">
-            If you have any questions about this Privacy Policy, please contact us via our Contact page.
+          <p>
+            Questions about data handling for a specific recovery case should be
+            raised through contact before any run is authorized.
           </p>
         </div>
       </Page>

@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { Shell } from "@/components/site/Shell";
-import { Page } from "@/components/site/Page";
 import { FadeIn } from "@/components/animations/FadeIn";
+import { Page } from "@/components/site/Page";
+import { Shell } from "@/components/site/Shell";
 
-const title = "About | Aternox";
+const title = "About";
 const description =
-  "Aternox is the company behind DGS \u2014 Deterministic General Synthesis. Build Recovery by DGS is Aternox\u2019s first active product. Delaware, USA.";
+  "Aternox is the parent company. ReArch is the public recovery product.";
 
 export const metadata: Metadata = {
   title,
@@ -30,55 +29,54 @@ export default function AboutPage() {
     ],
   };
 
-  const webPageJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    name: "About Aternox",
-    url: canonicalUrl,
-    description,
-    isPartOf: { "@type": "WebSite", name: "Aternox", url: site.href },
-    publisher: { "@type": "Organization", name: "Aternox", url: site.href },
-  };
-
   return (
     <Shell>
       <Page
         eyebrow="About"
-        title="About Aternox"
+        title="Aternox is the parent company. ReArch is the public product."
+        subtitle="This site keeps the roles clean: company identity stays with Aternox, while the product story is centered on ReArch recovery."
       >
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(breadCrumbJsonLd) }}
         />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
-        />
-        <FadeIn>
-          <div className="max-w-3xl space-y-8">
-            <p className="text-base leading-relaxed text-white/60">
-              Aternox is the company behind DGS \u2014 Deterministic General Synthesis. We are building a synthesis engine for researchers, enterprises, and builders who need verified answers, not confident guesses. Aternox is incorporated in Delaware, USA.
-            </p>
-            <p className="text-base leading-relaxed text-white/60">
-              Aternox&apos;s current active product is{" "}
-              <strong className="text-white">Build Recovery by DGS</strong> \u2014 a recovery engine for AI-assisted builders with broken or failing software projects. Build Recovery is in final development and launching soon.
-            </p>
-            <p className="text-base leading-relaxed text-white/60">
-              DGS was designed and built by Lennox Hayes, founder of Aternox. The FLT3 research program was DGS&apos;s first major proof of concept \u2014 a complete preclinical research architecture for a problem that has occupied major pharmaceutical R&amp;D teams for decades.
-            </p>
-            <p className="text-base leading-relaxed text-white/60">
-              For research collaboration, validator inquiries, or enterprise access \u2014 use the contact page.
-            </p>
-            <div>
-              <Link
-                href="/contact"
-                className="inline-flex h-11 items-center justify-center rounded-full bg-white text-black px-6 text-[13px] font-medium transition-all duration-200 hover:bg-white/90"
-              >
-                Contact us
-              </Link>
+
+        <div className="grid gap-4 md:grid-cols-3">
+          <FadeIn>
+            <div className="rounded-3xl border border-border/70 bg-surface/50 p-8">
+              <div className="text-xs font-mono font-semibold uppercase tracking-wider text-brand-2">
+                Company
+              </div>
+              <p className="mt-4 text-base leading-7 text-muted">
+                Aternox owns the company surface, legal pages, and public trust
+                posture.
+              </p>
             </div>
-          </div>
-        </FadeIn>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <div className="rounded-3xl border border-border/70 bg-surface/50 p-8">
+              <div className="text-xs font-mono font-semibold uppercase tracking-wider text-brand-2">
+                Product
+              </div>
+              <p className="mt-4 text-base leading-7 text-muted">
+                ReArch focuses on recovery for broken or messy AI-built apps
+                through case understanding, confirmation, execution, and package
+                delivery.
+              </p>
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <div className="rounded-3xl border border-border/70 bg-surface/50 p-8">
+              <div className="text-xs font-mono font-semibold uppercase tracking-wider text-brand-2">
+                Founder
+              </div>
+              <p className="mt-4 text-base leading-7 text-muted">
+                The company is founder-led. This page does not invent extra legal
+                entity detail beyond what is currently frozen.
+              </p>
+            </div>
+          </FadeIn>
+        </div>
       </Page>
     </Shell>
   );

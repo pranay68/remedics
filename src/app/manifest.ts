@@ -1,11 +1,11 @@
 import type { MetadataRoute } from "next";
+import { productName, siteDescription } from "@/content/site";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "DGS | Aternox",
-    short_name: "DGS",
-    description:
-      "DGS is Aternox's deterministic logic-gate synthesis engine with traceable decision rules. Synthesis can vary; logic structure does not.",
+    name: `${productName} | Aternox`,
+    short_name: productName,
+    description: siteDescription,
     start_url: "/",
     display: "standalone",
     background_color: "#000000",

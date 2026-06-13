@@ -23,7 +23,8 @@ export default function TwitterImage() {
           justifyContent: "center",
           alignItems: "center",
           position: "relative",
-          fontFamily: "ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial",
+          fontFamily:
+            "ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial",
         }}
       >
         <div
@@ -36,14 +37,21 @@ export default function TwitterImage() {
         />
 
         <div style={{ display: "flex", flexDirection: "column", gap: 18, maxWidth: 980 }}>
-          <div style={{ fontSize: 22, letterSpacing: 2, color: "rgba(255,255,255,0.7)", textTransform: "uppercase" }}>
-            DGS — Deterministic General Synthesis | Aternox
+          <div
+            style={{
+              fontSize: 22,
+              letterSpacing: 2,
+              color: "rgba(255,255,255,0.7)",
+              textTransform: "uppercase",
+            }}
+          >
+            ReArch by Aternox
           </div>
           <div style={{ fontSize: 78, fontWeight: 700, letterSpacing: -3, lineHeight: 1.02 }}>
-            Synthesis. Not prediction.
+            Recovery for broken AI-built apps.
           </div>
           <div style={{ fontSize: 28, color: "rgba(255,255,255,0.6)", lineHeight: 1.35 }}>
-            Deterministic logic gates with traceable decision rules.
+            Intake. Case Room. Quote. Run. Package.
           </div>
         </div>
       </div>
