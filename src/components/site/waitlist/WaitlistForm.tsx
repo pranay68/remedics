@@ -84,8 +84,8 @@ export function WaitlistForm({
   if (submitted) {
     return (
       <div className="py-6 text-center text-[15px] text-white/70">
-        You&apos;re on the list. We&apos;ll reach out when ReArch intake capacity
-        is ready for your case type.
+        You&apos;re on the list. We&apos;ll follow up when the July 1 launch window
+        opens and the infrastructure pass is complete.
       </div>
     );
   }
@@ -95,8 +95,8 @@ export function WaitlistForm({
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white/70">
-        ReArch is intake-led. We use this form to understand which recovery cases
-        should be prioritized first.
+        Launching July 1. Development status is ready, and infrastructure is
+        still processing. This form is for early signal only.
       </div>
 
       <div>

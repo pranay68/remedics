@@ -6,7 +6,7 @@ import { TurnstileWidget } from "@/components/security/TurnstileWidget";
 type Status = "idle" | "sending" | "sent" | "error";
 
 const inquiryTypes = [
-  "ReArch Intake",
+  "Launch Question",
   "Buyer Package",
   "General",
   "Press",
@@ -18,7 +18,7 @@ export function EnterpriseForm() {
   const [form, setForm] = useState({
     name: "",
     organization: "",
-    inquiryType: "ReArch Intake",
+    inquiryType: "Launch Question",
     message: "",
   });
   const [website, setWebsite] = useState("");

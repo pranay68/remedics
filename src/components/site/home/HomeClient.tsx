@@ -43,13 +43,13 @@ export default function HomeClient() {
           <div className="absolute inset-0 bg-grid opacity-[0.05]" />
           <div className="absolute inset-0 bg-[radial-gradient(1200px_600px_at_50%0%,rgba(255,255,255,0.12),transparent_70%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(900px_520px_at_75%30%,rgba(192,192,192,0.08),transparent_70%)]" />
-          <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-[0.04] mix-blend-overlay select-none">
+          <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-[0.05] select-none">
             <Image
               src="/logo.png"
               alt="Aternox background"
               width={1000}
               height={1000}
-              className="object-contain grayscale invert"
+              className="object-contain"
               priority
             />
           </div>
@@ -84,7 +84,7 @@ export default function HomeClient() {
                   href="/waitlist"
                   className="group inline-flex h-11 items-center justify-center rounded-full bg-white px-6 text-[13px] font-medium text-black transition-all duration-200 hover:bg-white/90 hover:shadow-[0_0_20px-5px_rgba(255,255,255,0.3)]"
                 >
-                  Read waitlist note
+                  Launching July 1
                   <span className="ml-2 transition-transform duration-200 group-hover:translate-x-0.5">
                     →
                   </span>
@@ -93,7 +93,7 @@ export default function HomeClient() {
                   href="/how-it-works"
                   className="inline-flex h-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] px-6 text-[13px] text-white transition-all duration-200 hover:bg-white/[0.08]"
                 >
-                  See launch status
+                  Development status
                 </Link>
               </div>
 
@@ -220,12 +220,12 @@ export default function HomeClient() {
         <Section className="pb-32">
           <div className="rounded-3xl border border-white/[0.08] bg-white/[0.02] p-10 md:p-16 text-center backdrop-blur">
             <h2 className="font-sans text-3xl font-semibold leading-[1.15] tracking-[-0.04em] md:text-4xl">
-              It will take time to launch, but it will be launching soon.
+              Launching July 1.
             </h2>
             <p className="mt-4 text-[15px] text-white/50">
-              ReArch has not launched yet, so there is no intake button on this
-              page. We are still finishing the launch path and using this list to
-              understand what should be ready first.
+              Development status: ready. Infrastructure status: processing. The
+              public site stays honest about where the launch stands while the
+              remaining infrastructure work finishes.
             </p>
             <div className="mx-auto mt-8 max-w-3xl text-left">
               <WaitlistForm compact source="home-page" />

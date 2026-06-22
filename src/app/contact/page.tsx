@@ -7,19 +7,19 @@ import { Shell } from "@/components/site/Shell";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Start a ReArch intake conversation or send a general company inquiry to Aternox.",
+    "ReArch launches July 1. Use this page for launch questions and general company inquiries.",
   alternates: { canonical: "/contact" },
   openGraph: {
     title: "Contact",
     description:
-      "Start a ReArch intake conversation or send a general company inquiry to Aternox.",
+      "ReArch launches July 1. Use this page for launch questions and general company inquiries.",
     url: "/contact",
   },
   twitter: {
     card: "summary_large_image",
     title: "Contact",
     description:
-      "Start a ReArch intake conversation or send a general company inquiry to Aternox.",
+      "ReArch launches July 1. Use this page for launch questions and general company inquiries.",
   },
 };
 
@@ -41,8 +41,8 @@ export default function ContactPage() {
     <Shell>
       <Page
         eyebrow="Contact"
-        title="Start the intake conversation."
-        subtitle="Use this page for ReArch case intake, company questions, or press. We retired the old research-only path."
+        title="Launch questions and company inquiries."
+        subtitle="ReArch has not launched yet. Use this page for July 1 launch questions, company inquiries, or press."
       >
         <script
           type="application/ld+json"
@@ -65,11 +65,12 @@ export default function ContactPage() {
           <FadeIn delay={0.15}>
             <div className="rounded-3xl border border-border/70 bg-surface/50 p-8 glow">
               <div className="text-xs font-mono font-semibold uppercase tracking-wider text-brand-2 mb-3">
-                Intake / Company Inquiry
+                Launch / Company Inquiry
               </div>
               <p className="mb-6 text-sm text-muted">
-                This form routes ReArch intake and general company questions
-                without pretending there is already a separate live intake portal.
+                Development status is ready. Infrastructure is still processing,
+                so this form stays in launch-question mode instead of pretending
+                live intake is already open.
               </p>
               <EnterpriseForm />
             </div>

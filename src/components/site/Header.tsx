@@ -10,7 +10,7 @@ const nav = [
   { href: "/pricing", label: "Pricing" },
   { href: "/trust", label: "Trust" },
   { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  { href: "/waitlist", label: "Waitlist" },
 ];
 
 function isActive(pathname: string, href: string) {
@@ -42,15 +42,15 @@ export function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-5 py-4">
         <Link
           href="/"
-          className="group flex items-center gap-3 transition-opacity hover:opacity-80"
+          className="flex items-center gap-3"
         >
-          <div className="relative h-10 w-10 overflow-hidden rounded-xl border border-white/10 bg-gradient-to-br from-white/10 to-white/[0.02] shadow-2xl transition-transform duration-500 group-hover:scale-110">
+          <div className="relative h-10 w-10 overflow-hidden rounded-lg border border-white/10 bg-[#05060e]">
             <Image
               src="/logo.png"
               alt="Aternox"
               width={40}
               height={40}
-              className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-125 group-hover:rotate-3"
+              className="h-full w-full object-cover"
             />
           </div>
           <div className="leading-tight">
@@ -82,13 +82,10 @@ export function Header() {
           })}
         </nav>
 
-        <div className="flex items-center gap-2">
-          <Link
-            href="/contact"
-            className="hidden h-9 items-center justify-center rounded-full bg-white px-4 text-[13px] font-medium text-black transition-all duration-200 hover:bg-white/90 md:inline-flex"
-          >
-            Start intake
-          </Link>
+        <div className="hidden items-center gap-2 md:flex">
+          <div className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-[12px] font-medium text-white/75">
+            Launching July 1
+          </div>
         </div>
       </div>
     </header>

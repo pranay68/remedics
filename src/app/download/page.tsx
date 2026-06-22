@@ -25,22 +25,22 @@ export default function DownloadPage() {
       >
         <div className="rounded-3xl border border-border/70 bg-surface/50 p-10">
           <p className="max-w-3xl text-base leading-7 text-muted">
-            If you need to discuss a live recovery case, use contact or the
-            waitlist. The public site stays on process truth rather than public
-            bundle theater.
+            ReArch launches July 1. Development status is ready, infrastructure
+            is still processing, and the public site stays on process truth rather
+            than public bundle theater.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
-              href="/contact"
+              href="/waitlist"
               className="btn-primary inline-flex h-12 items-center justify-center rounded-full px-6 text-sm font-semibold transition-all hover:scale-105"
             >
-              Start intake
+              Launching July 1
             </Link>
             <Link
-              href="/waitlist"
+              href="/how-it-works"
               className="btn-secondary inline-flex h-12 items-center justify-center rounded-full px-6 text-sm font-semibold transition-all hover:scale-105"
             >
-              Join waitlist
+              Development status
             </Link>
           </div>
         </div>

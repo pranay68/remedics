@@ -71,13 +71,13 @@ export default function PricingPage() {
                 href="/how-it-works"
                 className="btn-secondary inline-flex h-12 items-center justify-center rounded-full px-6 text-sm font-semibold transition-all hover:scale-105"
               >
-                See the flow
+                Development status
               </Link>
               <Link
-                href="/contact"
+                href="/waitlist"
                 className="btn-primary inline-flex h-12 items-center justify-center rounded-full px-6 text-sm font-semibold transition-all hover:scale-105"
               >
-                Start intake
+                Launching July 1
               </Link>
             </div>
           </div>
